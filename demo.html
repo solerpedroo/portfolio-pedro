@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Portfólio Pedro Soler</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+        .feature h3 {
+            color: #3498db;
+            margin-top: 0;
+        }
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .screenshot {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .tech-tag {
+            background: rgba(52, 152, 219, 0.2);
+            color: #3498db;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .instructions h3 {
+            color: #f39c12;
+            margin-top: 0;
+        }
+        .instructions ol {
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Portfólio Pedro Soler</h1>
+        
+        <div class="feature">
+            <h3>✨ Características Principais</h3>
+            <ul>
+                <li><strong>Design Minimalista:</strong> Interface limpa e profissional</li>
+                <li><strong>Totalmente Responsivo:</strong> Adaptável para todos os dispositivos</li>
+                <li><strong>Bilíngue:</strong> Português e Inglês com tradução dinâmica</li>
+                <li><strong>Animações Suaves:</strong> Efeitos de scroll e hover elegantes</li>
+                <li><strong>Upload de Imagens:</strong> Sistema para projetos com preview</li>
+                <li><strong>Download de CVs:</strong> Três versões diferentes do currículo</li>
+            </ul>
+        </div>
+
+        <div class="feature">
+            <h3>🎨 Seções Implementadas</h3>
+            <ul>
+                <li><strong>Sobre Mim:</strong> Perfil, redes sociais e downloads de CV</li>
+                <li><strong>Habilidades:</strong> Técnicas e soft skills com barras de progresso</li>
+                <li><strong>Certificações:</strong> Cards com cursos e certificações</li>
+                <li><strong>Experiências:</strong> Timeline cronológica das experiências</li>
+                <li><strong>Projetos:</strong> Cards interativos com upload de imagem</li>
+                <li><strong>Contato:</strong> Formulário funcional e informações</li>
+            </ul>
+        </div>
+
+        <div class="tech-stack">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Font Awesome</span>
+            <span class="tech-tag">Google Fonts</span>
+            <span class="tech-tag">Responsive Design</span>
+        </div>
+
+        <div class="screenshot">
+            📱 Screenshot do Portfólio
+            <br>
+            <small>Interface moderna e responsiva</small>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 Como Usar</h3>
+            <ol>
+                <li>Abra o arquivo <code>index.html</code> em seu navegador</li>
+                <li>Navegue pelas seções usando o menu fixo</li>
+                <li>Teste a funcionalidade de tradução PT/EN</li>
+                <li>Experimente o upload de imagens nos projetos</li>
+                <li>Teste o formulário de contato</li>
+                <li>Verifique a responsividade em diferentes tamanhos de tela</li>
+            </ol>
+        </div>
+
+        <div class="feature">
+            <h3>🎯 Funcionalidades Especiais</h3>
+            <ul>
+                <li><strong>Menu Mobile:</strong> Hambúrguer responsivo</li>
+                <li><strong>Smooth Scroll:</strong> Navegação suave entre seções</li>
+                <li><strong>Scroll Reveal:</strong> Animações baseadas na visibilidade</li>
+                <li><strong>Efeitos de Hover:</strong> Interações visuais elegantes</li>
+                <li><strong>Loading Screen:</strong> Tela de carregamento inicial</li>
+                <li><strong>Partículas Animadas:</strong> Efeito visual de fundo</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" class="btn">🚀 Abrir Portfólio</a>
+            <a href="README.md" class="btn btn-secondary">📖 Ver Documentação</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; opacity: 0.8;">
+            <p><strong>Desenvolvido com ❤️ usando apenas HTML, CSS e JavaScript puro</strong></p>
+            <p>Pedro Henrique Contardi Soler - 2024</p>
+        </div>
+    </div>
+</body>
+</html>

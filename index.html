@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Henrique Contardi Soler - Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="favicon.svg" color="#0066cc">
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%234a9eff"/><stop offset="100%" stop-color="%230066cc"/></linearGradient></defs><rect x="0" y="0" width="64" height="64" rx="14" ry="14" fill="%230a0a0a"/><circle cx="32" cy="32" r="20" fill="none" stroke="url(%23g)" stroke-width="4"/><path d="M24 40 V20 h9 a6 6 0 0 1 0 12 h-9" fill="none" stroke="url(%23g)" stroke-width="4" stroke-linecap="round"/><path d="M40 24 h-6 a6 6 0 0 0 0 12 h6" fill="none" stroke="url(%23g)" stroke-width="4" stroke-linecap="round"/></svg>'>
+</head>
+<body>
+    <!-- Menu Fixo -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span data-translate="nav.logo">Pedro Soler</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-translate="nav.about">Sobre Mim</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link" data-translate="nav.skills">Habilidades</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#education" class="nav-link" data-translate="nav.formation">Formação</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#certifications" class="nav-link" data-translate="nav.certifications">Certificações</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link" data-translate="nav.experience">Experiências</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link" data-translate="nav.projects">Projetos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#awards" class="nav-link" data-translate="nav.award">Prêmios</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-translate="nav.contact">Contato</a>
+                </li>
+            </ul>
+            <div class="nav-language">
+                <button type="button" class="lang-btn active" data-lang="pt">🇧🇷 PT</button>
+                <button type="button" class="lang-btn" data-lang="en">🇺🇸 EN</button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <!-- Seção Sobre Mim -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="about-content">
+                    <!-- Coluna Esquerda - Perfil -->
+                    <div class="profile-column">
+                        <div class="profile-card">
+                            <div class="profile-image">
+                                <img src="img/foto_pedro.jpeg" alt="Pedro Henrique Contardi Soler" id="profile-img">
+                            </div>
+                            <h1 class="profile-name" data-translate="about.name">Pedro Henrique Contardi Soler</h1>
+                            <p class="profile-title" data-translate="about.title">Estudante de Engenharia de Software</p>
+                            <p class="profile-description" data-translate="about.description">
+                                Desenvolvedor apaixonado por tecnologia, focado em criar soluções inovadoras e eficientes. 
+                                Busco constantemente aprender novas tecnologias e aplicar conhecimentos em projetos práticos.
+                            </p>
+                            
+                            <!-- Redes Sociais -->
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/pedro-henrique-contardi-soler/" target="_blank" class="social-link">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://www.instagram.com/solerpedroo" target="_blank" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://github.com/solerpedroo" target="_blank" class="social-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://wa.me/5519987087013" target="_blank" class="social-link">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="mailto:pedrocsoler@hotmail.com" class="social-link">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+
+                            <!-- Botões de Download de CV -->
+                            <div class="cv-downloads">
+                                <h3 data-translate="about.downloads">Baixar Currículo</h3>
+                                <div class="cv-buttons">
+                                    <a href="cv/Currículo Pedro Soler - Geral (1).pdf" download class="cv-btn">
+                                        <i class="fas fa-file-pdf"></i>
+                                        <span data-translate="about.cv.general">Currículo Geral</span>
+                                    </a>
+                                    <a href="cv/Currículo Pedro Soler - Área de Tecnologia (2).pdf" download class="cv-btn">
+                                        <i class="fas fa-laptop-code"></i>
+                                        <span data-translate="about.cv.tech-pt">Área de Tecnologia - PT</span>
+                                    </a>
+                                    <a href="cv/Resume Pedro Soler - Technology Field. (1).pdf" download class="cv-btn">
+                                        <i class="fas fa-globe"></i>
+                                        <span data-translate="about.cv.tech-en">Área de Tecnologia - ENG</span>
+                                    </a>
+                                    <a href="certificados.zip" download class="cv-btn">
+                                        <i class="fas fa-file-archive"></i>
+                                        <span data-translate="about.cv.certifications">Certificados (ZIP)</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna Direita - Conteúdo Principal -->
+                    <div class="content-column">
+                        <div class="section-header">
+                            <h2 data-translate="about.me">Sobre Mim</h2>
+                            <div class="section-line"></div>
+                        </div>
+                        <div class="about-text">
+                            <p data-translate="about.text1">
+                                Sou estudante de Engenharia de Software com foco em desenvolvimento web e mobile. 
+                                Tenho experiência prática em diversas tecnologias e sempre busco me manter atualizado 
+                                com as últimas tendências do mercado.
+                            </p>
+                            <p data-translate="about.text2">
+                                Meu interesse pela tecnologia me levou a criar e gerenciar projetos próprios, 
+                                desenvolvendo habilidades em gestão, marketing digital e automação de processos. 
+                                Sou proativo, comunicativo e sempre disposto a aprender e crescer profissionalmente.
+                            </p>
+                            <p data-translate="about.text3">
+                                Estou à disposição para novas oportunidades no mercado de tecnologia, onde eu possa aplicar meus conhecimentos, desenvolver novas habilidades e contribuir com soluções inovadoras para desafios reais. Estou aberto a aprender, colaborar em equipe e crescer profissionalmente em um ambiente dinâmico e em constante evolução.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Habilidades -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-translate="skills.title">Habilidades</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="skills-content">
+                    <div class="skills-category">
+                        <h3 data-translate="skills.technical">Habilidades Técnicas</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">CSS</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">C</span>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">MySQL</span>
+                                    <span class="skill-percentage">65%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="65"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Firebase</span>
+                                    <span class="skill-percentage">50%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="50"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-percentage">50%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="50"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h3 data-translate="skills.soft">Outras Habilidades</h3>
+                        <div class="soft-skills">
+                            <div class="soft-skill-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span data-translate="skills.soft.analytics-ecom">Análise de métricas para E-commerce</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-microchip"></i>
+                                <span data-translate="skills.soft.arduino">Arduino</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-palette"></i>
+                                <span data-translate="skills.soft.branding">Branding e Definição de marca</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-comments"></i>
+                                <span data-translate="skills.soft.communication">Comunicação</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-paint-brush"></i>
+                                <span data-translate="skills.soft.canva">Design Gráfico (Canva)</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <span data-translate="skills.soft.design-thinking">Design Thinking</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-code"></i>
+                                <span data-translate="skills.soft.software-dev">Desenvolvimento de Software</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="skills.soft.ecommerce">E-commerce e Dropshipping</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-video"></i>
+                                <span data-translate="skills.soft.video-editing">Edição de Vídeos</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-rocket"></i>
+                                <span data-translate="skills.soft.entrepreneurship">Empreendedorismo</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span data-translate="skills.soft.finance">Finanças</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-globe"></i>
+                                <span data-translate="skills.soft.advanced-english">Inglês Avançado</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-users"></i>
+                                <span data-translate="skills.soft.project-leadership">Liderança de Projetos</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-bullhorn"></i>
+                                <span data-translate="skills.soft.digital-marketing">Marketing Digital</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-ad"></i>
+                                <span data-translate="skills.soft.meta-ads">Meta ADS e TikTok ADS</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-file-excel"></i>
+                                <span data-translate="skills.soft.ms-office">Microsoft Office</span>
+                        </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-tasks"></i>
+                                <span data-translate="skills.soft.organization">Organização e Planejamento</span>
+                    </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-chart-bar"></i>
+                                <span data-translate="skills.soft.strategy">Planejamento Estratégico</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-code"></i>
+                                <span data-translate="skills.soft.programming">Programação (CSS, C, Firebase, HTML, MySQL, Python, JavaScript)</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-share-alt"></i>
+                                <span data-translate="skills.soft.social-media">Social Media</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-puzzle-piece"></i>
+                                <span data-translate="skills.soft.problem-solving">Solução de Problemas</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-book"></i>
+                                <span data-translate="skills.soft.storytelling">Storytelling</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-traffic-light"></i>
+                                <span data-translate="skills.soft.traffic">Tráfego Pago e Tráfego Orgânico</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-eye"></i>
+                                <span data-translate="skills.soft.computer-vision">Visão Computacional</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Certificações -->
+        <section id="certifications" class="section certifications-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-translate="certifications.title">Certificações</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="certifications-grid">
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.1.title">Análise de métricas</h3>
+                            <p class="cert-institution" data-translate="cert.1.inst">Bequest Digital</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.2.title">Análise de métricas para e-commerce</h3>
+                            <p class="cert-institution" data-translate="cert.2.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.3.title">Análise e Classificação de Faces</h3>
+                            <p class="cert-institution" data-translate="cert.3.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.4.title">Aprendizagem com IA: ChatGPT</h3>
+                            <p class="cert-institution" data-translate="cert.4.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.5.title">Assistente de Desenvolvimento de Aplicativos</h3>
+                            <p class="cert-institution" data-translate="cert.5.inst">Senac Campinas</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.6.title">Assistente de Operação de Redes</h3>
+                            <p class="cert-institution" data-translate="cert.6.inst">Senac Campinas</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.7.title">Assistente de Suporte e Manutenção</h3>
+                            <p class="cert-institution" data-translate="cert.7.inst">Senac Campinas</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.8.title">Aula Magna com Caito Maia - Branding</h3>
+                            <p class="cert-institution" data-translate="cert.8.inst">Belas Artes e Chilli Beans</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.9.title">Branding: criando uma marca forte</h3>
+                            <p class="cert-institution" data-translate="cert.9.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.10.title">Básico Facebook ADS</h3>
+                            <p class="cert-institution" data-translate="cert.10.inst">Bequest Digital</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.11.title">Canva: criando apresentações comerciais</h3>
+                            <p class="cert-institution" data-translate="cert.11.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.12.title">Canva: criando vídeos com motion graphics</h3>
+                            <p class="cert-institution" data-translate="cert.12.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.13.title">Canva: designs digitais para redes sociais</h3>
+                            <p class="cert-institution" data-translate="cert.13.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.14.title">Canva: crie um e-book com IA</h3>
+                            <p class="cert-institution" data-translate="cert.14.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.15.title">CashFlow</h3>
+                            <p class="cert-institution" data-translate="cert.15.inst">Bequest Digital</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.16.title">ChatGPT: desvendando a IA</h3>
+                            <p class="cert-institution" data-translate="cert.16.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.17.title">ChatGPT: otimizando resultados</h3>
+                            <p class="cert-institution" data-translate="cert.17.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.18.title">Comunicação corporativa: PowerPoint</h3>
+                            <p class="cert-institution" data-translate="cert.18.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.19.title">Construindo Lojas Profissionais</h3>
+                            <p class="cert-institution" data-translate="cert.19.inst">Bequest Digital</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.20.title">Copywriting e Persuasão</h3>
+                            <p class="cert-institution" data-translate="cert.20.inst">Bequest Digital</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.21.title">Copywriting: textos persuasivos com IA</h3>
+                            <p class="cert-institution" data-translate="cert.21.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.22.title">Criativos que Vendem</h3>
+                            <p class="cert-institution" data-translate="cert.22.inst">Bequest Digital</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.23.title">Criação de conteúdo em vídeo</h3>
+                            <p class="cert-institution" data-translate="cert.23.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.24.title">Desenvolva seu primeiro robô de bate-papo</h3>
+                            <p class="cert-institution" data-translate="cert.24.inst">IBM</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.25.title">Design de apresentações: PowerPoint</h3>
+                            <p class="cert-institution" data-translate="cert.25.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.26.title">Design Thinking</h3>
+                            <p class="cert-institution" data-translate="cert.26.inst">Sebrae</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.27.title">Estratégia de crescimento para startups</h3>
+                            <p class="cert-institution" data-translate="cert.27.inst">SantaderX</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.28.title">Excel: domine o editor de planilhas</h3>
+                            <p class="cert-institution" data-translate="cert.28.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.29.title">Facebook Ads: campanha de vídeo</h3>
+                            <p class="cert-institution" data-translate="cert.29.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.30.title">Facebook Ads: campanhas de remarketing</h3>
+                            <p class="cert-institution" data-translate="cert.30.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.31.title">Facebook Ads: campanhas para e-commerce</h3>
+                            <p class="cert-institution" data-translate="cert.31.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.32.title">Facebook Ads: criando campanhas de sucesso</h3>
+                            <p class="cert-institution" data-translate="cert.32.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.33.title">Funil de Vendas que mais Geram Resultados</h3>
+                            <p class="cert-institution" data-translate="cert.33.inst">Bequest Digital</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.34.title">Funções com Excel: operações matemáticas</h3>
+                            <p class="cert-institution" data-translate="cert.34.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.35.title">Gestão do Conhecimento com IA</h3>
+                            <p class="cert-institution" data-translate="cert.35.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.36.title">Gestão financeira</h3>
+                            <p class="cert-institution" data-translate="cert.36.inst">Sebrae</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.37.title">Gestão financeira: administre suas finanças</h3>
+                            <p class="cert-institution" data-translate="cert.37.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.38.title">Inteligência Artificial: Marketing Digital</h3>
+                            <p class="cert-institution" data-translate="cert.38.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.39.title">Inteligência Artificial: gestão de mídias sociais</h3>
+                            <p class="cert-institution" data-translate="cert.39.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.40.title">Inteligência Artificial: estratégias de vendas</h3>
+                            <p class="cert-institution" data-translate="cert.40.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.41.title">Inteligência artificial Generativa</h3>
+                            <p class="cert-institution" data-translate="cert.41.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.42.title">Marketing Digital: explorando os conceitos</h3>
+                            <p class="cert-institution" data-translate="cert.42.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.43.title">Marketing digital para sua empresa</h3>
+                            <p class="cert-institution" data-translate="cert.43.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.44.title">Mídias Sociais: estratégias para engajar</h3>
+                            <p class="cert-institution" data-translate="cert.44.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.45.title">Mudanças e Escolhas</h3>
+                            <p class="cert-institution" data-translate="cert.45.inst">Sebrae</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.46.title">O que é E-mail Marketing?</h3>
+                            <p class="cert-institution" data-translate="cert.46.inst">Bequest Digital</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.47.title">Oficina Se Liga no Empreendedorismo</h3>
+                            <p class="cert-institution" data-translate="cert.47.inst">PUC-Campinas</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.48.title">Planejamento Estratégico</h3>
+                            <p class="cert-institution" data-translate="cert.48.inst">G4 Educação</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.49.title">Plano de Marketing Digital</h3>
+                            <p class="cert-institution" data-translate="cert.49.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.50.title">Produtos, Mineração e Fornecimento</h3>
+                            <p class="cert-institution" data-translate="cert.50.inst">Bequest Digital</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.51.title">Psicologia financeira</h3>
+                            <p class="cert-institution" data-translate="cert.51.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.52.title">Python: começando com a linguagem</h3>
+                            <p class="cert-institution" data-translate="cert.52.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.53.title">Página de Venda & Oferta</h3>
+                            <p class="cert-institution" data-translate="cert.53.inst">Bequest Digital</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-chart-area"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.54.title">Recursos Visuais com Excel</h3>
+                            <p class="cert-institution" data-translate="cert.54.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.55.title">Seminário A Universidade do Futuro</h3>
+                            <p class="cert-institution" data-translate="cert.55.inst">PUC-Campinas</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.56.title">Social Commerce</h3>
+                            <p class="cert-institution" data-translate="cert.56.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.57.title">Storytelling Como Ferramenta de Negócios</h3>
+                            <p class="cert-institution" data-translate="cert.57.inst">Sebrae</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.58.title">Tecnologia da Informação</h3>
+                            <p class="cert-institution" data-translate="cert.58.inst">iEstudar</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.59.title">Testes Facebook ADS</h3>
+                            <p class="cert-institution" data-translate="cert.59.inst">Bequest Digital</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.60.title">TikTok Ads: funcionalidades e configurações</h3>
+                            <p class="cert-institution" data-translate="cert.60.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-traffic-light"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.61.title">Tráfego Pago: Estratégias e Aplicações</h3>
+                            <p class="cert-institution" data-translate="cert.61.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.62.title">Usar IA generativa para desenvolvimento</h3>
+                            <p class="cert-institution" data-translate="cert.62.inst">IBM</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.63.title">Visão Computacional: análise facial</h3>
+                            <p class="cert-institution" data-translate="cert.63.inst">Alura</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.64.title">Visão Computacional com Arduino</h3>
+                            <p class="cert-institution" data-translate="cert.64.inst">Hotmart - Dev Ideias</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.65.title">Workshop Se Liga na Argumentação</h3>
+                            <p class="cert-institution" data-translate="cert.65.inst">PUC-Campinas</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.66.title">Workshop de Modelagem de Negócios</h3>
+                            <p class="cert-institution" data-translate="cert.66.inst">Inova Unicamp</p>
+                        </div>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3 data-translate="cert.67.title">Workshop de Descoberta do Cliente Ideal</h3>
+                            <p class="cert-institution" data-translate="cert.67.inst">Inova Unicamp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Atividades Extracurriculares -->
+        <section id="activities" class="section activities-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-translate="activities.title">Atividades Extracurriculares</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="activities-content">
+                    <ul class="activities-list">
+                        <li data-translate="activities.item.2023-3m"><strong>2023</strong> – 11ª Mostra de Ciências e Tecnologia Instituto 3M</li>
+                        <li data-translate="activities.item.2024-events"><strong>2024</strong> – Expo Ecomm Campinas 2024, Startup Day 2024, Campinas Innovation Week 2024, Aula magna com Caito Maia - Branding e Marketing Digital</li>
+                        <li data-translate="activities.item.2024-bragantec"><strong>2024</strong> – 14ª Bragantec</li>
+                        <li data-translate="activities.item.2024-3m-senac"><strong>2024</strong> – 12ª Mostra de Ciências e Tecnologia Instituto 3M, 17ª Edição Empreenda Senac</li>
+                        <li data-translate="activities.item.2025-events"><strong>2025</strong> – Startup Day 2025, 12º Motiv.se PUC-Campinas, Campinas Innovation Week</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Experiências -->
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-translate="experience.title">Experiências Profissionais</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 data-translate="experience.job1.title">Assistente de T.I</h3>
+                                <span class="timeline-company" data-translate="experience.job1.company">Zara Multimarcas</span>
+                                <span class="timeline-period">2022 - <span data-translate="experience.current">atual</span></span>
+                            </div>
+                            <p data-translate="experience.job1.description">
+                                Empresa de veículos da família, onde atuo na área de tecnologia, responsável pelo desenvolvimento 
+                                e gestão de sites, suporte técnico e manutenção das redes sociais e sistemas internos.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 data-translate="experience.job2.title">Fundador</h3>
+                                <span class="timeline-company" data-translate="experience.job2.company">Loja Escolha Correta</span>
+                                <span class="timeline-period">2023 - 2024</span>
+                            </div>
+                            <p data-translate="experience.job2.description">
+                                Loja de dropshipping criada e administrada por mim, com foco em marketing digital, 
+                                automação de vendas e otimização de campanhas online.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 data-translate="experience.job3.title">Fundador</h3>
+                                <span class="timeline-company" data-translate="experience.job3.company">Saint Capri</span>
+                                <span class="timeline-period">2024 - 2025</span>
+                            </div>
+                            <p data-translate="experience.job3.description">
+                                Loja nichada premium de dropshipping desenvolvida por mim, com foco em design, 
+                                identidade visual e estratégias de conversão e vendas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Projetos -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-translate="projects.title">Projetos</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/manual_upgrade.jpg" alt="Manual de Upgrade e Manutenção de Computadores" class="project-img">
+                            </div>
+                        <div class="project-content">
+                            <h3 data-translate="projects.manual.title">Manual de Upgrade e Manutenção de Computadores</h3>
+                            <p data-translate="projects.manual.desc">
+                                Manual completo desenvolvido em 2022 com instruções detalhadas para upgrade e manutenção 
+                                de computadores, incluindo guias práticos e dicas técnicas.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Documentação</span>
+                                <span class="tech-tag">Técnico</span>
+                                <span class="tech-tag">Hardware</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/mapeamento_lixo.jpg" alt="Mapeamento de pontos de descarte de lixo" class="project-img">
+                        </div>
+                        <div class="project-content">
+                            <h3 data-translate="projects.lixo.title">Mapeamento de pontos de descarte de lixo em Campinas</h3>
+                            <p data-translate="projects.lixo.desc">
+                                Projeto de 2022 que mapeou pontos de descarte de lixo em Campinas, 
+                                contribuindo para a conscientização ambiental e melhoria da gestão de resíduos.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Mapeamento</span>
+                                <span class="tech-tag">Sustentabilidade</span>
+                                <span class="tech-tag">Comunidade</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/maxwake.jpg" alt="MaxWake - Sensor de Segurança Automotiva" class="project-img">
+                            </div>
+                        <div class="project-content">
+                            <h3 data-translate="projects.maxwake.title">MaxWake - Sensor de Segurança Automotiva</h3>
+                            <p data-translate="projects.maxwake.desc">
+                                Projeto finalista na 11ª Mostra de Ciências e Tecnologia Instituto 3M (2023). 
+                                Sistema de segurança automotiva que detecta sonolência do motorista.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Arduino</span>
+                                <span class="tech-tag">Sensores</span>
+                                <span class="tech-tag">Segurança</span>
+                                <span class="tech-tag">IoT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/guia_investimentos.jpg" alt="Guia de Investimentos para Jovens" class="project-img">
+                        </div>
+                        <div class="project-content">
+                            <h3 data-translate="projects.guia.title">Guia de Investimentos para Jovens</h3>
+                            <p data-translate="projects.guia.desc">
+                                Guia desenvolvido em 2023 para orientar jovens sobre investimentos, 
+                                educação financeira e planejamento de futuro.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Educação Financeira</span>
+                                <span class="tech-tag">Planejamento</span>
+                                <span class="tech-tag">Jovens</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/safe_vision.jpg" alt="Safe Vision - Sistema de Segurança Rodoviária" class="project-img">
+                            </div>
+                        <div class="project-content">
+                            <h3 data-translate="projects.safevision.title">Safe Vision – Sistema de Segurança Rodoviária</h3>
+                            <p data-translate="projects.safevision.desc">
+                                Projeto premiado que conquistou 3ª colocação na 14ª Bragantec e 12ª Mostra de Ciências 
+                                e Tecnologia Instituto 3M (2024). Sistema de segurança rodoviária com visão computacional.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Visão Computacional</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">Segurança</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/fullcontrol.jpg" alt="FullControl" class="project-img">
+                        </div>
+                        <div class="project-content">
+                            <h3 data-translate="projects.fullcontrol.title">FullControl</h3>
+                            <p data-translate="projects.fullcontrol.desc">
+                                Projeto de 2025 focado em controle e automação de sistemas, 
+                                desenvolvido durante a participação em eventos de inovação.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Automação</span>
+                                <span class="tech-tag">Controle</span>
+                                <span class="tech-tag">Sistemas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Prêmios e Reconhecimentos -->
+        <section id="awards" class="section awards-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-translate="awards.title">Prêmios e Reconhecimentos</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="awards-grid">
+                    <div class="award-card">
+                        <div class="award-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="award-content">
+                            <h3 data-translate="awards.1.title">Projeto Finalista - MaxWake</h3>
+                            <p class="award-event" data-translate="awards.1.event">11ª Mostra de Ciências e Tecnologia - Instituto 3M</p>
+                            <p class="award-year">2023</p>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="award-content">
+                            <h3 data-translate="awards.2.title">3ª Colocação - Safe Vision</h3>
+                            <p class="award-event" data-translate="awards.2.event">Categoria: Informática - 14ª Bragantec (Instituto Federal de São Paulo)</p>
+                            <p class="award-year">2024</p>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="award-content">
+                            <h3 data-translate="awards.3.title">3ª Colocação - Safe Vision</h3>
+                            <p class="award-event" data-translate="awards.3.event">Categoria: Engenharia - 12ª Mostra de Ciências e Tecnologia - Instituto 3M</p>
+                            <p class="award-year">2024</p>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="award-content">
+                            <h3 data-translate="awards.4.title">Projeto Semifinalista - Safe Vision</h3>
+                            <p class="award-event" data-translate="awards.4.event">17ª Edição Empreenda Senac</p>
+                            <p class="award-year">2024</p>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="award-content">
+                            <h3 data-translate="awards.5.title">2ª Colocação - Safe Vision</h3>
+                            <p class="award-event" data-translate="awards.5.event">12º Motiv.se PUC-Campinas - Mostra de Empreendedorismo e Inovação</p>
+                            <p class="award-year">2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Formação Acadêmica -->
+        <section id="education" class="section education-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-translate="education.title">Formação Acadêmica</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="education-content">
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-details">
+                            <h3 data-translate="education.software-bachelor">Bacharelado em Engenharia de Software</h3>
+                            <p class="education-institution" data-translate="education.puc">PUC Campinas</p>
+                            <p class="education-period">2025 - 2028</p>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="education-details">
+                            <h3 data-translate="education.highschool-tech">Ensino Médio Integrado com Técnico em Informática</h3>
+                            <p class="education-institution" data-translate="education.senac">Senac Campinas</p>
+                            <p class="education-period">2022 - 2024</p>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="education-details">
+                            <h3 data-translate="education.english-classes">English Classes</h3>
+                            <p class="education-institution" data-translate="education.english-course">Curso de Inglês</p>
+                            <p class="education-period">2014 - 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Idiomas -->
+        <section id="languages" class="section languages-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-translate="languages.title">Idiomas</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="languages-grid">
+                    <div class="language-card">
+                        <div class="language-flag">🇧🇷</div>
+                        <h3 data-translate="languages.pt">Português</h3>
+                        <p class="language-level" data-translate="languages.level.native">Nativo (C2)</p>
+                    </div>
+                    <div class="language-card">
+                        <div class="language-flag">🇺🇸</div>
+                        <h3 data-translate="languages.en">Inglês</h3>
+                        <p class="language-level" data-translate="languages.level.advanced">Avançado (C1)</p>
+                    </div>
+                    <div class="language-card">
+                        <div class="language-flag">🇪🇸</div>
+                        <h3 data-translate="languages.es">Espanhol</h3>
+                        <p class="language-level" data-translate="languages.level.basic">Básico (A2)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-translate="contact.title">Contato</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3 data-translate="contact.info">Informações de Contato</h3>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <span class="contact-label" data-translate="contact.whatsapp">WhatsApp:</span>
+                                <span class="contact-value">+55 (19) 98708-7013</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="contact-label" data-translate="contact.email">E-mail:</span>
+                                <span class="contact-value">pedrocsoler@hotmail.com</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span class="contact-label" data-translate="contact.location">Localização:</span>
+                                <span class="contact-value" data-translate="contact.location.value">Campinas, SP, Brasil</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Pedro Henrique Contardi Soler. <span data-translate="footer.rights">Todos os direitos reservados.</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
