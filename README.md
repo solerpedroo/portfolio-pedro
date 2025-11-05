@@ -146,4 +146,3 @@ Este projeto é de uso pessoal e educacional. Sinta-se livre para usar como base
 
 ---
 
-*Desenvolvido com ❤️ usando apenas HTML, CSS e JavaScript puro*
