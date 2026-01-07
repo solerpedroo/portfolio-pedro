@@ -210,7 +210,7 @@ const translations = {
         'cert.65.title': 'Workshop Se Liga na Argumentação', 'cert.65.inst': 'PUC-Campinas',
         'cert.66.title': 'Workshop de Modelagem de Negócios', 'cert.66.inst': 'Inova Unicamp',
         'cert.67.title': 'Workshop de Descoberta do Cliente Ideal', 'cert.67.inst': 'Inova Unicamp',
-        'cert.68.title': 'Programa de Aceleração - Cria I', 'cert.68.inst': 'PUC Campinas',
+        'cert.68.title': 'Programa de Aceleração - Cria I', 'cert.68.inst': 'PUC-Campinas',
 
         // Prêmios (PT)
         'awards.1.title': 'Projeto Finalista - MaxWake',
@@ -434,7 +434,7 @@ const translations = {
         'cert.65.title': 'Argumentation Workshop', 'cert.65.inst': 'PUC-Campinas',
         'cert.66.title': 'Business Modeling Workshop', 'cert.66.inst': 'Inova Unicamp',
         'cert.67.title': 'Ideal Customer Discovery Workshop', 'cert.67.inst': 'Inova Unicamp',
-        'cert.68.title': 'Acceleration Program – Cria I', 'cert.68.inst': 'PUC Campinas',
+        'cert.68.title': 'Acceleration Program – Cria I', 'cert.68.inst': 'PUC-Campinas',
 
         // Awards (EN)
         'awards.1.title': 'Finalist Project - MaxWake',
