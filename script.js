@@ -121,7 +121,9 @@ const translations = {
         'projects.githubanalyzer.title': 'GitHub Analyzer',
         'projects.githubanalyzer.desc': 'Sistema que analisa qualquer repositório público do GitHub utilizando dados da API oficial. Gera métricas claras sobre atividade, colaboradores, linguagens e qualidade do código. Auxilia estudantes, recrutadores e desenvolvedores a avaliarem projetos rapidamente.',
         'projects.cardapioai.title': 'Cardápio AI',
-        'projects.cardapioai.desc': 'Aplicação que cria cardápios personalizados com base em preferências, metas e restrições alimentares. Utiliza Groq LLM para gerar sugestões coerentes e estruturadas de refeições.Facilita o planejamento alimentar de forma prática, rápida e inteligente.',
+        'projects.cardapioai.desc': 'Aplicação que cria cardápios personalizados com base em preferências, metas e restrições alimentares. Utiliza Groq LLM para gerar sugestões coerentes e estruturadas de refeições. Facilita o planejamento alimentar de forma prática, rápida e inteligente.',
+        'projects.codefix_ai.title': 'CodeFix AI',
+        'projects.codefix_ai.desc': 'CodeFix AI é uma ferramenta baseada em IA que analisa trechos de código (Python, JS, C e dentre outras) para detectar bugs, falhas de performance e problemas de boas práticas.',
         // Tags dos Projetos - Português
         'projects.tags.documentation': 'Documentação',
         'projects.tags.technical': 'Técnico',
@@ -372,6 +374,8 @@ const translations = {
         'projects.githubanalyzer.desc': 'A system that analyzes any public GitHub repository using data from the official API. Provides clear metrics on activity, contributors, languages, and code quality. Helps students, recruiters, and developers evaluate projects efficiently.',
         'projects.cardapioai.title': 'Cardápio AI',
         'projects.cardapioai.desc': 'An application that generates personalized meal plans based on preferences, goals, and dietary restrictions. Uses Groq LLM to produce structured and consistent meal suggestions. Simplifies meal planning in a practical, fast, and intelligent way.',
+        'projects.codefix_ai.title': 'CodeFix AI',
+        'projects.codefix_ai.desc': 'CodeFix AI is an AI-based tool that analyzes code snippets (Python, JS, C, and others) to detect bugs, performance issues, and bad practice problems.',
         // Tags dos Projetos - English
         'projects.tags.documentation': 'Documentation',
         'projects.tags.technical': 'Technical',
