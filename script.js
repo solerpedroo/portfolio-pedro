@@ -124,6 +124,8 @@ const translations = {
         'projects.cardapioai.desc': 'Aplicação que cria cardápios personalizados com base em preferências, metas e restrições alimentares. Utiliza Groq LLM para gerar sugestões coerentes e estruturadas de refeições. Facilita o planejamento alimentar de forma prática, rápida e inteligente.',
         'projects.codefix_ai.title': 'CodeFix AI',
         'projects.codefix_ai.desc': 'CodeFix AI é uma ferramenta baseada em IA que analisa trechos de código (Python, JS, C e dentre outras) para detectar bugs, falhas de performance e problemas de boas práticas.',
+        'projects.quantix_ai.title': 'Quantix AI',
+        'projects.quantix_ai.desc': 'QUANTIX AI é uma plataforma de inteligência financeira baseada em IA que analisa ativos de múltiplos mercados (B3, ações americanas e criptomoedas) em tempo real, fornecendo análise técnica automatizada, pontuações de tendência e recomendações de investimento.',
         // Tags dos Projetos - Português
         'projects.tags.documentation': 'Documentação',
         'projects.tags.technical': 'Técnico',
@@ -150,6 +152,8 @@ const translations = {
         'projects.tags.github': 'GitHub',
         'projects.tags.api': 'API',
         'projects.tags.nodejs': 'Node.js',
+        'projects.tags.finance': 'Finanças',
+        'projects.btn.view': 'Veja Mais',
         // Atividades
         'activities.item.2023-3m': '2023 – 11ª Mostra de Ciências e Tecnologia Instituto 3M',
         'activities.item.2024-events': '2024 – Expo Ecomm Campinas 2024, Startup Day 2024, Campinas Innovation Week 2024, Aula magna com Caito Maia - Branding e Marketing Digital',
@@ -376,6 +380,8 @@ const translations = {
         'projects.cardapioai.desc': 'An application that generates personalized meal plans based on preferences, goals, and dietary restrictions. Uses Groq LLM to produce structured and consistent meal suggestions. Simplifies meal planning in a practical, fast, and intelligent way.',
         'projects.codefix_ai.title': 'CodeFix AI',
         'projects.codefix_ai.desc': 'CodeFix AI is an AI-based tool that analyzes code snippets (Python, JS, C, and others) to detect bugs, performance issues, and bad practice problems.',
+        'projects.quantix_ai.title': 'Quantix AI',
+        'projects.quantix_ai.desc': 'QUANTIX AI is an AI-powered financial intelligence platform that analyzes assets across multiple markets (B3, US stocks, and cryptocurrencies) in real time, delivering automated technical analysis, trend-based scoring, and investment recommendations.',
         // Tags dos Projetos - English
         'projects.tags.documentation': 'Documentation',
         'projects.tags.technical': 'Technical',
@@ -402,6 +408,8 @@ const translations = {
         'projects.tags.github': 'GitHub',
         'projects.tags.api': 'API',
         'projects.tags.nodejs': 'Node.js',
+        'projects.tags.finance': 'Finance',
+        'projects.btn.view': 'See More',
         // Activities
         'activities.item.2023-3m': '2023 – 11th 3M Institute Science and Technology Fair',
         'activities.item.2024-events': '2024 – Expo Ecomm Campinas 2024, Startup Day 2024, Campinas Innovation Week 2024, Guest Lecture with Caito Maia - Branding & Digital Marketing',
