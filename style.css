@@ -648,6 +648,31 @@ body {
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
 }
 
+/* Mesmo “tile” dos ícones skillicons.dev (theme=dark): fundo + borda arredondada */
+.tech-stack-icon-frame {
+    position: relative;
+    z-index: 1;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: linear-gradient(165deg, #2a2d36 0%, #1b1e25 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.06) inset,
+        0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.tech-stack-skillicon--framed {
+    width: 34px;
+    height: 34px;
+    border-radius: 0;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45));
+}
+
 .tech-stack-card--fa {
     gap: 0.5rem;
 }
