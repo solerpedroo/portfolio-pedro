@@ -10,6 +10,10 @@ const translations = {
         'nav.projects': 'Projetos',
         'nav.award': 'Prêmios',
         'nav.contact': 'Contato',
+        'lang.switcher.trigger': 'Idioma',
+        'lang.switcher.name.pt': 'Português (Brasil)',
+        'lang.switcher.name.en': 'Inglês',
+        'lang.switcher.name.es': 'Espanhol',
         'about.name': 'Pedro Henrique Contardi Soler',
         'about.title': 'Estudante de Engenharia de Software e Técnico em Informática',
         'about.description': 'Sou estudante de Engenharia de Software, focado em criar soluções inovadoras e eficientes. Busco constantemente aprender novas tecnologias e aplicar conhecimentos em projetos práticos.',
@@ -266,6 +270,10 @@ const translations = {
         'nav.projects': 'Projects',
         'nav.award': 'Awards',
         'nav.contact': 'Contact',
+        'lang.switcher.trigger': 'Language',
+        'lang.switcher.name.pt': 'Portuguese (Brazil)',
+        'lang.switcher.name.en': 'English',
+        'lang.switcher.name.es': 'Spanish',
         'about.name': 'Pedro Henrique Contardi Soler',
         'about.title': 'Software Engineering Student and IT Technician',
         'about.description': 'I am a Software Engineering student focused on creating innovative and efficient solutions. I am constantly seeking to learn new technologies and apply my knowledge in practical projects.',
@@ -522,6 +530,10 @@ const translations = {
         'nav.projects': 'Proyectos',
         'nav.award': 'Premios',
         'nav.contact': 'Contacto',
+        'lang.switcher.trigger': 'Idioma',
+        'lang.switcher.name.pt': 'Portugués (Brasil)',
+        'lang.switcher.name.en': 'Inglés',
+        'lang.switcher.name.es': 'Español',
         'about.name': 'Pedro Henrique Contardi Soler',
         'about.title': 'Estudiante de Ingeniería de Software y Técnico en Informática',
         'about.description': 'Soy estudiante de Ingeniería de Software, enfocado en crear soluciones innovadoras y eficientes. Busco aprender constantemente nuevas tecnologías y aplicar conocimientos en proyectos prácticos.',
@@ -800,6 +812,13 @@ function translatePage(language) {
         const key = element.getAttribute('data-translate');
         if (translations[language] && translations[language][key]) {
             element.textContent = translations[language][key];
+        }
+    });
+
+    document.querySelectorAll('[data-translate-aria]').forEach(element => {
+        const key = element.getAttribute('data-translate-aria');
+        if (translations[language] && translations[language][key]) {
+            element.setAttribute('aria-label', translations[language][key]);
         }
     });
     
