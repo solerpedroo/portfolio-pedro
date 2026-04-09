@@ -514,11 +514,44 @@ const translations = {
     }
 };
 
+// Espanhol: mesmo conteúdo que inglês até haver tradução dedicada
+translations.es = { ...translations.en };
+
+const LANG_FLAG_SRC = { pt: 'img/brazil.png', en: 'img/usa.png', es: 'img/spain.png' };
+const HTML_LANG = { pt: 'pt-BR', en: 'en-US', es: 'es' };
+
 // Estado atual do idioma
 let currentLanguage = 'en';
 
+function setLangMenuOpen(open) {
+    const switcher = document.getElementById('lang-switcher');
+    const trigger = document.getElementById('lang-switcher-trigger');
+    const menu = document.getElementById('lang-switcher-menu');
+    if (!switcher || !trigger || !menu) return;
+    switcher.classList.toggle('is-open', open);
+    trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menu.hidden = !open;
+}
+
+function syncLanguageSwitcher(language) {
+    const switcher = document.getElementById('lang-switcher');
+    if (!switcher) return;
+    const flagEl = switcher.querySelector('.lang-switcher-flag');
+    if (flagEl && flagEl.tagName === 'IMG') {
+        flagEl.src = LANG_FLAG_SRC[language] || LANG_FLAG_SRC.en;
+    }
+    switcher.querySelectorAll('.lang-option').forEach(opt => {
+        const selected = opt.getAttribute('data-lang') === language;
+        opt.classList.toggle('is-selected', selected);
+        opt.setAttribute('aria-selected', selected ? 'true' : 'false');
+    });
+}
+
 // Função para traduzir elementos
 function translatePage(language) {
+    if (!translations[language]) {
+        language = 'en';
+    }
     currentLanguage = language;
     const elements = document.querySelectorAll('[data-translate]');
     
@@ -529,14 +562,9 @@ function translatePage(language) {
         }
     });
     
-    // Atualizar atributo lang do HTML
-    document.documentElement.lang = language === 'pt' ? 'pt-BR' : 'en-US';
-    
-    // Atualizar botões de idioma
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    document.querySelector(`[data-lang="${language}"]`).classList.add('active');
+    document.documentElement.lang = HTML_LANG[language] || 'en-US';
+
+    syncLanguageSwitcher(language);
 
     // Reordenar dinamicamente os certificados conforme o idioma
     sortCertifications(language);
@@ -544,13 +572,36 @@ function translatePage(language) {
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', function() {
-    // Configurar botões de idioma
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const lang = this.getAttribute('data-lang');
-            translatePage(lang);
+    const langSwitcher = document.getElementById('lang-switcher');
+    const langTrigger = document.getElementById('lang-switcher-trigger');
+    const langMenu = document.getElementById('lang-switcher-menu');
+
+    if (langTrigger && langMenu && langSwitcher) {
+        langTrigger.addEventListener('click', function() {
+            const willOpen = langMenu.hidden;
+            setLangMenuOpen(willOpen);
         });
-    });
+
+        langSwitcher.querySelectorAll('.lang-option').forEach(opt => {
+            opt.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                translatePage(lang);
+                setLangMenuOpen(false);
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!langSwitcher.contains(e.target)) {
+                setLangMenuOpen(false);
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                setLangMenuOpen(false);
+            }
+        });
+    }
 
     // Menu mobile
     const hamburger = document.querySelector('.hamburger');
@@ -852,7 +903,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function sortCertifications(language) {
     const grid = document.querySelector('#certifications .certifications-grid');
     if (!grid) return;
-    const locale = language === 'pt' ? 'pt-BR' : 'en-US';
+    const locale = language === 'pt' ? 'pt-BR' : language === 'es' ? 'es' : 'en-US';
     const cards = Array.from(grid.querySelectorAll('.certification-card'));
 
     const entries = cards.map(card => {

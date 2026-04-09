@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,9 +45,36 @@
                     <a href="#contact" class="nav-link" data-translate="nav.contact">Contato</a>
                 </li>
             </ul>
-            <div class="nav-language">
-                <button type="button" class="lang-btn active" data-lang="pt">🇧🇷 PT</button>
-                <button type="button" class="lang-btn" data-lang="en">🇺🇸 EN</button>
+            <div class="lang-switcher" id="lang-switcher">
+                <button type="button" class="lang-switcher-trigger" id="lang-switcher-trigger" aria-expanded="false" aria-haspopup="listbox" aria-controls="lang-switcher-menu" aria-label="Language">
+                    <img class="lang-switcher-flag" src="img/usa.png" alt="" width="32" height="32" decoding="async">
+                    <svg class="lang-switcher-chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true" focusable="false">
+                        <path d="M1 1.5L6 6.5L11 1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="lang-switcher-menu" id="lang-switcher-menu" role="listbox" aria-labelledby="lang-switcher-trigger" hidden>
+                    <li role="presentation">
+                        <button type="button" class="lang-option" role="option" data-lang="pt" aria-label="Portuguese (Brazil)">
+                            <img class="lang-option-flag" src="img/brazil.png" alt="" width="30" height="30" decoding="async">
+                            <span class="lang-option-label">Português (Brasileiro)</span>
+                            <span class="lang-option-check" aria-hidden="true"><i class="fas fa-check"></i></span>
+                        </button>
+                    </li>
+                    <li role="presentation">
+                        <button type="button" class="lang-option" role="option" data-lang="en" aria-label="English">
+                            <img class="lang-option-flag" src="img/usa.png" alt="" width="30" height="30" decoding="async">
+                            <span class="lang-option-label">English</span>
+                            <span class="lang-option-check" aria-hidden="true"><i class="fas fa-check"></i></span>
+                        </button>
+                    </li>
+                    <li role="presentation">
+                        <button type="button" class="lang-option" role="option" data-lang="es" aria-label="Spanish">
+                            <img class="lang-option-flag" src="img/spain.png" alt="" width="30" height="30" decoding="async">
+                            <span class="lang-option-label">Español</span>
+                            <span class="lang-option-check" aria-hidden="true"><i class="fas fa-check"></i></span>
+                        </button>
+                    </li>
+                </ul>
             </div>
             <div class="hamburger">
                 <span class="bar"></span>
