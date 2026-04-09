@@ -783,6 +783,20 @@ body {
     font-size: 1.2rem;
 }
 
+.soft-skill-item--wide {
+    grid-column: 1 / -1;
+    align-items: flex-start;
+}
+
+.soft-skill-item--wide i {
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.soft-skill-item--wide span {
+    line-height: 1.45;
+}
+
 /* Seção Certificações */
 .certifications-section {
     background: #0a0a0a;
