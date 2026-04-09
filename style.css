@@ -216,8 +216,8 @@ body {
 }
 
 .lang-switcher-flag {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     overflow: hidden;
     display: block;
@@ -278,8 +278,8 @@ body {
 }
 
 .lang-option-flag {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     overflow: hidden;
     display: block;
@@ -1217,8 +1217,8 @@ body {
     }
 
     .lang-switcher-flag {
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
     }
 
     .lang-switcher-chevron {
@@ -1237,8 +1237,8 @@ body {
     }
 
     .lang-option-flag {
-        width: 34px;
-        height: 34px;
+        width: 30px;
+        height: 30px;
     }
 
     .lang-option-check {
