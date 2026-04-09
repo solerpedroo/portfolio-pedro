@@ -28,6 +28,10 @@ const translations = {
         'about.text3': 'Estou à disposição para novas oportunidades no mercado de tecnologia, onde eu possa aplicar meus conhecimentos, desenvolver novas habilidades e contribuir com soluções inovadoras para desafios reais. Estou aberto a aprender, colaborar em equipe e crescer profissionalmente em um ambiente dinâmico e em constante evolução.',
         'skills.title': 'Habilidades',
         'skills.technical': 'Habilidades Técnicas',
+        'skills.tech.chrome': 'stack técnico',
+        'skills.tech.nn.sub': 'redes neurais',
+        'skills.tech.generative': 'IA generativa',
+        'skills.tech.mcp.sub': 'Model Context Protocol',
         'skills.soft': 'Soft Skills',
         'skills.communication': 'Comunicação',
         'skills.problem-solving': 'Resolução de Problemas',
@@ -288,6 +292,10 @@ const translations = {
         'about.text3': 'I am open to new opportunities in the technology market, where I can apply my knowledge, develop new skills, and contribute with innovative solutions to real-world challenges. I am eager to learn, collaborate with teams, and grow professionally in a dynamic and ever-evolving environment.',
         'skills.title': 'Skills',
         'skills.technical': 'Technical Skills',
+        'skills.tech.chrome': 'dev stack',
+        'skills.tech.nn.sub': 'neural networks',
+        'skills.tech.generative': 'Generative AI',
+        'skills.tech.mcp.sub': 'Model Context Protocol',
         'skills.soft': 'Soft Skills',
         'skills.communication': 'Communication',
         'skills.problem-solving': 'Problem Solving',
@@ -548,6 +556,10 @@ const translations = {
         'about.text3': 'Estoy abierto a nuevas oportunidades en el mercado tecnológico, donde pueda aplicar mis conocimientos, desarrollar nuevas habilidades y aportar soluciones innovadoras a retos reales. Me interesa aprender, colaborar en equipo y crecer profesionalmente en un entorno dinámico y en constante evolución.',
         'skills.title': 'Habilidades',
         'skills.technical': 'Habilidades técnicas',
+        'skills.tech.chrome': 'stack técnico',
+        'skills.tech.nn.sub': 'redes neuronales',
+        'skills.tech.generative': 'IA generativa',
+        'skills.tech.mcp.sub': 'Model Context Protocol',
         'skills.soft': 'Otras habilidades',
         'skills.communication': 'Comunicación',
         'skills.problem-solving': 'Resolución de problemas',
@@ -904,37 +916,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.remove('scrolled');
         }
 
-        // Skills
-        const skillsSection = document.querySelector('.skills-content');
-        const skillsPosition = skillsSection.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.2; // ajusta quando anima
-
-        if (skillsPosition < screenPosition) {
-            document.querySelectorAll('.skill-progress').forEach(bar => {
-                const width = bar.getAttribute('data-width');
-                bar.style.width = width + '%';
-            });
-        }
     });
-
-    // Animações de scroll - simplificado para garantir visibilidade
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                
-                // Animar barras de progresso das habilidades
-                if (entry.target.classList.contains('skills-section')) {
-                    animateSkillBars();
-                }
-            }
-        });
-    }, observerOptions);
 
     // Garantir que todas as seções sejam visíveis
     document.querySelectorAll('.section').forEach(section => {
@@ -991,17 +973,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializar tradução em inglês
     translatePage('en');
 });
-
-// Função para animar barras de progresso
-function animateSkillBars() {
-    const skillBars = document.querySelectorAll('.skill-progress');
-    skillBars.forEach(bar => {
-        const width = bar.getAttribute('data-width');
-        bar.style.width = width + '%';
-        bar.style.background = 'linear-gradient(90deg, #4a9eff, #0066cc)';
-        bar.style.transition = 'width 1.5s ease';
-    });
-}
 
 // Função para upload de imagem nos projetos
 function handleImageUpload(input, imgId) {
@@ -1064,28 +1035,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Função para adicionar animação de contador nas habilidades
-function animateCounters() {
-    const counters = document.querySelectorAll('.skill-percentage');
-    counters.forEach(counter => {
-        const target = parseInt(counter.textContent);
-        let current = 0;
-        const increment = target / 50;
-        
-        const updateCounter = () => {
-            if (current < target) {
-                current += increment;
-                counter.textContent = Math.ceil(current) + '%';
-                requestAnimationFrame(updateCounter);
-            } else {
-                counter.textContent = target + '%';
-            }
-        };
-        
-        updateCounter();
-    });
-}
-
 // Função para adicionar efeito de partículas no fundo
 function createParticles() {
     const particlesContainer = document.createElement('div');
@@ -1142,26 +1091,6 @@ function createParticles() {
     `;
     document.head.appendChild(style);
 }
-
-// Inicializar efeitos visuais
-document.addEventListener('DOMContentLoaded', function() {
-    // Particles disabled for a cleaner, more minimal layout
-    
-    // Animar contadores quando a seção de habilidades for visível
-    const skillsSection = document.querySelector('.skills-section');
-    if (skillsSection) {
-        const skillsObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    skillsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        skillsObserver.observe(skillsSection);
-    }
-});
 
 // Função de loading removida para evitar tela branca
 

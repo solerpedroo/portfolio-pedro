@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedro Henrique Contardi Soler - Portfólio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="mask-icon" href="favicon.svg" color="#0066cc">
@@ -181,88 +181,179 @@
                     <div class="section-line"></div>
                 </div>
                 <div class="skills-content">
-                    <div class="skills-category">
-                        <h3 data-translate="skills.technical">Habilidades Técnicas</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">HTML</span>
-                                    <span class="skill-percentage">85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="85"></div>
-                                </div>
+                    <div class="skills-category skills-category--technical">
+                        <h3 id="technical-skills-heading" data-translate="skills.technical">Habilidades Técnicas</h3>
+                        <div class="tech-stack-panel" role="list" aria-labelledby="technical-skills-heading">
+                            <div class="tech-stack-chrome">
+                                <span class="tech-stack-chrome-dot tech-stack-chrome-dot--r" aria-hidden="true"></span>
+                                <span class="tech-stack-chrome-dot tech-stack-chrome-dot--y" aria-hidden="true"></span>
+                                <span class="tech-stack-chrome-dot tech-stack-chrome-dot--g" aria-hidden="true"></span>
+                                <span class="tech-stack-chrome-label" data-translate="skills.tech.chrome">dev stack</span>
                             </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">CSS</span>
-                                    <span class="skill-percentage">85%</span>
+                            <div class="tech-stack-grid">
+                                <div class="tech-stack-card" style="--accent: #e34f26; --stagger: 0;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=html&amp;theme=dark" alt="HTML" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">HTML</span>
                                 </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="85"></div>
+                                <div class="tech-stack-card" style="--accent: #1572b6; --stagger: 1;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=css&amp;theme=dark" alt="CSS" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">CSS</span>
                                 </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Python</span>
-                                    <span class="skill-percentage">80%</span>
+                                <div class="tech-stack-card" style="--accent: #f7df1e; --stagger: 2;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=js&amp;theme=dark" alt="JavaScript" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">JavaScript</span>
                                 </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="80"></div>
+                                <div class="tech-stack-card" style="--accent: #3178c6; --stagger: 3;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=ts&amp;theme=dark" alt="TypeScript" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">TypeScript</span>
                                 </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">C</span>
-                                    <span class="skill-percentage">75%</span>
+                                <div class="tech-stack-card" style="--accent: #3776ab; --stagger: 4;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=python&amp;theme=dark" alt="Python" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">Python</span>
                                 </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="75"></div>
+                                <div class="tech-stack-card" style="--accent: #659ad2; --stagger: 5;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=c&amp;theme=dark" alt="C" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">C</span>
                                 </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">MySQL</span>
-                                    <span class="skill-percentage">65%</span>
+                                <div class="tech-stack-card" style="--accent: #00599c; --stagger: 6;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=cpp&amp;theme=dark" alt="C++" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">C++</span>
                                 </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="65"></div>
+                                <div class="tech-stack-card" style="--accent: #0175c2; --stagger: 7;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=dart&amp;theme=dark" alt="Dart" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">Dart</span>
                                 </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Firebase</span>
-                                    <span class="skill-percentage">50%</span>
+                                <div class="tech-stack-card" style="--accent: #02569b; --stagger: 8;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=flutter&amp;theme=dark" alt="Flutter" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">Flutter</span>
                                 </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="50"></div>
+                                <div class="tech-stack-card" style="--accent: #ffca28; --stagger: 9;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=firebase&amp;theme=dark" alt="Firebase" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">Firebase</span>
                                 </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">JavaScript</span>
-                                    <span class="skill-percentage">50%</span>
+                                <div class="tech-stack-card" style="--accent: #68a063; --stagger: 10;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=nodejs&amp;theme=dark" alt="Node.js" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">Node.js</span>
                                 </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="50"></div>
+                                <div class="tech-stack-card" style="--accent: #42b883; --stagger: 11;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=vue&amp;theme=dark" alt="Vue.js" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">Vue.js</span>
                                 </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">TypeScript</span>
-                                    <span class="skill-percentage">50%</span>
+                                <div class="tech-stack-card" style="--accent: #00dc82; --stagger: 12;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=nuxtjs&amp;theme=dark" alt="Nuxt.js" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">Nuxt.js</span>
                                 </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="50"></div>
+                                <div class="tech-stack-card" style="--accent: #092e20; --stagger: 13;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=django&amp;theme=dark" alt="Django" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">Django</span>
                                 </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Node.JS</span>
-                                    <span class="skill-percentage">50%</span>
+                                <div class="tech-stack-card" style="--accent: #61dafb; --stagger: 14;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=react&amp;theme=dark" alt="React Native" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name tech-stack-name--long">React Native</span>
                                 </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="50"></div>
+                                <div class="tech-stack-card" style="--accent: #00758f; --stagger: 15;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=mysql&amp;theme=dark" alt="MySQL" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">MySQL</span>
+                                </div>
+                                <div class="tech-stack-card" style="--accent: #336791; --stagger: 16;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=postgres&amp;theme=dark" alt="PostgreSQL" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name tech-stack-name--long">PostgreSQL</span>
+                                </div>
+                                <div class="tech-stack-card" style="--accent: #3ecf8e; --stagger: 17;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=supabase&amp;theme=dark" alt="Supabase" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">Supabase</span>
+                                </div>
+                                <div class="tech-stack-card" style="--accent: #ff9900; --stagger: 18;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=aws&amp;theme=dark" alt="AWS" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">AWS</span>
+                                </div>
+                                <div class="tech-stack-card" style="--accent: #ff9900; --stagger: 19;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=aws&amp;theme=dark" alt="Serverless Framework" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">Serverless</span>
+                                    <span class="tech-stack-sub">Framework</span>
+                                </div>
+                                <div class="tech-stack-card" style="--accent: #2496ed; --stagger: 20;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=docker&amp;theme=dark" alt="Docker" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">Docker</span>
+                                </div>
+                                <div class="tech-stack-card" style="--accent: #3ddc84; --stagger: 21;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=androidstudio&amp;theme=dark" alt="Android Studio" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name tech-stack-name--long">Android Studio</span>
+                                    <span class="tech-stack-sub">Android SDK</span>
+                                </div>
+                                <div class="tech-stack-card" style="--accent: #f05032; --stagger: 22;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=git&amp;theme=dark" alt="Git" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">Git</span>
+                                </div>
+                                <div class="tech-stack-card" style="--accent: #007acc; --stagger: 23;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=vscode&amp;theme=dark" alt="VS Code" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">VS Code</span>
+                                </div>
+                                <div class="tech-stack-card" style="--accent: #c792ea; --stagger: 24;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=visualstudio&amp;theme=dark" alt="Visual Studio" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name tech-stack-name--long">Visual Studio</span>
+                                </div>
+                                <div class="tech-stack-card" style="--accent: #00a4ef; --stagger: 25;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=windows&amp;theme=dark" alt="Windows" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">Windows</span>
+                                </div>
+                                <div class="tech-stack-card" style="--accent: #00979d; --stagger: 26;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=arduino&amp;theme=dark" alt="Arduino" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">Arduino</span>
+                                </div>
+                                <div class="tech-stack-card" style="--accent: #5c3ee8; --stagger: 27;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=opencv&amp;theme=dark" alt="OpenCV" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">OpenCV</span>
+                                </div>
+                                <div class="tech-stack-card" style="--accent: #ee4c2c; --stagger: 28;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=pytorch&amp;theme=dark" alt="Redes neurais" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">NN</span>
+                                    <span class="tech-stack-sub" data-translate="skills.tech.nn.sub">redes neurais</span>
+                                </div>
+                                <div class="tech-stack-card" style="--accent: #5c3ee8; --stagger: 29;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <img class="tech-stack-skillicon" src="https://skillicons.dev/icons?i=opencv&amp;theme=dark" alt="YOLO" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="tech-stack-name">YOLO</span>
+                                </div>
+                                <div class="tech-stack-card tech-stack-card--fa" style="--accent: #ab68ff; --stagger: 30;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <i class="fas fa-wand-magic-sparkles tech-stack-faicon" aria-hidden="true"></i>
+                                    <span class="tech-stack-name tech-stack-name--long" data-translate="skills.tech.generative">IA generativa</span>
+                                </div>
+                                <div class="tech-stack-card tech-stack-card--fa" style="--accent: #4a9eff; --stagger: 31;" role="listitem">
+                                    <div class="tech-stack-card-glow"></div>
+                                    <span class="tech-stack-mcp" aria-hidden="true">MCP</span>
+                                    <span class="tech-stack-name">MCPs</span>
+                                    <span class="tech-stack-sub" data-translate="skills.tech.mcp.sub">Model Context Protocol</span>
                                 </div>
                             </div>
                         </div>

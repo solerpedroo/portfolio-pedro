@@ -525,54 +525,235 @@ body {
     text-align: center;
 }
 
-.skills-grid {
+/* Stack técnico — painel estilo IDE / dev */
+.skills-category--technical {
+    position: relative;
+}
+
+.tech-stack-panel {
+    max-width: min(960px, 100%);
+    margin: 0 auto;
+    border-radius: 14px;
+    overflow: hidden;
+    background: linear-gradient(165deg, #161b22 0%, #0d1117 45%, #0a0e14 100%);
+    box-shadow:
+        0 0 0 1px rgba(74, 158, 255, 0.12),
+        0 24px 48px rgba(0, 0, 0, 0.55),
+        0 0 80px rgba(74, 158, 255, 0.06);
+}
+
+.tech-stack-chrome {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.65rem 1rem;
+    background: rgba(22, 27, 34, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tech-stack-chrome-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.tech-stack-chrome-dot--r {
+    background: #ff5f57;
+    box-shadow: 0 0 8px rgba(255, 95, 87, 0.45);
+}
+
+.tech-stack-chrome-dot--y {
+    background: #febc2e;
+    box-shadow: 0 0 8px rgba(254, 188, 46, 0.35);
+}
+
+.tech-stack-chrome-dot--g {
+    background: #28c840;
+    box-shadow: 0 0 8px rgba(40, 200, 64, 0.35);
+}
+
+.tech-stack-chrome-label {
+    margin-left: 0.5rem;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(74, 158, 255, 0.85);
+}
+
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+    gap: 0.7rem;
+    padding: 1.25rem 1.1rem 1.35rem;
+    position: relative;
+}
+
+.tech-stack-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(74, 158, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74, 158, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    border-radius: 0 0 14px 14px;
+    mask-image: linear-gradient(to bottom, transparent, black 12%);
+}
+
+@keyframes tech-stack-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.tech-stack-card {
+    --stagger: 0;
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-}
-
-.skill-item {
-    background: #1a1a1a;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-    border: 1px solid #333;
-}
-
-.skill-item:hover {
-    transform: translateY(-5px);
-}
-
-.skill-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.8rem;
-}
-
-.skill-name {
-    font-weight: 600;
-    color: #ffffff;
-}
-
-.skill-percentage {
-    color: #4a9eff;
-    font-weight: 600;
-}
-
-.skill-bar {
-    height: 8px;
-    background: #333;
-    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 112px;
+    padding: 0.85rem 0.5rem 0.95rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    animation: tech-stack-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: calc(var(--stagger) * 0.028s);
+    transition:
+        transform 0.28s cubic-bezier(0.34, 1.2, 0.64, 1),
+        border-color 0.28s ease,
+        box-shadow 0.28s ease,
+        background 0.28s ease;
     overflow: hidden;
 }
 
-.skill-progress {
-    height: 100%;
-    background: linear-gradient(90deg, #4a9eff, #0066cc);
-    border-radius: 4px;
-    width: 0; /* começa zerada */
-    transition: width 1.5s ease;
+.tech-stack-skillicon {
+    position: relative;
+    z-index: 1;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 10px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+}
+
+.tech-stack-card--fa {
+    gap: 0.5rem;
+}
+
+.tech-stack-faicon {
+    position: relative;
+    z-index: 1;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--accent);
+    filter: drop-shadow(0 2px 14px color-mix(in srgb, var(--accent) 45%, transparent));
+}
+
+.tech-stack-mcp {
+    position: relative;
+    z-index: 1;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #fff;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: linear-gradient(145deg, rgba(74, 158, 255, 0.35), rgba(0, 102, 204, 0.55));
+    box-shadow: 0 4px 18px rgba(74, 158, 255, 0.35);
+}
+
+.tech-stack-card-glow {
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(circle at 50% 80%, var(--accent), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.tech-stack-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.45),
+        0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent),
+        0 0 32px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.tech-stack-card:hover .tech-stack-card-glow {
+    opacity: 0.22;
+}
+
+.tech-stack-name {
+    position: relative;
+    z-index: 1;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: rgba(240, 245, 255, 0.9);
+    text-align: center;
+    line-height: 1.25;
+    max-width: 100%;
+    padding: 0 0.15rem;
+}
+
+.tech-stack-name--long {
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+}
+
+.tech-stack-sub {
+    position: relative;
+    z-index: 1;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: rgba(200, 210, 225, 0.72);
+    text-align: center;
+    line-height: 1.2;
+    max-width: 100%;
+    margin-top: -0.15rem;
+}
+
+@media (max-width: 620px) {
+    .tech-stack-grid {
+        grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    }
+}
+
+@media (max-width: 380px) {
+    .tech-stack-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tech-stack-card {
+        animation: none;
+    }
 }
 
 .soft-skills {
