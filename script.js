@@ -1279,7 +1279,10 @@ function handleImageUpload(input, imgId) {
     if (file) {
         const reader = new FileReader();
         reader.onload = function(e) {
-            const img = document.getElementById(imgId) || input.parentElement.parentElement.querySelector('.project-img');
+            const img =
+                document.getElementById(imgId) ||
+                input.parentElement.parentElement.querySelector('.project-card__img') ||
+                input.parentElement.parentElement.querySelector('.project-img');
             if (img) {
                 img.src = e.target.result;
             }
@@ -1293,18 +1296,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Efeito de hover nos cards de certificação
     const certCards = document.querySelectorAll('.certification-card');
     certCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-
-    // Efeito de hover nos cards de projeto
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-10px) scale(1.02)';
         });
