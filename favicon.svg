@@ -1,41 +1,23 @@
-<<<<<<< HEAD
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pedro Soler portfolio">
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4a9eff"/>
-      <stop offset="100%" stop-color="#0066cc"/>
+    <linearGradient id="fav-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121820"/>
+      <stop offset="48%" stop-color="#0e131c"/>
+      <stop offset="100%" stop-color="#080a0f"/>
     </linearGradient>
-    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.35"/>
-    </filter>
-  </defs>
-  <rect x="0" y="0" width="64" height="64" rx="14" ry="14" fill="#0a0a0a"/>
-  <g filter="url(#s)">
-    <circle cx="32" cy="32" r="20" fill="none" stroke="url(#g)" stroke-width="4"/>
-    <!-- Monogram P S -->
-    <path d="M24 40 V20 h9 a6 6 0 0 1 0 12 h-9" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
-    <path d="M40 24 h-6 a6 6 0 0 0 0 12 h6" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
-  </g>
-</svg>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4a9eff"/>
-      <stop offset="100%" stop-color="#0066cc"/>
+    <linearGradient id="fav-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8eb9ff"/>
+      <stop offset="100%" stop-color="#5ba3ff"/>
     </linearGradient>
-    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.35"/>
-    </filter>
   </defs>
-  <rect x="0" y="0" width="64" height="64" rx="14" ry="14" fill="#0a0a0a"/>
-  <g filter="url(#s)">
-    <circle cx="32" cy="32" r="20" fill="none" stroke="url(#g)" stroke-width="4"/>
-    <!-- Monogram P S -->
-    <path d="M24 40 V20 h9 a6 6 0 0 1 0 12 h-9" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
-    <path d="M40 24 h-6 a6 6 0 0 0 0 12 h6" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
-  </g>
+  <rect width="64" height="64" rx="13" fill="url(#fav-bg)"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="12.5" fill="none" stroke="rgba(91,163,255,0.28)" stroke-width="1"/>
+  <!-- dev-panel chrome (same hues as .tech-stack-chrome-dot) -->
+  <circle cx="12.5" cy="12.5" r="3.25" fill="#ff5f57"/>
+  <circle cx="21.5" cy="12.5" r="3.25" fill="#febc2e"/>
+  <circle cx="30.5" cy="12.5" r="3.25" fill="#28c840"/>
+  <line x1="8" y1="20.5" x2="56" y2="20.5" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <!-- terminal-style prompt -->
+  <path d="M14 33l8.5 6.5L14 46V33z" fill="url(#fav-accent)"/>
+  <path d="M26 39.5h20" stroke="url(#fav-accent)" stroke-width="3.25" stroke-linecap="round" fill="none"/>
 </svg>
->>>>>>> 99509ec3b1a2fef805b4739c2f4e46ffbdd8fc1b
