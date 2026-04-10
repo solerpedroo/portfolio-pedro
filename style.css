@@ -674,6 +674,22 @@ body::after {
     color: #f0f4ff;
 }
 
+.nav-logo__link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-logo__link:visited {
+    color: inherit;
+}
+
+.nav-logo__link:hover,
+.nav-logo__link:focus-visible {
+    text-decoration: none;
+}
+
 .nav-logo span {
     background: linear-gradient(135deg, #fff 30%, var(--dev-accent) 100%);
     -webkit-background-clip: text;
