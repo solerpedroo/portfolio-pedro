@@ -378,6 +378,9 @@ body::after {
     .profile-card:hover,
     .skills-soft-panel .tech-stack-card:hover,
     #certifications .certification-card:hover,
+    #certifications .certification-card:focus-within,
+    #certifications .certification-card:hover .certification-card__icon,
+    #certifications .certification-card:focus-within .certification-card__icon,
     .project-card:hover,
     .project-card:hover .project-card__img,
     .project-card:focus-within .project-card__img,
@@ -398,73 +401,125 @@ body::after {
 
 #certifications .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 1rem;
     margin-top: 1rem;
 }
 
 #certifications .certification-card {
     position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.05rem;
+    min-height: 100%;
+    text-align: left;
     background: var(--dev-tile-bg);
-    padding: 1.75rem 1.5rem;
-    border-radius: 12px;
-    text-align: center;
+    padding: 1.2rem 1.25rem 1.25rem;
+    border-radius: var(--radius-sm);
     overflow: hidden;
     border: 1px solid var(--dev-tile-border);
     transition:
-        transform 0.28s cubic-bezier(0.34, 1.2, 0.64, 1),
+        transform 0.32s var(--ease-out-expo),
         border-color 0.28s ease,
-        box-shadow 0.28s ease,
+        box-shadow 0.32s var(--ease-out-expo),
         background 0.28s ease;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.32);
 }
 
-#certifications .certification-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(74, 158, 255, 0.35);
-    background: rgba(255, 255, 255, 0.04);
+#certifications .certification-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--dev-accent), rgba(91, 163, 255, 0.15));
+    opacity: 0;
+    transition: opacity 0.28s ease;
+}
+
+#certifications .certification-card:hover,
+#certifications .certification-card:focus-within {
+    transform: translateY(-4px);
+    border-color: var(--dev-border-accent);
+    background: rgba(255, 255, 255, 0.045);
     box-shadow:
-        0 14px 32px rgba(0, 0, 0, 0.45),
-        0 0 0 1px rgba(74, 158, 255, 0.15),
-        0 0 36px rgba(74, 158, 255, 0.1);
+        0 16px 40px rgba(0, 0, 0, 0.48),
+        0 0 0 1px rgba(91, 163, 255, 0.12),
+        0 0 32px rgba(91, 163, 255, 0.08);
 }
 
-#certifications .cert-icon {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 1.15rem;
-    border-radius: 12px;
+#certifications .certification-card:hover::before,
+#certifications .certification-card:focus-within::before {
+    opacity: 1;
+}
+
+#certifications .certification-card:focus-within {
+    outline: none;
+}
+
+#certifications .certification-card__icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 11px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(165deg, #2a2d36 0%, #1b1e25 100%);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(155deg, rgba(42, 48, 58, 0.95) 0%, rgba(20, 24, 32, 0.98) 100%);
+    border: 1px solid var(--dev-border-accent);
     box-shadow:
         0 1px 0 rgba(255, 255, 255, 0.06) inset,
-        0 4px 16px rgba(0, 0, 0, 0.35);
+        0 4px 18px rgba(0, 0, 0, 0.38);
+    transition:
+        border-color 0.28s ease,
+        box-shadow 0.28s ease,
+        transform 0.32s var(--ease-out-expo);
 }
 
-#certifications .cert-icon i {
-    font-size: 1.45rem;
-    color: #8ec5ff;
-    filter: drop-shadow(0 2px 12px rgba(74, 158, 255, 0.45));
+#certifications .certification-card:hover .certification-card__icon,
+#certifications .certification-card:focus-within .certification-card__icon {
+    border-color: rgba(91, 163, 255, 0.45);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.08) inset,
+        0 6px 22px rgba(0, 0, 0, 0.42),
+        0 0 20px rgba(91, 163, 255, 0.12);
+    transform: scale(1.04);
 }
 
-#certifications .cert-content h3 {
-    font-size: 1.05rem;
-    color: #f0f4ff;
-    margin-bottom: 0.5rem;
-    line-height: 1.35;
+#certifications .certification-card__icon i {
+    font-size: 1.28rem;
+    color: var(--dev-accent);
+    filter: drop-shadow(0 2px 10px rgba(91, 163, 255, 0.35));
+}
+
+#certifications .certification-card__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+#certifications .certification-card__title {
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    line-height: 1.38;
+    color: #f1f5f9;
+    margin: 0;
+}
+
+#certifications .certification-card__institution {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
     font-weight: 600;
-}
-
-#certifications .cert-institution {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(180, 195, 220, 0.85);
-    font-weight: 500;
-    margin-bottom: 0.5rem;
+    color: rgba(148, 163, 184, 0.92);
+    margin: 0;
 }
 
 .certifications-filter-wrap {
@@ -1494,47 +1549,6 @@ html.js-reveal-init .reveal-section.reveal-visible {
 .certifications-section {
     background: transparent;
     padding: 80px 0;
-}
-
-.cert-icon {
-    width: 80px !important;
-    height: 80px !important;
-    background: linear-gradient(135deg, #4a9eff, #0066cc) !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0 auto 1.5rem !important;
-    visibility: visible !important;
-}
-
-.cert-icon i {
-    font-size: 2rem !important;
-    color: white !important;
-    display: block !important;
-    visibility: visible !important;
-}
-
-.cert-content h3 {
-    font-size: 1.3rem !important;
-    color: #ffffff !important;
-    margin-bottom: 0.5rem !important;
-    display: block !important;
-    visibility: visible !important;
-}
-
-.cert-institution {
-    color: #b0b0b0 !important;
-    font-weight: 500 !important;
-    margin-bottom: 0.5rem !important;
-    display: block !important;
-    visibility: visible !important;
-}
-
-.cert-year {
-    color: #4a9eff;
-    font-weight: 600;
-    font-size: 1.1rem;
 }
 
 /* Seção Experiências */

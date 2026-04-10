@@ -1294,17 +1294,6 @@ function handleImageUpload(input, imgId) {
 // Função para adicionar efeitos de hover nos cards
 document.addEventListener('DOMContentLoaded', function() {
     // Efeito de hover nos cards de certificação
-    const certCards = document.querySelectorAll('.certification-card');
-    certCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-
     // Efeito de digitação no nome (desativado com prefers-reduced-motion)
     const profileName = document.querySelector('.profile-name');
     if (profileName && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -1389,7 +1378,7 @@ const CERT_TECH_IDS = new Set([3, 5, 6, 7, 24, 52, 58, 62, 63, 64]);
 let currentCertFilter = 'all';
 
 function getCertIdFromCard(card) {
-    const el = card.querySelector('.cert-content h3[data-translate]');
+    const el = card.querySelector('.certification-card__title[data-translate]');
     if (!el) return null;
     const key = el.getAttribute('data-translate');
     const m = key && key.match(/^cert\.(\d+)\.title$/);
@@ -1427,7 +1416,7 @@ function sortCertifications(language) {
     const cards = Array.from(grid.querySelectorAll('.certification-card'));
 
     const entries = cards.map(card => {
-        const titleEl = card.querySelector('.cert-content h3');
+        const titleEl = card.querySelector('.certification-card__title');
         if (!titleEl) return { card, title: '' };
         const key = titleEl.getAttribute('data-translate');
         const title = (key && translations[language] && translations[language][key])
