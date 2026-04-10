@@ -1436,7 +1436,29 @@ function createParticles() {
 // Função de loading removida para evitar tela branca
 
 /** IDs dos cursos classificados como área de tecnologia (TI, dev, redes, Python, visão computacional, IA aplicada a software). */
-const CERT_TECH_IDS = new Set([3, 5, 6, 7, 24, 52, 58, 62, 63, 64]);
+const CERT_TECH_IDS = new Set([
+    4,
+    3,
+    5, 6, 7,
+    11, 12, 13, 14,
+    16, 17, 18,
+    21,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    34,
+    35,
+    38, 39, 40, 41,
+    47, 48,
+    52,
+    54,
+    58,
+    62, 63, 64,
+    68,
+]);
 
 let currentCertFilter = 'tech';
 
