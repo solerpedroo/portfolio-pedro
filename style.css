@@ -1818,9 +1818,11 @@ html.js-reveal-init .reveal-section.reveal-visible {
 }
 
 .contact-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: 2.5rem;
+    align-items: start;
+    width: 100%;
 }
 
 .contact-info h3 {
@@ -1871,18 +1873,68 @@ html.js-reveal-init .reveal-section.reveal-visible {
     color: rgba(180, 195, 215, 0.9);
 }
 
+.contact-form {
+    padding: 1.35rem 1.4rem 1.5rem;
+    border-radius: var(--radius-sm);
+    background: var(--dev-tile-bg);
+    border: 1px solid var(--dev-tile-border);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.32);
+}
+
 .contact-form h3 {
     font-family: var(--font-display);
     color: #ffffff;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.03em;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form-privacy {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: rgba(180, 195, 215, 0.78);
+    margin-bottom: 1.25rem;
+}
+
+.contact-form-phone-hint {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: rgba(147, 165, 190, 0.75);
+    margin: -0.35rem 0 0.85rem;
+}
+
+.contact-form-status {
+    min-height: 1.35rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.contact-form-status--ok {
+    color: #4ade80;
+}
+
+.contact-form-status--error {
+    color: #f87171;
+}
+
+.contact-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .form-group {
     position: relative;
     margin-bottom: 2rem;
+}
+
+#contactForm {
+    position: relative;
 }
 
 .form-group input,
@@ -1892,9 +1944,16 @@ html.js-reveal-init .reveal-section.reveal-visible {
     border: 1px solid var(--dev-tile-border);
     border-radius: 10px;
     font-size: 1rem;
+    font-family: inherit;
     transition: all 0.3s ease;
-    background: var(--dev-tile-bg);
+    background: rgba(0, 0, 0, 0.2);
     color: #f0f4fc;
+}
+
+.form-group textarea {
+    min-height: 140px;
+    resize: vertical;
+    line-height: 1.55;
 }
 
 .form-group input:focus,
@@ -1930,7 +1989,7 @@ html.js-reveal-init .reveal-section.reveal-visible {
     left: 0.8rem;
     font-size: 0.8rem;
     color: var(--dev-accent);
-    background: var(--page-base);
+    background: #121820;
     padding: 0 0.5rem;
 }
 

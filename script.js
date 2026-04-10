@@ -76,11 +76,20 @@ const translations = {
         'contact.email': 'E-mail:',
         'contact.location': 'Localização:',
         'contact.location.value': 'Campinas-SP, Brasil',
-        'contact.form.title': 'Envie uma Mensagem',
+        'contact.form.title': 'Envie uma mensagem',
+        'contact.form.privacy': 'Seus dados são usados apenas para responder este contato.',
         'contact.form.name': 'Nome',
         'contact.form.email': 'E-mail',
+        'contact.form.phone': 'Telefone',
+        'contact.form.phoneHint': 'Brasil: só números com DDD. Exterior: comece com + ou 00 (código do país).',
         'contact.form.message': 'Mensagem',
-        'contact.form.submit': 'Enviar Mensagem',
+        'contact.form.submit': 'Enviar mensagem',
+        'contact.form.sending': 'Enviando...',
+        'contact.form.success': 'Mensagem enviada! Verifique também o spam. Em breve respondo.',
+        'contact.form.error.validation': 'Preencha nome, e-mail, telefone e mensagem.',
+        'contact.form.error.phone': 'Telefone inválido. Brasil: DDD + número (10 ou 11 dígitos). Exterior: + ou 00 e entre 7 e 15 dígitos no total (ex.: +351…, +1…).',
+        'contact.form.error.send': 'Não foi possível enviar. Tente de novo em alguns minutos.',
+        'contact.form.error.network': 'Erro de conexão. Verifique a internet e tente novamente.',
         'footer.rights': 'Todos os direitos reservados.',
         // Seções
         'certifications.title': 'Certificações',
@@ -360,11 +369,20 @@ const translations = {
         'contact.email': 'Email:',
         'contact.location': 'Location:',
         'contact.location.value': 'Campinas, SP, Brazil',
-        'contact.form.title': 'Send a Message',
+        'contact.form.title': 'Send a message',
+        'contact.form.privacy': 'Your details are only used to reply to this message.',
         'contact.form.name': 'Name',
         'contact.form.email': 'Email',
+        'contact.form.phone': 'Phone',
+        'contact.form.phoneHint': 'Brazil: digits with area code only. International: start with + or 00 (country code).',
         'contact.form.message': 'Message',
-        'contact.form.submit': 'Send Message',
+        'contact.form.submit': 'Send message',
+        'contact.form.sending': 'Sending...',
+        'contact.form.success': 'Message sent! Check spam too. I will reply soon.',
+        'contact.form.error.validation': 'Please fill in name, email, phone, and message.',
+        'contact.form.error.phone': 'Invalid phone. Brazil: area code + number (10 or 11 digits). International: + or 00 and 7–15 digits total (e.g. +351…, +1…).',
+        'contact.form.error.send': 'Could not send. Please try again in a few minutes.',
+        'contact.form.error.network': 'Connection error. Check your network and try again.',
         'footer.rights': 'All rights reserved.',
         // Sections
         'certifications.title': 'Certifications',
@@ -660,10 +678,19 @@ const translations = {
         'contact.location': 'Ubicación:',
         'contact.location.value': 'Campinas, SP, Brasil',
         'contact.form.title': 'Enviar un mensaje',
+        'contact.form.privacy': 'Tus datos se usan solo para responder a este contacto.',
         'contact.form.name': 'Nombre',
         'contact.form.email': 'Correo electrónico',
+        'contact.form.phone': 'Teléfono',
+        'contact.form.phoneHint': 'Brasil: solo números con DDD. Internacional: empieza con + o 00 (código de país).',
         'contact.form.message': 'Mensaje',
         'contact.form.submit': 'Enviar mensaje',
+        'contact.form.sending': 'Enviando...',
+        'contact.form.success': '¡Mensaje enviado! Revisa también el spam. Responderé pronto.',
+        'contact.form.error.validation': 'Completa nombre, correo, teléfono y mensaje.',
+        'contact.form.error.phone': 'Teléfono no válido. Brasil: DDD + número (10 u 11 dígitos). Internacional: + o 00 y entre 7 y 15 dígitos en total (ej.: +351…, +1…).',
+        'contact.form.error.send': 'No se pudo enviar. Intenta de nuevo en unos minutos.',
+        'contact.form.error.network': 'Error de conexión. Comprueba tu red e inténtalo de nuevo.',
         'footer.rights': 'Todos los derechos reservados.',
         'activities.title': 'Actividades extracurriculares',
         'awards.title': 'Premios y reconocimientos',
@@ -844,6 +871,92 @@ const translations = {
 
 const LANG_FLAG_SRC = { pt: 'img/brazil.png', en: 'img/usa.png', es: 'img/spain.png' };
 const HTML_LANG = { pt: 'pt-BR', en: 'en-US', es: 'es-419' };
+
+/** E-mail que recebe as mensagens do formulário (FormSubmit — confirme o domínio no primeiro envio, se pedido). */
+const CONTACT_FORM_EMAIL = 'pedrocsoler@hotmail.com';
+const CONTACT_FORM_ENDPOINT = `https://formsubmit.co/ajax/${encodeURIComponent(CONTACT_FORM_EMAIL)}`;
+
+/** Dígitos nacionais (sem +55); se colar com 55 no início, remove uma vez. */
+function normalizeBrazilPhoneDigits(raw) {
+    let d = String(raw || '').replace(/\D/g, '');
+    if (d.startsWith('55')) {
+        d = d.slice(2);
+    }
+    return d.slice(0, 11);
+}
+
+/** Máscara (XX) XXXXX-XXXX ou (XX) XXXX-XXXX. */
+function formatBrazilPhoneDisplay(digits) {
+    const d = normalizeBrazilPhoneDigits(digits);
+    if (d.length === 0) return '';
+    if (d.length <= 2) return `(${d}`;
+    if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
+    if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
+    return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+}
+
+/** DDD brasileiro 11–99; 10 ou 11 dígitos totais. */
+function isValidBrazilPhone(digits) {
+    const d = normalizeBrazilPhoneDigits(digits);
+    if (d.length !== 10 && d.length !== 11) return false;
+    if (d[0] === '0') return false;
+    const ddd = parseInt(d.slice(0, 2), 10);
+    if (Number.isNaN(ddd) || ddd < 11 || ddd > 99) return false;
+    return true;
+}
+
+function isPhoneInternational(raw) {
+    const t = String(raw || '').trim();
+    return t.startsWith('+') || t.startsWith('00');
+}
+
+/** Exibe internacional: + ou 00 → + até 15 dígitos (E.164). */
+function formatInternationalPhoneInput(raw) {
+    let t = String(raw || '').trim();
+    if (t === '') return '';
+    if (t.startsWith('00')) {
+        const d = t.slice(2).replace(/\D/g, '').slice(0, 15);
+        return d.length ? '+' + d : '+';
+    }
+    if (t.startsWith('+')) {
+        const d = t.slice(1).replace(/\D/g, '').slice(0, 15);
+        return '+' + d;
+    }
+    return t;
+}
+
+/**
+ * Valida telefone: Brasil sem + (máscara local) ou internacional com + / 00 (E.164, 7–15 dígitos).
+ * +55 exige também número brasileiro válido (DDD + número).
+ * Retorno: { ok, display } para envio no e-mail.
+ */
+function validatePhoneForContact(raw) {
+    let t = String(raw || '').trim();
+    if (!t) return { ok: false };
+
+    if (t.startsWith('00')) {
+        t = '+' + t.slice(2).replace(/\D/g, '');
+    } else if (t.startsWith('+')) {
+        t = '+' + t.slice(1).replace(/\D/g, '');
+    } else {
+        const br = normalizeBrazilPhoneDigits(t);
+        if (!isValidBrazilPhone(br)) return { ok: false };
+        return { ok: true, display: '+55 ' + formatBrazilPhoneDisplay(br) };
+    }
+
+    const digits = t.slice(1);
+    if (digits.length < 7 || digits.length > 15 || !/^\d+$/.test(digits)) {
+        return { ok: false };
+    }
+
+    if (digits.startsWith('55')) {
+        const br = digits.slice(2).slice(0, 11);
+        if (!isValidBrazilPhone(br)) return { ok: false };
+        return { ok: true, display: '+55 ' + formatBrazilPhoneDisplay(br) };
+    }
+
+    return { ok: true, display: '+' + digits };
+}
 
 // Estado atual do idioma
 let currentLanguage = 'en';
@@ -1035,36 +1148,114 @@ document.addEventListener('DOMContentLoaded', function() {
 
     initScrollReveal();
 
-    // Formulário de contato
+    // Formulário de contato → FormSubmit (entrega no e-mail CONTACT_FORM_EMAIL)
     const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+    const contactFormStatus = document.getElementById('contactFormStatus');
+    if (contactForm && contactFormStatus) {
+        const phoneInput = document.getElementById('contact-phone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function() {
+                const v = this.value;
+                const trimmed = v.trim();
+                if (trimmed.startsWith('+') || trimmed.startsWith('00')) {
+                    this.value = formatInternationalPhoneInput(v);
+                    return;
+                }
+                const digits = normalizeBrazilPhoneDigits(v);
+                this.value = formatBrazilPhoneDisplay(digits);
+            });
+            phoneInput.addEventListener('blur', function() {
+                const trimmed = this.value.trim();
+                if (trimmed.startsWith('+') || trimmed.startsWith('00')) {
+                    this.value = formatInternationalPhoneInput(this.value);
+                    return;
+                }
+                const digits = normalizeBrazilPhoneDigits(this.value);
+                this.value = formatBrazilPhoneDisplay(digits);
+            });
+        }
+
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Simular envio do formulário
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.textContent =
-                currentLanguage === 'pt' ? 'Enviando...' :
-                currentLanguage === 'es' ? 'Enviando...' :
-                'Sending...';
+
+            const form = this;
+            const submitBtn = form.querySelector('.submit-btn');
+            const t = translations[currentLanguage] || translations.en;
+            const honey = form.querySelector('[name="_honey"]');
+            if (honey && honey.value) return;
+
+            const nameInput = form.querySelector('[name="name"]');
+            const emailInput = form.querySelector('[name="email"]');
+            const messageInput = form.querySelector('[name="message"]');
+            const name = (nameInput && nameInput.value.trim()) || '';
+            const email = (emailInput && emailInput.value.trim()) || '';
+            const message = (messageInput && messageInput.value.trim()) || '';
+            const phoneRaw = phoneInput ? phoneInput.value : '';
+
+            contactFormStatus.className = 'contact-form-status';
+            contactFormStatus.textContent = '';
+
+            if (!name || !email || !message || !String(phoneRaw).trim()) {
+                contactFormStatus.textContent = t['contact.form.error.validation'];
+                contactFormStatus.classList.add('contact-form-status--error');
+                return;
+            }
+
+            const phoneResult = validatePhoneForContact(phoneRaw);
+            if (!phoneResult.ok) {
+                contactFormStatus.textContent = t['contact.form.error.phone'];
+                contactFormStatus.classList.add('contact-form-status--error');
+                return;
+            }
+
             submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                submitBtn.textContent =
-                    currentLanguage === 'pt' ? 'Mensagem enviada!' :
-                    currentLanguage === 'es' ? '¡Mensaje enviado!' :
-                    'Message sent!';
-                submitBtn.style.background = '#27ae60';
-                
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.style.background = '';
-                    this.reset();
-                }, 2000);
-            }, 1500);
+            submitBtn.textContent = t['contact.form.sending'];
+
+            const phoneIntl = phoneResult.display;
+
+            try {
+                const res = await fetch(CONTACT_FORM_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        phone: phoneIntl,
+                        message,
+                        _honey: (honey && honey.value) || '',
+                        _subject: `[Portfólio] Mensagem de ${name}`,
+                        _template: 'table',
+                        _captcha: 'false',
+                    }),
+                });
+
+                let data = {};
+                try {
+                    data = await res.json();
+                } catch (_) {
+                    /* resposta não JSON */
+                }
+
+                if (res.ok) {
+                    contactFormStatus.textContent = t['contact.form.success'];
+                    contactFormStatus.classList.add('contact-form-status--ok');
+                    form.reset();
+                } else {
+                    const errMsg =
+                        (data && (data.message || data.error)) || t['contact.form.error.send'];
+                    contactFormStatus.textContent = errMsg;
+                    contactFormStatus.classList.add('contact-form-status--error');
+                }
+            } catch (err) {
+                contactFormStatus.textContent = t['contact.form.error.network'];
+                contactFormStatus.classList.add('contact-form-status--error');
+            }
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = t['contact.form.submit'];
         });
     }
 
