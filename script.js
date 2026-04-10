@@ -1331,6 +1331,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Inicializar tradução em inglês
     translatePage('en');
+
+    // Filtro default: Área de tecnologia
+    applyCertificationFilter(currentCertFilter);
 });
 
 // Função para upload de imagem nos projetos
@@ -1435,7 +1438,7 @@ function createParticles() {
 /** IDs dos cursos classificados como área de tecnologia (TI, dev, redes, Python, visão computacional, IA aplicada a software). */
 const CERT_TECH_IDS = new Set([3, 5, 6, 7, 24, 52, 58, 62, 63, 64]);
 
-let currentCertFilter = 'all';
+let currentCertFilter = 'tech';
 
 function getCertIdFromCard(card) {
     const el = card.querySelector('.certification-card__title[data-translate]');
