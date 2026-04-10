@@ -2,6 +2,7 @@
 const translations = {
     pt: {
         'nav.logo': 'Pedro Soler',
+        'nav.skip': 'Pular para o conteúdo',
         'nav.about': 'Sobre',
         'nav.skills': 'Habilidades',
         'nav.formation': 'Formação',
@@ -15,6 +16,8 @@ const translations = {
         'lang.switcher.name.en': 'Inglês',
         'lang.switcher.name.es': 'Espanhol',
         'about.name': 'Pedro Henrique Contardi Soler',
+        'about.hero.eyebrow': 'Olá — eu sou',
+        'about.hero.pill': 'Eng. de Software · Campinas, BR',
         'about.title': 'Estudante de Engenharia de Software e Técnico em Informática',
         'about.description': 'Sou estudante de Engenharia de Software, focado em criar soluções inovadoras e eficientes. Busco constantemente aprender novas tecnologias e aplicar conhecimentos em projetos práticos.',
         'about.downloads': 'Baixar Currículo',
@@ -85,6 +88,17 @@ const translations = {
         'certifications.filter.all': 'Geral',
         'certifications.filter.tech': 'Área de tecnologia',
         'certifications.filter.other': 'Outras áreas',
+        'panel.about': 'perfil.md',
+        'panel.skills': 'habilidades.workspace',
+        'panel.soft_skills': 'outras_habilidades.yaml',
+        'panel.certifications': 'certificados.grid',
+        'panel.activities': 'atividades.log',
+        'panel.experience': 'experiencia.yml',
+        'panel.projects': 'projetos.workspace',
+        'panel.awards': 'premiacoes.json',
+        'panel.education': 'formacao.json',
+        'panel.languages': 'idiomas.toml',
+        'panel.contact': 'contato.md',
         'activities.title': 'Atividades Extracurriculares',
         'awards.title': 'Prêmios e Reconhecimentos',
         'education.title': 'Formação Acadêmica',
@@ -279,6 +293,7 @@ const translations = {
     },
     en: {
         'nav.logo': 'Pedro Soler',
+        'nav.skip': 'Skip to content',
         'nav.about': 'About Me',
         'nav.skills': 'Skills',
         'nav.formation':'Education',
@@ -292,6 +307,8 @@ const translations = {
         'lang.switcher.name.en': 'English',
         'lang.switcher.name.es': 'Spanish',
         'about.name': 'Pedro Henrique Contardi Soler',
+        "about.hero.eyebrow": "Hi — I'm",
+        'about.hero.pill': 'Software Engineering · Campinas, BR',
         'about.title': 'Software Engineering Student and IT Technician',
         'about.description': 'I am a Software Engineering student focused on creating innovative and efficient solutions. I am constantly seeking to learn new technologies and apply my knowledge in practical projects.',
         'about.downloads': 'Download Resume',
@@ -362,6 +379,17 @@ const translations = {
         'certifications.filter.all': 'All',
         'certifications.filter.tech': 'Technology',
         'certifications.filter.other': 'Other fields',
+        'panel.about': 'profile.md',
+        'panel.skills': 'skills.workspace',
+        'panel.soft_skills': 'other_skills.yaml',
+        'panel.certifications': 'certifications.grid',
+        'panel.activities': 'activities.log',
+        'panel.experience': 'experience.yml',
+        'panel.projects': 'projects.workspace',
+        'panel.awards': 'awards.json',
+        'panel.education': 'education.json',
+        'panel.languages': 'locales.toml',
+        'panel.contact': 'contact.md',
         'activities.title': 'Extracurricular Activities',
         'awards.title': 'Awards & Recognitions',
         'education.title': 'Education',
@@ -556,6 +584,7 @@ const translations = {
     },
     es: {
         'nav.logo': 'Pedro Soler',
+        'nav.skip': 'Ir al contenido',
         'nav.about': 'Sobre mí',
         'nav.skills': 'Habilidades',
         'nav.formation': 'Formación',
@@ -569,6 +598,8 @@ const translations = {
         'lang.switcher.name.en': 'Inglés',
         'lang.switcher.name.es': 'Español',
         'about.name': 'Pedro Henrique Contardi Soler',
+        'about.hero.eyebrow': 'Hola — soy',
+        'about.hero.pill': 'Ing. de Software · Campinas, BR',
         'about.title': 'Estudiante de Ingeniería de Software y Técnico en Informática',
         'about.description': 'Soy estudiante de Ingeniería de Software, enfocado en crear soluciones innovadoras y eficientes. Busco aprender constantemente nuevas tecnologías y aplicar conocimientos en proyectos prácticos.',
         'about.downloads': 'Descargar currículum',
@@ -598,6 +629,17 @@ const translations = {
         'certifications.filter.all': 'General',
         'certifications.filter.tech': 'Tecnología',
         'certifications.filter.other': 'Otras áreas',
+        'panel.about': 'perfil.md',
+        'panel.skills': 'habilidades.workspace',
+        'panel.soft_skills': 'otras_habilidades.yaml',
+        'panel.certifications': 'certificaciones.grid',
+        'panel.activities': 'actividades.log',
+        'panel.experience': 'experiencia.yml',
+        'panel.projects': 'proyectos.workspace',
+        'panel.awards': 'premios.json',
+        'panel.education': 'formacion.json',
+        'panel.languages': 'idiomas.toml',
+        'panel.contact': 'contacto.md',
         'certifications.cert1.title': 'Desarrollo web completo',
         'certifications.cert1.institution': 'Udemy',
         'certifications.cert2.title': 'Python para principiantes',
@@ -882,6 +924,57 @@ function translatePage(language) {
     applyCertificationFilter(currentCertFilter);
 }
 
+function initScrollReveal() {
+    const targets = document.querySelectorAll('.reveal-section');
+    if (!targets.length) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        targets.forEach(el => el.classList.add('reveal-visible'));
+        return;
+    }
+
+    const io = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('reveal-visible');
+                io.unobserve(entry.target);
+            });
+        },
+        { root: null, rootMargin: '0px 0px -8% 0px', threshold: 0.07 }
+    );
+    targets.forEach(el => io.observe(el));
+}
+
+/** Destaca o link da seção visível na navbar (scroll spy). */
+function updateNavFromScroll() {
+    const links = document.querySelectorAll('.nav-menu .nav-link[href^="#"]');
+    const sections = [...document.querySelectorAll('main section[id]')];
+    if (!sections.length || !links.length) return;
+
+    const navOffset = 72;
+    const marker = navOffset + window.innerHeight * 0.14;
+    let currentId = sections[0].id;
+    const docEl = document.documentElement;
+    const atBottom = window.innerHeight + window.scrollY >= docEl.scrollHeight - 96;
+
+    if (atBottom) {
+        currentId = sections[sections.length - 1].id;
+    } else {
+        for (const sec of sections) {
+            const r = sec.getBoundingClientRect();
+            if (r.top <= marker && r.bottom > navOffset + 32) currentId = sec.id;
+        }
+    }
+
+    links.forEach(link => {
+        const active = link.getAttribute('href') === '#' + currentId;
+        link.classList.toggle('nav-link--active', active);
+        if (active) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+    });
+}
+
 // Inicialização
 document.addEventListener('DOMContentLoaded', function() {
     const langSwitcher = document.getElementById('lang-switcher');
@@ -946,33 +1039,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Efeito de scroll no navbar
-    window.addEventListener('scroll', function() {
-        // Navbar
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+    // Navbar + scroll spy (uma única leitura por frame de scroll)
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener(
+        'scroll',
+        function() {
+            if (navbar) {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            }
+            updateNavFromScroll();
+        },
+        { passive: true }
+    );
+    window.addEventListener('resize', updateNavFromScroll, { passive: true });
+    updateNavFromScroll();
 
-    });
-
-    // Garantir que todas as seções sejam visíveis
-    document.querySelectorAll('.section').forEach(section => {
-        section.classList.add('visible');
-        section.style.opacity = '1';
-        section.style.transform = 'translateY(0)';
-    });
-
-    // Garantir que a seção de certificações seja visível
-    const certificationsSection = document.getElementById('certifications');
-    if (certificationsSection) {
-        certificationsSection.style.display = 'block';
-        certificationsSection.style.visibility = 'visible';
-        certificationsSection.style.opacity = '1';
-        certificationsSection.style.transform = 'translateY(0)';
-    }
+    initScrollReveal();
 
     // Formulário de contato
     const contactForm = document.getElementById('contactForm');
@@ -1062,23 +1144,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Efeito de digitação no nome
+    // Efeito de digitação no nome (desativado com prefers-reduced-motion)
     const profileName = document.querySelector('.profile-name');
-    if (profileName) {
+    if (profileName && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const text = profileName.textContent;
         profileName.textContent = '';
         let i = 0;
-        
+
         function typeWriter() {
             if (i < text.length) {
                 profileName.textContent += text.charAt(i);
                 i++;
-                setTimeout(typeWriter, 100);
+                setTimeout(typeWriter, 55);
             }
         }
-        
-        // Iniciar efeito de digitação após um delay
-        setTimeout(typeWriter, 1000);
+
+        setTimeout(typeWriter, 680);
     }
 });
 

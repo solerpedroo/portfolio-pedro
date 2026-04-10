@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedro Henrique Contardi Soler - Portfólio</title>
+    <meta name="theme-color" content="#080a0f">
+    <meta name="color-scheme" content="dark">
+    <title>Portfólio - Pedro Soler</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="mask-icon" href="favicon.svg" color="#0066cc">
@@ -13,6 +15,8 @@
     <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%234a9eff"/><stop offset="100%" stop-color="%230066cc"/></linearGradient></defs><rect x="0" y="0" width="64" height="64" rx="14" ry="14" fill="%230a0a0a"/><circle cx="32" cy="32" r="20" fill="none" stroke="url(%23g)" stroke-width="4"/><path d="M24 40 V20 h9 a6 6 0 0 1 0 12 h-9" fill="none" stroke="url(%23g)" stroke-width="4" stroke-linecap="round"/><path d="M40 24 h-6 a6 6 0 0 0 0 12 h6" fill="none" stroke="url(%23g)" stroke-width="4" stroke-linecap="round"/></svg>'>
 </head>
 <body>
+    <script>document.documentElement.classList.add('js-reveal-init');</script>
+    <a class="skip-link" href="#about" data-translate="nav.skip">Skip to content</a>
     <!-- Menu Fixo -->
     <nav class="navbar">
         <div class="nav-container">
@@ -89,6 +93,18 @@
         <!-- Seção Sobre Mim -->
         <section id="about" class="section about-section">
             <div class="container">
+                <div class="dev-panel dev-panel--wide site-about-panel">
+                    <div class="dev-panel-chrome">
+                        <span class="dev-panel-chrome-dots" aria-hidden="true">
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--r"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--y"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--g"></span>
+                        </span>
+                        <span class="dev-panel-filename" data-translate="panel.about">perfil.md</span>
+                    </div>
+                    <div class="dev-panel-body dev-panel-body--compact about-panel-body">
+                <div class="about-hero" aria-labelledby="profile-heading">
+                    <div class="about-hero__glow" aria-hidden="true"></div>
                 <div class="about-content">
                     <!-- Coluna Esquerda - Perfil -->
                     <div class="profile-column">
@@ -96,7 +112,9 @@
                             <div class="profile-image">
                                 <img src="img/foto_pedro.jpeg" alt="Pedro Henrique Contardi Soler" id="profile-img">
                             </div>
-                            <h1 class="profile-name" data-translate="about.name">Pedro Henrique Contardi Soler</h1>
+                            <p class="hero-eyebrow" data-translate="about.hero.eyebrow">Hi — I'm</p>
+                            <p class="hero-pill"><span class="hero-pill__pulse" aria-hidden="true"></span><span data-translate="about.hero.pill">Software Engineering · Campinas, BR</span></p>
+                            <h1 class="profile-name" id="profile-heading" data-translate="about.name">Pedro Henrique Contardi Soler</h1>
                             <p class="profile-title" data-translate="about.title">Estudante de Engenharia de Software</p>
                             <p class="profile-description" data-translate="about.description">
                                 Desenvolvedor apaixonado por tecnologia, focado em criar soluções inovadoras e eficientes. 
@@ -170,20 +188,33 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Seção Habilidades -->
-        <section id="skills" class="section skills-section">
+        <section id="skills" class="section skills-section reveal-section">
             <div class="container">
                 <div class="section-header">
                     <h2 data-translate="skills.title">Habilidades</h2>
                     <div class="section-line"></div>
                 </div>
+                <div class="dev-panel dev-panel--wide skills-page-panel">
+                    <div class="dev-panel-chrome">
+                        <span class="dev-panel-chrome-dots" aria-hidden="true">
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--r"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--y"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--g"></span>
+                        </span>
+                        <span class="dev-panel-filename" data-translate="panel.skills">habilidades.workspace</span>
+                    </div>
+                    <div class="dev-panel-body dev-panel-body--compact">
                 <div class="skills-content">
                     <div class="skills-category skills-category--technical">
                         <h3 id="technical-skills-heading" data-translate="skills.technical">Habilidades Técnicas</h3>
-                        <div class="tech-stack-panel" role="list" aria-labelledby="technical-skills-heading">
+                        <div class="dev-panel tech-stack-panel" role="list" aria-labelledby="technical-skills-heading">
                             <div class="tech-stack-chrome">
                                 <span class="tech-stack-chrome-dot tech-stack-chrome-dot--r" aria-hidden="true"></span>
                                 <span class="tech-stack-chrome-dot tech-stack-chrome-dot--y" aria-hidden="true"></span>
@@ -362,6 +393,16 @@
                     </div>
                     <div class="skills-category">
                         <h3 data-translate="skills.soft">Outras Habilidades</h3>
+                        <div class="dev-panel dev-panel--wide skills-soft-panel">
+                            <div class="dev-panel-chrome">
+                                <span class="dev-panel-chrome-dots" aria-hidden="true">
+                                    <span class="tech-stack-chrome-dot tech-stack-chrome-dot--r"></span>
+                                    <span class="tech-stack-chrome-dot tech-stack-chrome-dot--y"></span>
+                                    <span class="tech-stack-chrome-dot tech-stack-chrome-dot--g"></span>
+                                </span>
+                                <span class="dev-panel-filename" data-translate="panel.soft_skills">outras_habilidades.yaml</span>
+                            </div>
+                            <div class="dev-panel-body dev-panel-body--compact">
                         <div class="soft-skills">
                             <div class="soft-skill-item">
                                 <i class="fas fa-chart-line"></i>
@@ -476,18 +517,32 @@
                                 <span data-translate="skills.soft.computer-vision">Visão Computacional</span>
                             </div>
                         </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Seção Certificações -->
-        <section id="certifications" class="section certifications-section">
+        <section id="certifications" class="section certifications-section reveal-section">
             <div class="container">
                 <div class="section-header">
                     <h2 data-translate="certifications.title">Certificações</h2>
                     <div class="section-line"></div>
                 </div>
+                <div class="dev-panel dev-panel--wide certifications-dev-panel">
+                    <div class="dev-panel-chrome">
+                        <span class="dev-panel-chrome-dots" aria-hidden="true">
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--r"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--y"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--g"></span>
+                        </span>
+                        <span class="dev-panel-filename" data-translate="panel.certifications">certificados.grid</span>
+                    </div>
+                    <div class="dev-panel-body dev-panel-body--flush-top dev-panel-body--compact">
                 <div class="certifications-filter-wrap" role="group">
                     <div class="certifications-filter" role="toolbar" data-translate-aria="certifications.filter.aria">
                         <button type="button" class="cert-filter-btn is-active" aria-pressed="true" data-cert-filter="all" data-translate="certifications.filter.all">Geral</button>
@@ -1109,16 +1164,28 @@
                         </div>
                     </div>
                 </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Seção Atividades Extracurriculares -->
-        <section id="activities" class="section activities-section">
+        <section id="activities" class="section activities-section reveal-section">
             <div class="container">
                 <div class="section-header">
                     <h2 data-translate="activities.title">Atividades Extracurriculares</h2>
                     <div class="section-line"></div>
                 </div>
+                <div class="dev-panel dev-panel--wide">
+                    <div class="dev-panel-chrome">
+                        <span class="dev-panel-chrome-dots" aria-hidden="true">
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--r"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--y"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--g"></span>
+                        </span>
+                        <span class="dev-panel-filename" data-translate="panel.activities">atividades.log</span>
+                    </div>
+                    <div class="dev-panel-body dev-panel-body--compact">
                 <div class="activities-content">
                     <ul class="activities-list">
                         <li data-translate="activities.item.2023-3m"><strong>2023</strong> – 11ª Mostra de Ciências e Tecnologia Instituto 3M</li>
@@ -1128,17 +1195,28 @@
                         <li data-translate="activities.item.2025-events"><strong>2025</strong> – Startup Day 2025, 12º Motiv.se PUC-Campinas, Campinas Innovation Week</li>
                     </ul>
                 </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Seção Experiências -->
-        <section id="experience" class="section experience-section">
+        <section id="experience" class="section experience-section reveal-section">
             <div class="container">
                 <div class="section-header">
                     <h2 data-translate="experience.title">Experiências Profissionais</h2>
                     <div class="section-line"></div>
                 </div>
-                
+                <div class="dev-panel dev-panel--wide experience-dev-panel">
+                    <div class="dev-panel-chrome">
+                        <span class="dev-panel-chrome-dots" aria-hidden="true">
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--r"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--y"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--g"></span>
+                        </span>
+                        <span class="dev-panel-filename" data-translate="panel.experience">experiencia.yml</span>
+                    </div>
+                    <div class="dev-panel-body dev-panel-body--compact">
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
@@ -1187,16 +1265,28 @@
                     </div>
 
                 </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Seção Projetos -->
-        <section id="projects" class="section projects-section">
+        <section id="projects" class="section projects-section reveal-section">
             <div class="container">
                 <div class="section-header">
                     <h2 data-translate="projects.title">Projetos</h2>
                     <div class="section-line"></div>
                 </div>
+                <div class="dev-panel dev-panel--wide projects-dev-panel">
+                    <div class="dev-panel-chrome">
+                        <span class="dev-panel-chrome-dots" aria-hidden="true">
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--r"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--y"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--g"></span>
+                        </span>
+                        <span class="dev-panel-filename" data-translate="panel.projects">projetos.workspace</span>
+                    </div>
+                    <div class="dev-panel-body dev-panel-body--compact">
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image">
@@ -1432,16 +1522,28 @@
                     </div>
 
                 </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Seção Prêmios e Reconhecimentos -->
-        <section id="awards" class="section awards-section">
+        <section id="awards" class="section awards-section reveal-section">
             <div class="container">
                 <div class="section-header">
                     <h2 data-translate="awards.title">Prêmios e Reconhecimentos</h2>
                     <div class="section-line"></div>
                 </div>
+                <div class="dev-panel dev-panel--wide">
+                    <div class="dev-panel-chrome">
+                        <span class="dev-panel-chrome-dots" aria-hidden="true">
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--r"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--y"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--g"></span>
+                        </span>
+                        <span class="dev-panel-filename" data-translate="panel.awards">premiacoes.json</span>
+                    </div>
+                    <div class="dev-panel-body dev-panel-body--compact">
                 <div class="awards-grid">
                     <div class="award-card">
                         <div class="award-icon">
@@ -1494,16 +1596,28 @@
                         </div>
                     </div>
                 </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Seção Formação Acadêmica -->
-        <section id="education" class="section education-section">
+        <section id="education" class="section education-section reveal-section">
             <div class="container">
                 <div class="section-header">
                     <h2 data-translate="education.title">Formação Acadêmica</h2>
                     <div class="section-line"></div>
                 </div>
+                <div class="dev-panel dev-panel--wide">
+                    <div class="dev-panel-chrome">
+                        <span class="dev-panel-chrome-dots" aria-hidden="true">
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--r"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--y"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--g"></span>
+                        </span>
+                        <span class="dev-panel-filename" data-translate="panel.education">formacao.json</span>
+                    </div>
+                    <div class="dev-panel-body dev-panel-body--compact">
                 <div class="education-content">
                     <div class="education-item">
                         <div class="education-icon">
@@ -1536,16 +1650,28 @@
                         </div>
                     </div>
                 </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Seção Idiomas -->
-        <section id="languages" class="section languages-section">
+        <section id="languages" class="section languages-section reveal-section">
             <div class="container">
                 <div class="section-header">
                     <h2 data-translate="languages.title">Idiomas</h2>
                     <div class="section-line"></div>
                 </div>
+                <div class="dev-panel dev-panel--wide">
+                    <div class="dev-panel-chrome">
+                        <span class="dev-panel-chrome-dots" aria-hidden="true">
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--r"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--y"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--g"></span>
+                        </span>
+                        <span class="dev-panel-filename" data-translate="panel.languages">idiomas.toml</span>
+                    </div>
+                    <div class="dev-panel-body dev-panel-body--compact">
                 <div class="languages-grid">
                     <article class="language-card">
                         <div class="language-flag-wrap" aria-hidden="true">
@@ -1569,16 +1695,28 @@
                         <p class="language-level" data-translate="languages.level.basic">Básico (A2)</p>
                     </article>
                 </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Seção Contato -->
-        <section id="contact" class="section contact-section">
+        <section id="contact" class="section contact-section reveal-section">
             <div class="container">
                 <div class="section-header">
                     <h2 data-translate="contact.title">Contato</h2>
                     <div class="section-line"></div>
                 </div>
+                <div class="dev-panel dev-panel--wide contact-dev-panel">
+                    <div class="dev-panel-chrome">
+                        <span class="dev-panel-chrome-dots" aria-hidden="true">
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--r"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--y"></span>
+                            <span class="tech-stack-chrome-dot tech-stack-chrome-dot--g"></span>
+                        </span>
+                        <span class="dev-panel-filename" data-translate="panel.contact">contato.md</span>
+                    </div>
+                    <div class="dev-panel-body dev-panel-body--compact">
                 <div class="contact-content">
                     <div class="contact-info">
                         <h3 data-translate="contact.info">Informações de Contato</h3>
@@ -1605,12 +1743,14 @@
                         </div>
                     </div>
                 </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer reveal-section">
         <div class="container">
             <p>&copy; 2026 Pedro Henrique Contardi Soler. <span data-translate="footer.rights">Todos os direitos reservados.</span></p>
         </div>
