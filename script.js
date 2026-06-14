@@ -1134,6 +1134,85 @@ function initScrollReveal() {
     targets.forEach(el => io.observe(el));
 }
 
+/** Offset do scroll suave para compensar a navbar fixa. */
+const SMOOTH_SCROLL_OFFSET = 88;
+const SMOOTH_SCROLL_DURATION = 900;
+
+function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+let smoothScrollAnimationId = null;
+
+function smoothScrollTo(targetY) {
+    const maxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    const y = Math.min(Math.max(0, targetY), maxY);
+
+    if (prefersReducedMotion()) {
+        window.scrollTo(0, y);
+        return;
+    }
+
+    if (smoothScrollAnimationId !== null) {
+        cancelAnimationFrame(smoothScrollAnimationId);
+        smoothScrollAnimationId = null;
+    }
+
+    const startY = window.scrollY;
+    const distance = y - startY;
+    if (Math.abs(distance) < 1) return;
+
+    const startTime = performance.now();
+
+    function step(now) {
+        const progress = Math.min((now - startTime) / SMOOTH_SCROLL_DURATION, 1);
+        window.scrollTo(0, startY + distance * easeInOutCubic(progress));
+        if (progress < 1) {
+            smoothScrollAnimationId = requestAnimationFrame(step);
+        } else {
+            smoothScrollAnimationId = null;
+        }
+    }
+
+    smoothScrollAnimationId = requestAnimationFrame(step);
+}
+
+function scrollToAnchor(hash, { updateHistory = true } = {}) {
+    if (!hash || hash === '#') return;
+
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    const y = target.getBoundingClientRect().top + window.scrollY - SMOOTH_SCROLL_OFFSET;
+    smoothScrollTo(y);
+
+    if (updateHistory) {
+        history.pushState(null, '', hash);
+    }
+}
+
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const hash = this.getAttribute('href');
+            if (!hash || hash === '#') return;
+            const target = document.querySelector(hash);
+            if (!target) return;
+            e.preventDefault();
+            scrollToAnchor(hash);
+        });
+    });
+
+    if (window.location.hash) {
+        const hash = window.location.hash;
+        requestAnimationFrame(() => scrollToAnchor(hash, { updateHistory: false }));
+    }
+}
+
 /** Destaca o link da seção visível na navbar (scroll spy). */
 function updateNavFromScroll() {
     const links = document.querySelectorAll('.nav-menu .nav-link[href^="#"]');
@@ -1213,19 +1292,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth scroll para links do menu
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+    // Scroll suave com easing (âncoras internas e logo no topo)
+    initSmoothScroll();
 
     // Navbar + scroll spy (uma única leitura por frame de scroll)
     const navbar = document.querySelector('.navbar');
