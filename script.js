@@ -190,6 +190,8 @@ const translations = {
         'projects.reuniai.desc': 'ReuniAI é uma plataforma que transforma reuniões em conhecimento acionável: você envia o link do Google Meet, Zoom ou Teams, um bot entra na chamada, transcreve em tempo real e a IA gera resumos, decisões, action items e follow-ups organizados para consulta e execução depois.',
         'projects.driveflow.title': 'DriveFlow',
         'projects.driveflow.desc': 'DriveFlow é um app Flutter offline-first para motoristas de aplicativo (Uber, 99 e inDrive) que centraliza ganhos, custos e turnos com Supabase e um assistente de IA. Com sincronização multiplataforma, criptografia e Row Level Security desde o início, ajuda a responder no fim do dia: valeu a pena?',
+        'projects.melo_music.title': 'Melo Music',
+        'projects.melo_music.desc': 'Melo Music é um app Flutter mobile-first de notação musical: compose, toque e crie partituras com editor acessível, playback via softsynth e exportação em PDF. Stack com Dart, Riverpod, Drift e rendering SMuFL para uma experiência de composição pensada para o celular.',
         // Tags dos Projetos - Português
         'projects.tags.documentation': 'Documentação',
         'projects.tags.technical': 'Técnico',
@@ -231,6 +233,7 @@ const translations = {
         'projects.tags.meetings': 'Reuniões',
         'projects.tags.transcription': 'Transcrição',
         'projects.tags.privacy': 'Privacidade',
+        'projects.tags.music': 'Música',
         'projects.btn.view': 'Veja Mais',
         // Atividades
         'activities.item.2023-3m': '2023 – 11ª Mostra de Ciências e Tecnologia Instituto 3M',
@@ -524,6 +527,8 @@ const translations = {
         'projects.reuniai.desc': 'ReuniAI turns meetings into actionable knowledge: you paste a Google Meet, Zoom, or Teams link, a bot joins the call, transcribes in real time, and AI generates summaries, decisions, action items, and follow-ups that stay organized for later search and execution.',
         'projects.driveflow.title': 'DriveFlow',
         'projects.driveflow.desc': 'DriveFlow is an offline-first Flutter app for rideshare drivers (Uber, 99, and inDrive) that centralizes earnings, costs, and shifts with Supabase and an AI assistant. With multi-platform sync, encryption, and Row Level Security from day one, it helps answer at the end of the day: was it worth it?',
+        'projects.melo_music.title': 'Melo Music',
+        'projects.melo_music.desc': 'Melo Music is a Flutter mobile-first music notation app: compose, play, and create scores with an accessible editor, softsynth playback, and PDF export. Built with Dart, Riverpod, Drift, and SMuFL rendering for a composition experience designed for mobile.',
         // Tags dos Projetos - English
         'projects.tags.documentation': 'Documentation',
         'projects.tags.technical': 'Technical',
@@ -565,6 +570,7 @@ const translations = {
         'projects.tags.meetings': 'Meetings',
         'projects.tags.transcription': 'Transcription',
         'projects.tags.privacy': 'Privacy',
+        'projects.tags.music': 'Music',
         'projects.btn.view': 'See More',
         // Activities
         'activities.item.2023-3m': '2023 – 11th 3M Institute Science and Technology Fair',
@@ -853,6 +859,8 @@ const translations = {
         'projects.reuniai.desc': 'ReuniAI convierte las reuniones en conocimiento accionable: pegas el enlace de Google Meet, Zoom o Teams, un bot entra a la llamada, transcribe en tiempo real y la IA genera resúmenes, decisiones, action items y follow-ups organizados para consultar y ejecutar después.',
         'projects.driveflow.title': 'DriveFlow',
         'projects.driveflow.desc': 'DriveFlow es una app Flutter offline-first para conductores de apps (Uber, 99 e inDrive) que centraliza ganancias, costos y turnos con Supabase y un asistente de IA. Con sincronización multiplataforma, cifrado y Row Level Security desde el inicio, ayuda a responder al final del día: ¿valió la pena?',
+        'projects.melo_music.title': 'Melo Music',
+        'projects.melo_music.desc': 'Melo Music es una app Flutter mobile-first de notación musical: compón, reproduce y crea partituras con un editor accesible, playback por softsynth y exportación a PDF. Stack con Dart, Riverpod, Drift y rendering SMuFL para una experiencia de composición pensada para el móvil.',
         'projects.tags.documentation': 'Documentación',
         'projects.tags.technical': 'Técnico',
         'projects.tags.hardware': 'Hardware',
@@ -893,6 +901,7 @@ const translations = {
         'projects.tags.meetings': 'Reuniones',
         'projects.tags.transcription': 'Transcripción',
         'projects.tags.privacy': 'Privacidad',
+        'projects.tags.music': 'Música',
         'projects.btn.view': 'Ver más',
         'activities.item.2023-3m': '2023 – 11.ª Feria de Ciencia y Tecnología Instituto 3M',
         'activities.item.2024-events': '2024 – Expo Ecomm Campinas 2024, Startup Day 2024, Campinas Innovation Week 2024, clase magistral con Caito Maia - Branding y marketing digital',
