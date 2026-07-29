@@ -192,6 +192,8 @@ const translations = {
         'projects.driveflow.desc': 'DriveFlow é um app Flutter offline-first para motoristas de aplicativo (Uber, 99 e inDrive) que centraliza ganhos, custos e turnos com Supabase e um assistente de IA. Com sincronização multiplataforma, criptografia e Row Level Security desde o início, ajuda a responder no fim do dia: valeu a pena?',
         'projects.melo_music.title': 'Melo Music',
         'projects.melo_music.desc': 'Melo Music é um app Flutter mobile-first de notação musical: compose, toque e crie partituras com editor acessível, playback via softsynth e exportação em PDF. Stack com Dart, Riverpod, Drift e rendering SMuFL para uma experiência de composição pensada para o celular.',
+        'projects.chronos.title': 'Chronos',
+        'projects.chronos.desc': 'Chronos reconstrói a memória técnica de repositórios git locais: agrupa commits em eras, resume o porquê de cada fase com LLM (Groq) e sinaliza criticidade de arquivos. Pipeline em Python com UI Next.js para explorar a narrativa de decisões ao longo do tempo — não é um sumarizador de changelog.',
         // Tags dos Projetos - Português
         'projects.tags.documentation': 'Documentação',
         'projects.tags.technical': 'Técnico',
@@ -529,6 +531,8 @@ const translations = {
         'projects.driveflow.desc': 'DriveFlow is an offline-first Flutter app for rideshare drivers (Uber, 99, and inDrive) that centralizes earnings, costs, and shifts with Supabase and an AI assistant. With multi-platform sync, encryption, and Row Level Security from day one, it helps answer at the end of the day: was it worth it?',
         'projects.melo_music.title': 'Melo Music',
         'projects.melo_music.desc': 'Melo Music is a Flutter mobile-first music notation app: compose, play, and create scores with an accessible editor, softsynth playback, and PDF export. Built with Dart, Riverpod, Drift, and SMuFL rendering for a composition experience designed for mobile.',
+        'projects.chronos.title': 'Chronos',
+        'projects.chronos.desc': 'Chronos reconstructs technical memory from local git repositories: it clusters commits into eras, summarizes why each phase happened with an LLM (Groq), and flags file criticality. Python pipeline with a Next.js UI to explore decision narratives over time — not a changelog summarizer.',
         // Tags dos Projetos - English
         'projects.tags.documentation': 'Documentation',
         'projects.tags.technical': 'Technical',
@@ -861,6 +865,8 @@ const translations = {
         'projects.driveflow.desc': 'DriveFlow es una app Flutter offline-first para conductores de apps (Uber, 99 e inDrive) que centraliza ganancias, costos y turnos con Supabase y un asistente de IA. Con sincronización multiplataforma, cifrado y Row Level Security desde el inicio, ayuda a responder al final del día: ¿valió la pena?',
         'projects.melo_music.title': 'Melo Music',
         'projects.melo_music.desc': 'Melo Music es una app Flutter mobile-first de notación musical: compón, reproduce y crea partituras con un editor accesible, playback por softsynth y exportación a PDF. Stack con Dart, Riverpod, Drift y rendering SMuFL para una experiencia de composición pensada para el móvil.',
+        'projects.chronos.title': 'Chronos',
+        'projects.chronos.desc': 'Chronos reconstruye la memoria técnica de repositorios git locales: agrupa commits en eras, resume el porqué de cada fase con LLM (Groq) y señala la criticidad de archivos. Pipeline en Python con UI Next.js para explorar la narrativa de decisiones a lo largo del tiempo — no es un resumidor de changelog.',
         'projects.tags.documentation': 'Documentación',
         'projects.tags.technical': 'Técnico',
         'projects.tags.hardware': 'Hardware',
