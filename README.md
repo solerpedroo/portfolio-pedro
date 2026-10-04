@@ -1,109 +1,73 @@
-# Portfólio Pedro Henrique Contardi Soler
+# Pedro Soler — Portfólio
 
-Um portfólio profissional e responsivo desenvolvido com HTML, CSS e JavaScript puro, apresentando as informações pessoais, habilidades, experiências e projetos de Pedro Henrique Contardi Soler.
+Portfólio em Next.js App Router, TypeScript, Tailwind CSS, Motion, Lenis e Three.js com React Three Fiber e Drei. Conteúdo pré-renderizado em inglês por padrão (`/`), português (`/pt`) e espanhol (`/es`). A rota anterior `/en` redireciona para `/`.
 
-## 🚀 Características
+## Executar
 
-- **Design Minimalista**: Interface limpa e profissional com paleta de cores neutras
-- **Totalmente Responsivo**: Adaptável para desktop, tablet e mobile
-- **Bilíngue**: Suporte completo para Português e Inglês
-- **Animações Suaves**: Efeitos de scroll, hover e transições fluidas
-- **Upload de Imagens**: Sistema para upload de imagens nos projetos
-- **Download de CVs**: Três versões diferentes do currículo disponíveis
-- **Formulário de Contato**: Sistema funcional de envio de mensagens
+Requer Node.js 22 ou mais recente.
 
-## 📁 Estrutura do Projeto
-
-```
-portfolio/
-├── index.html          # Página principal
-├── style.css           # Estilos CSS
-├── script.js           # Funcionalidades JavaScript
-├── img/
-│   └── foto_pedro.jpeg # Foto de perfil
-├── cv/
-│   ├── Currículo Pedro Soler - Geral (1).pdf
-│   ├── Currículo Pedro Soler - Área de Tecnologia (2).pdf
-│   └── Resume Pedro Soler - Technology Field. (1).pdf
-└── README.md
+```sh
+npm ci
+npm run dev
 ```
 
-## 🎨 Seções do Portfólio
+Abra `http://localhost:3000`. Para validar a versão de produção:
 
-### 1. **Sobre Mim**
-- Foto de perfil redonda
-- Informações pessoais e profissionais
-- Links para redes sociais (LinkedIn, Instagram, GitHub, WhatsApp, Email)
-- Botões de download para três versões do currículo
+```sh
+npm run build
+npm start
+```
 
-### 2. **Habilidades**
-- **Técnicas**: HTML5, CSS3, JavaScript, Python, React, Node.js
-- **Soft Skills**: Comunicação, Resolução de Problemas, Proatividade, etc.
-- Barras de progresso animadas
+## Verificar
 
-### 3. **Certificações**
-- Cards com certificações e cursos
-- Informações sobre instituição e ano
-- Ícones representativos
+```sh
+npm run lint
+npm run typecheck
+npm test
+npx playwright install chromium
+```
 
-### 4. **Experiências Profissionais**
-- Timeline cronológica
-- Zara Multimarcas (Assistente de T.I)
-- Loja Escolha Correta (Fundador)
-- Saint Capri (Fundador)
+Com a aplicação de produção em outra janela de terminal:
 
-### 5. **Projetos**
-- Cards interativos com upload de imagem
-- Descrições detalhadas
-- Tags de tecnologias utilizadas
+```sh
+node node_modules/next/dist/bin/next start -p 3100
+npx playwright test
+```
 
-### 6. **Contato**
-- Informações de contato
-- Formulário funcional
-- Validação de campos
+Os testes de conteúdo confrontam os dados com a versão original. Os testes de navegador cobrem idiomas, filtros, downloads, formulário com respostas interceptadas, navegação mobile, acessibilidade automatizada, WebGL e fallback. Nenhum teste envia mensagens reais.
 
-## 🛠️ Tecnologias Utilizadas
+## Estrutura
 
-- **HTML5**: Estrutura semântica
-- **CSS3**: Estilos responsivos e animações
-- **JavaScript**: Funcionalidades interativas e sistema de tradução
-- **Font Awesome**: Ícones
-- **Google Fonts**: Tipografia (Poppins)
+```text
+app/                  Rotas, metadata, SEO e estilos do design system
+components/layout/    Composição da página e navegação
+components/sections/  Seções e interações locais
+components/three/     Cena, geometria procedural e fallback SVG
+components/ui/        Primitivos visuais e Motion
+data/                 Conteúdo PT/EN/ES, textos de interface, skills e links
+lib/                  Resolução de conteúdo, idioma e URL canônica
+types/                Contratos de conteúdo
+public/               Imagens originais, currículos e certificados
+tests/                Preservação factual e testes de navegador
+docs/legacy/          Fonte original preservada para auditoria
+```
 
-## 🌐 Sistema de Tradução
+## Editar conteúdo
 
-O portfólio possui um sistema completo de tradução PT/EN que inclui:
-- Tradução dinâmica de todos os textos
-- Alteração do atributo `lang` do HTML
-- Persistência da escolha do usuário
-- Botões de alternância no menu
+Atualize `data/pt.json`, `data/en.json` e `data/es.json` para projetos, experiências, formação, certificações e reconhecimentos. Links sociais e currículos ficam em `data/socials.ts`; habilidades em `data/skills.ts`; textos de interface em `data/interface.ts`.
 
-## 📱 Responsividade
+Não acrescente métricas, responsabilidades ou tecnologias sem fonte. Agibank contém somente empresa, cargo e período fornecidos. Saint Capri conserva apenas empresa e cargo mencionados no README original. Os PDFs originais foram preservados sem alterações e podem ter informações anteriores à atualização do site.
 
-- **Desktop**: Layout de duas colunas
-- **Tablet**: Adaptação do grid e menu
-- **Mobile**: Menu hambúrguer e layout de coluna única
+## Three.js e movimento
 
-## 🎯 Funcionalidades Especiais
+Malha procedural inspirada em relações espaciais e visão computacional. Três chamadas de desenho por cena (conexões, nós com shader e pontos de fundo), sem texturas ou pós-processamento. Importação dinâmica somente quando uma cena está visível. A estrutura aparece no Hero, na transição para a trajetória e no contato. No mobile, a primeira renderização usa SVG; o controle da cena ativa WebGL sob demanda. Limite de aproximadamente 30 quadros/s no desktop e 15 em dispositivos compactos/fracos; DPR limitado a 1,5 e 1, respectivamente. Cena desmontada fora de vista, atualização suspensa em aba oculta, botão de pausa, fallback SVG sem WebGL e para `prefers-reduced-motion` ou economia de dados. A cena não bloqueia o conteúdo. Drei PerformanceMonitor reduz a qualidade quando a taxa de quadros cai. Lenis suaviza a rolagem somente em desktop com ponteiro preciso; touch e movimento reduzido mantêm scroll nativo. A entrada dura aproximadamente 1,25 s, não bloqueia cliques e não impõe espera ao carregamento.
 
-### Animações
-- Fade-in nas seções durante o scroll
-- Barras de progresso animadas
-- Efeitos de hover nos cards
-- Efeito de digitação no nome
-- Partículas animadas no fundo
+## Deploy na Vercel
 
-### Interatividade
-- Menu mobile responsivo
-- Smooth scroll entre seções
-- Upload de imagens nos projetos
-- Formulário de contato funcional
-- Sistema de loading
+Importe o repositório e selecione o preset Next.js. Build: `npm run build`; saída e instalação: padrões da Vercel. Não há banco nem credenciais necessários.
 
-## 🌟 Recursos Avançados
+Defina `NEXT_PUBLIC_SITE_URL` com a URL pública definitiva, copiando `.env.example` e substituindo o valor. Na Vercel, quando ausente, usa-se `VERCEL_PROJECT_PRODUCTION_URL`. Localmente o fallback é `http://localhost:3000`. Metadata, canonical, sitemap e robots usam a mesma configuração. Não foi presumido um domínio pessoal.
 
-- **Scroll Reveal**: Animações baseadas na visibilidade
-- **Intersection Observer**: Performance otimizada para animações
-- **CSS Grid e Flexbox**: Layout moderno e responsivo
-- **Backdrop Filter**: Efeitos de vidro fosco
-- **CSS Custom Properties**: Variáveis para fácil personalização
+O formulário preserva o serviço FormSubmit do site original. A entrega real depende da ativação/disponibilidade desse serviço; os links diretos de e-mail e WhatsApp continuam disponíveis. Não houve envio real durante a validação.
+
+Consulte [migração e design](docs/MIGRATION.md) e [validação](docs/VALIDATION.md).
