@@ -1,0 +1,662 @@
+{
+  "projects": [
+    {
+      "id": "manual",
+      "name": "Computer Upgrade & Maintenance Manual",
+      "description": "Comprehensive manual developed in 2022 with detailed instructions for computer upgrades and maintenance, including practical guides and technical tips.",
+      "tags": ["Documentation", "Technical", "Hardware"],
+      "image": "/img/manual_upgrade.jpg",
+      "links": [
+        "https://sites.google.com/view/pp-manual-de-upgrade/p%C3%A1gina-inicial"
+      ]
+    },
+    {
+      "id": "lixo",
+      "name": "Mapping Waste Disposal Points in Campinas",
+      "description": "2022 project mapping waste disposal points in Campinas, contributing to environmental awareness and improved waste management.",
+      "tags": ["Mapping", "Sustainability", "Community"],
+      "image": "/img/mapeamento_lixo.jpg",
+      "links": [
+        "https://sites.google.com/view/preservacao-ambiental/p%C3%A1gina-inicial"
+      ]
+    },
+    {
+      "id": "maxwake",
+      "name": "MaxWake - Automotive Safety Sensor",
+      "description": "Finalist project at the 11th 3M Institute Science and Technology Fair (2023). Automotive safety system that detects driver drowsiness.",
+      "tags": ["Arduino", "Sensors", "Security", "IoT"],
+      "image": "/img/maxwake.jpg",
+      "links": ["https://sites.google.com/view/max-wake"]
+    },
+    {
+      "id": "guia",
+      "name": "Investment Guide for Young People",
+      "description": "Guide developed in 2023 to help young people with investments, financial education, and future planning.",
+      "tags": ["Financial Education", "Planning", "Youth"],
+      "image": "/img/guia_investimentos.jpg",
+      "links": ["https://sites.google.com/view/projeto-investimentos/"]
+    },
+    {
+      "id": "safevision",
+      "name": "Safe Vision – Road Safety System",
+      "description": "Award-winning project: 3rd place at the 14th Bragantec and 12th 3M Institute Science and Technology Fair (2024). Road safety system using computer vision.",
+      "tags": ["Computer Vision", "Python", "OpenCV", "Security"],
+      "image": "/img/safe_vision.jpg",
+      "links": ["https://www.instagram.com/safevisionoficial/"]
+    },
+    {
+      "id": "fullcontrol",
+      "name": "FullControl",
+      "description": "2025 project focused on system control and automation, developed during participation in innovation events.",
+      "tags": ["Automation", "Control", "Systems"],
+      "image": "/img/fullcontrol.jpg",
+      "links": ["https://www.inova.unicamp.br/"]
+    },
+    {
+      "id": "pdfchatbot",
+      "name": "PDF Chatbot",
+      "description": "A tool that interprets PDFs and enables intelligent queries using Groq LLM. Delivers fast, contextual, and accurate answers from long documents. Designed for study, technical review, and automated document analysis.",
+      "tags": ["LLM", "A.I", "Web"],
+      "image": "/img/pdfchatbot.png",
+      "links": ["https://github.com/solerpedroo/pdf-chatbot"]
+    },
+    {
+      "id": "githubanalyzer",
+      "name": "GitHub Analyzer",
+      "description": "A system that analyzes any public GitHub repository using data from the official API. Provides clear metrics on activity, contributors, languages, and code quality. Helps students, recruiters, and developers evaluate projects efficiently.",
+      "tags": ["LLM", "GitHub", "API", "Web"],
+      "image": "/img/github_analyzer.png",
+      "links": ["https://github.com/solerpedroo/github-analyzer"]
+    },
+    {
+      "id": "cardapioai",
+      "name": "Cardápio AI",
+      "description": "An application that generates personalized meal plans based on preferences, goals, and dietary restrictions. Uses Groq LLM to produce structured and consistent meal suggestions. Simplifies meal planning in a practical, fast, and intelligent way.",
+      "tags": ["LLM", "Node.js", "Web"],
+      "image": "/img/cardapio ai.png",
+      "links": ["https://github.com/solerpedroo/cardapio-inteligente"]
+    },
+    {
+      "id": "codefix_ai",
+      "name": "CodeFix AI",
+      "description": "CodeFix AI is an AI-based tool that analyzes code snippets (Python, JS, C, and others) to detect bugs, performance issues, and bad practice problems.",
+      "tags": ["LLM", "A.I", "Web"],
+      "image": "/img/codefix ai.png",
+      "links": ["https://github.com/solerpedroo/codefix-ai"]
+    },
+    {
+      "id": "quantix_ai",
+      "name": "Quantix AI",
+      "description": "QUANTIX AI is an AI-powered financial intelligence platform that analyzes assets across multiple markets (B3, US stocks, and cryptocurrencies) in real time, delivering automated technical analysis, trend-based scoring, and investment recommendations.",
+      "tags": ["LLM", "A.I", "Web", "Finance"],
+      "image": "/img/quantix ai.png",
+      "links": ["https://github.com/solerpedroo/quantix-ai"]
+    },
+    {
+      "id": "virataxis",
+      "name": "ViraTáxis — Landing page",
+      "description": "Client site for ViraTáxis in Campinas: a landing page with trip quotes using a maps API, origin and destination, and routing the request to WhatsApp. Built with HTML, CSS, and JavaScript.",
+      "tags": ["Landing page", "Maps API", "WhatsApp", "Web"],
+      "image": "/img/virataxis.png",
+      "links": ["https://www.virataxis.com/"]
+    },
+    {
+      "id": "mescla_invest",
+      "name": "Mescla Invest",
+      "description": "Mescla Invest is PUC-Campinas Integrator Project III: a Flutter mobile app that simulates a startup investment ecosystem with digital token trading. Built with Firebase (Auth, Firestore, Storage, Node.js/TypeScript Functions) and service integrations for a real-world digital product experience.",
+      "tags": ["Flutter", "Dart", "Firebase", "Node.js", "Mobile"],
+      "image": "/img/mescla_invest.png",
+      "links": ["https://github.com/solerpedroo/ES-PI3-2026-T2-G03"]
+    },
+    {
+      "id": "codegraph",
+      "name": "CodeGraph",
+      "description": "AI-powered platform that analyzes GitHub repositories or local projects, maps file dependencies, detects architectural cycles, and generates insights about system structure. Uses interactive visualization with React Flow and Dagre to turn code into actionable analysis. Speeds up documentation, onboarding, and software maintenance.",
+      "tags": ["A.I", "GitHub", "Web", "Systems"],
+      "image": "/img/codegraph.png",
+      "links": ["https://code-graph-mu.vercel.app/"]
+    },
+    {
+      "id": "eplexpress",
+      "name": "EPL Express",
+      "description": "For EPL Express, a transport and logistics company in Campinas, SP, I built with Next.js the institutional website with service showcase, FAQ, and WhatsApp lead capture, plus two internal platforms: driver management with route tracking and an admin dashboard to coordinate operations and processes.",
+      "tags": ["Next.js", "Logistics", "Systems", "WhatsApp"],
+      "image": "/img/epl.png",
+      "links": ["https://eplexpress.com.br/"]
+    },
+    {
+      "id": "reuniai",
+      "name": "ReuniAI",
+      "description": "ReuniAI turns meetings into actionable knowledge: you paste a Google Meet, Zoom, or Teams link, a bot joins the call, transcribes in real time, and AI generates summaries, decisions, action items, and follow-ups that stay organized for later search and execution.",
+      "tags": ["A.I", "LLM", "Productivity", "Transcription", "Next.js"],
+      "image": "/img/reuniai.png",
+      "links": [
+        "https://reuniai.vercel.app",
+        "https://github.com/solerpedroo/reuniai"
+      ]
+    },
+    {
+      "id": "driveflow",
+      "name": "DriveFlow",
+      "description": "DriveFlow is an offline-first Flutter app for rideshare drivers (Uber, 99, and inDrive) that centralizes earnings, costs, and shifts with Supabase and an AI assistant. With multi-platform sync, encryption, and Row Level Security from day one, it helps answer at the end of the day: was it worth it?",
+      "tags": ["Flutter", "Supabase", "A.I", "Mobile"],
+      "image": "/img/driveflow.png",
+      "links": ["https://github.com/solerpedroo/driveflow"]
+    },
+    {
+      "id": "melo_music",
+      "name": "Melo Music",
+      "description": "Melo Music is a Flutter mobile-first music notation app: compose, play, and create scores with an accessible editor, softsynth playback, and PDF export. Built with Dart, Riverpod, Drift, and SMuFL rendering for a composition experience designed for mobile.",
+      "tags": ["Flutter", "Dart", "Mobile", "Music"],
+      "image": "/img/melo_music.png",
+      "links": ["https://github.com/solerpedroo/melo_music"]
+    },
+    {
+      "id": "chronos",
+      "name": "Chronos",
+      "description": "Chronos reconstructs technical memory from local git repositories: it clusters commits into eras, summarizes why each phase happened with an LLM (Groq), and flags file criticality. Python pipeline with a Next.js UI to explore decision narratives over time — not a changelog summarizer.",
+      "tags": ["Python", "Next.js", "LLM", "GitHub"],
+      "image": "/img/chronos.png",
+      "links": ["https://github.com/solerpedroo/chronos"]
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Agibank",
+      "role": "Technology Intern",
+      "period": "August 2026 — Present",
+      "description": "",
+      "contributions": [],
+      "certificates": []
+    },
+    {
+      "company": "Nola",
+      "role": "Software Engineering Intern",
+      "period": "01/2026 - 03/2026",
+      "description": "Software Engineering internship at Nola: I supported building and maintaining systems and applications—implementation, bug fixes, and continuous improvement. I helped with testing to strengthen quality, performance, and reliability, working with the technical team and solid development practices.",
+      "contributions": [
+        "Development and maintenance of web applications using Vue.js and Nuxt.js",
+        "Feature implementation and bug fixes in production environments",
+        "Serverless architecture with AWS and Serverless Framework",
+        "Backend development with Python and Django, integrating APIs and services",
+        "Data management and operations with PostgreSQL",
+        "Docker for environment standardization and deployment",
+        "Agile practices (Scrum/Kanban) focused on continuous delivery",
+        "Testing and performance validation to ensure quality and stability",
+        "Hands-on with AI concepts and Model Context Protocol (MCP)",
+        "Mobile development with React Native and Android SDK / Android Studio"
+      ],
+      "certificates": ["52", "5", "62", "24", "41", "17"]
+    },
+    {
+      "company": "Zara Multimarcas",
+      "role": "IT Assistant",
+      "period": "2022 - 2026",
+      "description": "Family vehicle company, where I work in the technology area, responsible for developing and managing websites, technical support and maintaining social media and internal systems.",
+      "contributions": [
+        "Development and maintenance of institutional websites and internal systems",
+        "Technical support for users and infrastructure troubleshooting",
+        "Social media management and updates focused on digital presence",
+        "Technology improvements to optimize internal processes"
+      ],
+      "certificates": ["7", "6", "13", "44", "42", "58", "18"]
+    },
+    {
+      "company": "Loja Escolha Correta",
+      "role": "Founder",
+      "period": "2023 - 2024",
+      "description": "Dropshipping store created and managed by me, focused on digital marketing, sales automation and online campaign optimization.",
+      "contributions": [
+        "Creation and management of a dropshipping e-commerce store",
+        "Planning and execution of digital marketing campaigns",
+        "Sales automation and conversion funnel optimization",
+        "Ad and strategy optimization to improve performance"
+      ],
+      "certificates": ["19", "31", "56", "2", "20", "61", "53", "33"]
+    },
+    {
+      "company": "Saint Capri",
+      "role": "Founder",
+      "period": "",
+      "description": "",
+      "contributions": [],
+      "certificates": []
+    }
+  ],
+  "education": [
+    {
+      "title": "Bachelor in Software Engineering",
+      "institution": "PUC Campinas",
+      "period": "2025 - 2028"
+    },
+    {
+      "title": "High School Integrated with IT Technician",
+      "institution": "Senac Campinas",
+      "period": "2022 - 2024"
+    },
+    {
+      "title": "English Classes",
+      "institution": "English Course",
+      "period": "2014 - 2024"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Finalist Project - MaxWake",
+      "event": "11th Science and Technology Fair - 3M Institute",
+      "year": "2023"
+    },
+    {
+      "title": "3rd Place - Safe Vision",
+      "event": "Category: Computer Science - 14th Bragantec (Federal Institute of São Paulo)",
+      "year": "2024"
+    },
+    {
+      "title": "3rd Place - Safe Vision",
+      "event": "Category: Engineering - 12th Science and Technology Fair - 3M Institute",
+      "year": "2024"
+    },
+    {
+      "title": "Semifinalist Project - Safe Vision",
+      "event": "17th Empreenda Senac Edition",
+      "year": "2024"
+    },
+    {
+      "title": "2nd Place - Safe Vision",
+      "event": "12th Motiv.se PUC-Campinas - Entrepreneurship and Innovation Showcase",
+      "year": "2025"
+    }
+  ],
+  "certifications": [
+    {
+      "id": "1",
+      "title": "Metrics analysis",
+      "institution": "Bequest Digital"
+    },
+    {
+      "id": "2",
+      "title": "E-commerce metrics analysis: exploring concepts",
+      "institution": "Alura"
+    },
+    {
+      "id": "3",
+      "title": "Face analysis and classification: computer vision with OpenCV",
+      "institution": "Alura"
+    },
+    {
+      "id": "4",
+      "title": "Learning with AI: personalizing your routine with ChatGPT",
+      "institution": "Alura"
+    },
+    {
+      "id": "5",
+      "title": "Assistant in development of computational applications",
+      "institution": "Senac Campinas"
+    },
+    {
+      "id": "6",
+      "title": "Assistant in computer network operations",
+      "institution": "Senac Campinas"
+    },
+    {
+      "id": "7",
+      "title": "Assistant in computer support and maintenance",
+      "institution": "Senac Campinas"
+    },
+    {
+      "id": "8",
+      "title": "Keynote with Caito Maia - branding and digital marketing",
+      "institution": "Belas Artes & Chilli Beans"
+    },
+    {
+      "id": "9",
+      "title": "Branding: building a strong brand",
+      "institution": "Alura"
+    },
+    {
+      "id": "10",
+      "title": "Facebook Ads basics",
+      "institution": "Bequest Digital"
+    },
+    {
+      "id": "11",
+      "title": "Canva: creating business presentations",
+      "institution": "Alura"
+    },
+    {
+      "id": "12",
+      "title": "Canva: creating videos with motion graphics",
+      "institution": "Alura"
+    },
+    {
+      "id": "13",
+      "title": "Canva: digital designs for social media",
+      "institution": "Alura"
+    },
+    {
+      "id": "14",
+      "title": "Canva: create an e-book with artificial intelligence",
+      "institution": "Alura"
+    },
+    {
+      "id": "15",
+      "title": "CashFlow",
+      "institution": "Bequest Digital"
+    },
+    {
+      "id": "16",
+      "title": "ChatGPT: understanding AI in conversations and applications",
+      "institution": "Alura"
+    },
+    {
+      "id": "17",
+      "title": "ChatGPT: improving the quality of outputs",
+      "institution": "Alura"
+    },
+    {
+      "id": "18",
+      "title": "Corporate communication: using PowerPoint effectively",
+      "institution": "Alura"
+    },
+    {
+      "id": "19",
+      "title": "Building professional stores",
+      "institution": "Bequest Digital"
+    },
+    {
+      "id": "20",
+      "title": "Copywriting and persuasion: the art of selling",
+      "institution": "Bequest Digital"
+    },
+    {
+      "id": "21",
+      "title": "Copywriting: persuasive writing with artificial intelligence",
+      "institution": "Alura"
+    },
+    {
+      "id": "22",
+      "title": "Creatives that sell",
+      "institution": "Bequest Digital"
+    },
+    {
+      "id": "23",
+      "title": "Video content creation: strategies and optimizations",
+      "institution": "Alura"
+    },
+    {
+      "id": "24",
+      "title": "Build your first chatbot",
+      "institution": "IBM"
+    },
+    {
+      "id": "25",
+      "title": "Presentation design: working with PowerPoint",
+      "institution": "Alura"
+    },
+    {
+      "id": "26",
+      "title": "Design Thinking",
+      "institution": "Sebrae"
+    },
+    {
+      "id": "27",
+      "title": "Growth strategy for startups",
+      "institution": "Santander X"
+    },
+    {
+      "id": "28",
+      "title": "Excel: master the spreadsheet editor",
+      "institution": "Alura"
+    },
+    {
+      "id": "29",
+      "title": "Facebook Ads: video and messaging campaigns",
+      "institution": "Alura"
+    },
+    {
+      "id": "30",
+      "title": "Facebook Ads: remarketing campaigns",
+      "institution": "Alura"
+    },
+    {
+      "id": "31",
+      "title": "Facebook Ads: e-commerce campaigns",
+      "institution": "Alura"
+    },
+    {
+      "id": "32",
+      "title": "Facebook Ads: creating successful campaigns",
+      "institution": "Alura"
+    },
+    {
+      "id": "33",
+      "title": "Sales funnels that drive the best results",
+      "institution": "Bequest Digital"
+    },
+    {
+      "id": "34",
+      "title": "Excel functions: math operations and filters",
+      "institution": "Alura"
+    },
+    {
+      "id": "35",
+      "title": "Knowledge management: optimize search and organization of information with AI",
+      "institution": "Alura"
+    },
+    {
+      "id": "36",
+      "title": "Financial management",
+      "institution": "Sebrae"
+    },
+    {
+      "id": "37",
+      "title": "Financial management: handle your finances in practice",
+      "institution": "Alura"
+    },
+    {
+      "id": "38",
+      "title": "Artificial intelligence: digital marketing campaigns",
+      "institution": "Alura"
+    },
+    {
+      "id": "39",
+      "title": "Artificial intelligence: social media management",
+      "institution": "Alura"
+    },
+    {
+      "id": "40",
+      "title": "Artificial intelligence: personalize sales strategies with ChatGPT",
+      "institution": "Alura"
+    },
+    {
+      "id": "41",
+      "title": "Generative AI: Midjourney and ChatGPT",
+      "institution": "Alura"
+    },
+    {
+      "id": "42",
+      "title": "Digital marketing: exploring concepts",
+      "institution": "Alura"
+    },
+    {
+      "id": "43",
+      "title": "Digital marketing for your company: sales team",
+      "institution": "Alura"
+    },
+    {
+      "id": "44",
+      "title": "Social media: strategies to engage your audience",
+      "institution": "Alura"
+    },
+    {
+      "id": "45",
+      "title": "Changes and choices - paths and possibilities for deciding",
+      "institution": "Sebrae"
+    },
+    {
+      "id": "46",
+      "title": "What is email marketing?",
+      "institution": "Bequest Digital"
+    },
+    {
+      "id": "47",
+      "title": "“Se Liga” entrepreneurship workshop",
+      "institution": "PUC-Campinas"
+    },
+    {
+      "id": "48",
+      "title": "Strategic planning",
+      "institution": "G4 Educação"
+    },
+    {
+      "id": "49",
+      "title": "Digital marketing plan: how to create and coordinate strategies",
+      "institution": "Alura"
+    },
+    {
+      "id": "50",
+      "title": "Products, sourcing and supply",
+      "institution": "Bequest Digital"
+    },
+    {
+      "id": "51",
+      "title": "Financial psychology: maximizing financial potential",
+      "institution": "Alura"
+    },
+    {
+      "id": "52",
+      "title": "Python: getting started with the language",
+      "institution": "Alura"
+    },
+    {
+      "id": "53",
+      "title": "Sales page & offer",
+      "institution": "Bequest Digital"
+    },
+    {
+      "id": "54",
+      "title": "Excel visual features: exploring charts and formats",
+      "institution": "Alura"
+    },
+    {
+      "id": "55",
+      "title": "Seminar: the university of the future and the future of the university",
+      "institution": "PUC-Campinas"
+    },
+    {
+      "id": "56",
+      "title": "Social commerce: boosting sales on social networks",
+      "institution": "Alura"
+    },
+    {
+      "id": "57",
+      "title": "Storytelling as a business tool",
+      "institution": "Sebrae"
+    },
+    {
+      "id": "58",
+      "title": "Information technology",
+      "institution": "iEstudar"
+    },
+    {
+      "id": "59",
+      "title": "Facebook Ads testing",
+      "institution": "Bequest Digital"
+    },
+    {
+      "id": "60",
+      "title": "TikTok Ads: features and settings to create campaigns",
+      "institution": "Alura"
+    },
+    {
+      "id": "61",
+      "title": "Paid traffic: strategies and applications",
+      "institution": "Alura"
+    },
+    {
+      "id": "62",
+      "title": "Using generative AI for software development",
+      "institution": "IBM"
+    },
+    {
+      "id": "63",
+      "title": "Computer vision: facial analysis",
+      "institution": "Alura"
+    },
+    {
+      "id": "64",
+      "title": "Computer vision with Arduino",
+      "institution": "Hotmart - Dev Ideias"
+    },
+    {
+      "id": "65",
+      "title": "“Se Liga” argumentation workshop",
+      "institution": "PUC-Campinas"
+    },
+    {
+      "id": "66",
+      "title": "Business modeling workshop",
+      "institution": "Inova Unicamp"
+    },
+    {
+      "id": "67",
+      "title": "Ideal customer discovery and social-environmental impact business workshop",
+      "institution": "Inova Unicamp"
+    },
+    {
+      "id": "68",
+      "title": "Acceleration program - CRIA I",
+      "institution": "PUC Campinas"
+    }
+  ],
+  "activities": [
+    "2023 – 11th 3M Institute Science and Technology Fair",
+    "2024 – Expo Ecomm Campinas 2024, Startup Day 2024, Campinas Innovation Week 2024, Guest Lecture with Caito Maia - Branding & Digital Marketing",
+    "2024 – 14th Bragantec",
+    "2024 – 12th 3M Institute Science and Technology Fair, 17th Empreenda Senac Edition",
+    "2025 – Startup Day 2025, 12th Motiv.se PUC-Campinas, Campinas Innovation Week"
+  ],
+  "languages": [
+    {
+      "name": "Portuguese",
+      "level": "Native (C2)"
+    },
+    {
+      "name": "English",
+      "level": "Advanced (C1)"
+    },
+    {
+      "name": "Spanish",
+      "level": "Basic (A2)"
+    }
+  ],
+  "otherSkills": [
+    "Communication",
+    "Problem Solving",
+    "Organization & Planning",
+    "Project Leadership",
+    "Strategic Planning",
+    "Design Thinking",
+    "Project management methodologies (Agile, Scrum, Waterfall, RUP, V-model, incremental, evolutionary)",
+    "Storytelling",
+    "Advanced English",
+    "Entrepreneurship",
+    "Finance",
+    "Branding & Brand Definition",
+    "Graphic Design (Canva)",
+    "Video Editing",
+    "Digital Marketing",
+    "Social Media",
+    "Meta Ads & TikTok Ads",
+    "Paid & Organic Traffic",
+    "E-commerce Metrics Analysis",
+    "E-commerce & Dropshipping",
+    "Microsoft Office (Excel, Word, PowerPoint)"
+  ],
+  "about": [
+    "I am a Software Engineering student with hands-on experience in various technologies and a constant drive to stay up to date with the latest market trends.",
+    "My interest in technology has led me to create and manage my own projects, developing skills in management, digital marketing, and process automation. I am proactive, communicative, and always eager to learn and grow professionally.",
+    "I am open to new opportunities in the technology market, where I can apply my knowledge, develop new skills, and contribute with innovative solutions to real-world challenges. I am eager to learn, collaborate with teams, and grow professionally in a dynamic and ever-evolving environment."
+  ],
+  "title": "Software Engineering Student and IT Technician"
+}
