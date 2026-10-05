@@ -37,3 +37,41 @@ export function createSurface(columns = 26, rows = 30) {
     stars,
   };
 }
+
+// Three interrupted elliptical instruments around the field, all in one draw call.
+export function createOrbitalArchitecture(segments = 96) {
+  const orbits: number[] = [];
+  const beacons: number[] = [];
+  const rails: number[] = [];
+  for (let ring = 0; ring < 3; ring++) {
+    const radius = 3.15 + ring * 0.38;
+    const tilt = 0.4 + ring * 0.66;
+    const point = (angle: number) => {
+      const x = Math.cos(angle) * radius;
+      const z = Math.sin(angle) * radius;
+      return [x, z * Math.sin(tilt), z * Math.cos(tilt)];
+    };
+    for (let i = 0; i < segments; i++) {
+      // Gaps turn the rings into measuring arcs instead of a solid cage.
+      if ((i + ring * 11) % segments > segments * 0.83) continue;
+      orbits.push(
+        ...point((i / segments) * Math.PI * 2),
+        ...point(((i + 1) / segments) * Math.PI * 2),
+      );
+    }
+    for (let i = 0; i < 3; i++) beacons.push(...point(i * 2.1 + ring * 0.7));
+  }
+  for (let i = 0; i < 14; i++) {
+    const y = (i / 13 - 0.5) * 5.8;
+    const angle = (i / 13) * Math.PI * 1.65 - 1.1;
+    const radius = 1.75 + Math.sin((i / 13) * Math.PI) * 0.8;
+    const x = Math.cos(angle) * radius;
+    const z = Math.sin(angle) * radius;
+    rails.push(x - 0.12, y, z, x + 0.12, y, z);
+  }
+  return {
+    orbits: new Float32Array(orbits),
+    beacons: new Float32Array(beacons),
+    rails: new Float32Array(rails),
+  };
+}
