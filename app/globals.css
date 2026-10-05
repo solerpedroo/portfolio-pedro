@@ -108,6 +108,33 @@ details > summary {
 details[open] > summary .expand-sign {
   transform: rotate(45deg);
 }
+.animated-details__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+.animated-details__summary {
+  display: contents;
+}
+.animated-details__panel {
+  overflow: hidden;
+}
+.animated-details__trigger .expand-sign {
+  flex-shrink: 0;
+  transform-origin: center;
+}
+.animated-details__trigger:hover .expand-sign {
+  color: var(--accent);
+}
 .container {
   width: min(1280px, calc(100% - 112px));
   margin-inline: auto;
@@ -618,14 +645,16 @@ textarea::placeholder {
 .archive-project {
   border-bottom: 1px solid var(--line);
 }
-.archive-project > summary {
+.archive-project > summary,
+.archive-project .animated-details__trigger {
   display: grid;
   grid-template-columns: 40px 1fr 180px 24px;
   gap: 20px;
   min-height: 86px;
   padding: 14px 4px;
 }
-.archive-project > summary:hover h4 {
+.archive-project > summary:hover h4,
+.archive-project .animated-details__trigger:hover h4 {
   color: var(--accent);
   transform: translateX(5px);
 }
@@ -648,7 +677,14 @@ textarea::placeholder {
   font-size: 24px;
   font-weight: 300;
   color: var(--muted);
-  transition: transform 0.2s;
+  transition: color 0.25s ease;
+}
+.archive-project.is-open,
+.archive-project[open] {
+  transition:
+    background 0.35s ease,
+    padding 0.35s ease,
+    margin 0.35s ease;
 }
 .archive-detail {
   display: grid;
@@ -762,7 +798,8 @@ textarea::placeholder {
   margin-top: 17px;
   font-size: 12px;
 }
-.experience-details > summary {
+.experience-details > summary,
+.experience-details .animated-details__trigger {
   min-height: 44px;
 }
 .experience-details ul {
@@ -924,7 +961,9 @@ textarea::placeholder {
   margin-top: 12px;
 }
 .other-skills summary,
-.activities summary {
+.other-skills .animated-details__trigger,
+.activities summary,
+.activities .animated-details__trigger {
   padding-block: 24px;
   font-size: 14px;
 }
@@ -988,7 +1027,8 @@ textarea::placeholder {
   border-block: 1px solid var(--line);
   margin-top: 25px;
 }
-.certifications-disclosure > summary {
+.certifications-disclosure > summary,
+.certifications-disclosure .animated-details__trigger {
   min-height: 70px;
   font-size: 14px;
 }
@@ -1104,7 +1144,8 @@ textarea::placeholder {
   border-bottom: 1px solid var(--line);
   margin-top: 30px;
 }
-.contact-form-disclosure summary {
+.contact-form-disclosure summary,
+.contact-form-disclosure .animated-details__trigger {
   min-height: 64px;
   font-size: 14px;
 }
