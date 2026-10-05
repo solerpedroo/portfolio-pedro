@@ -1,6 +1,6 @@
 "use client";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Float, PerformanceMonitor } from "@react-three/drei";
+import { PerformanceMonitor } from "@react-three/drei";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   AdditiveBlending,
@@ -8,11 +8,11 @@ import {
   type Group,
   type ShaderMaterial,
 } from "three";
-import { createSurface } from "./geometry";
+import { createOrbitalArchitecture, createSurface } from "./geometry";
 const vertex = `uniform float uTime; varying float vPulse;
-void main(){ vec4 mv = modelViewMatrix * vec4(position,1.0); vPulse = .5 + .5*sin(position.y*1.8-uTime*.7); gl_PointSize = (6.0+vPulse*5.0)*(5.0/-mv.z); gl_Position = projectionMatrix*mv; }`;
+void main(){ vec4 mv = modelViewMatrix * vec4(position,1.0); vPulse = pow(.5 + .5*sin(position.y*1.8-uTime*.7), 3.0); gl_PointSize = min(10.0,(4.0+vPulse*5.0)*(5.0/max(-mv.z,1.0))); gl_Position = projectionMatrix*mv; }`;
 const fragment = `varying float vPulse;
-void main(){ float d=length(gl_PointCoord-.5); float glow=exp(-d*9.0); float core=1.0-smoothstep(.06,.2,d); gl_FragColor=vec4(mix(vec3(.05,.35,1.),vec3(.5,.85,1.),core), (glow*.65+core*.7)*(.5+vPulse*.5)); }`;
+void main(){ float d=length(gl_PointCoord-.5); float glow=exp(-d*9.0); float core=1.0-smoothstep(.06,.2,d); gl_FragColor=vec4(mix(vec3(.12,.4,1.),vec3(.7,.94,1.),core), (glow*.45+core*.65)*(.35+vPulse*.65)); }`;
 function Network({
   active,
   compact,
@@ -23,6 +23,7 @@ function Network({
   variant: string;
 }) {
   const group = useRef<Group>(null);
+  const orbit = useRef<Group>(null);
   const shader = useRef<ShaderMaterial>(null);
   const elapsed = useRef(0);
   const scroll = useRef(0);
@@ -32,6 +33,10 @@ function Network({
     [compact],
   );
   const uniforms = useMemo(() => ({ uTime: { value: 0 } }), []);
+  const architecture = useMemo(
+    () => createOrbitalArchitecture(compact ? 64 : 112),
+    [compact],
+  );
   useEffect(() => {
     const update = () => {
       scroll.current = Math.min(scrollY / innerHeight, 1.5);
@@ -64,6 +69,10 @@ function Network({
       delta,
     );
     group.current.position.y = Math.sin(t * 0.3) * 0.08;
+    if (orbit.current) {
+      orbit.current.rotation.y = t * 0.035;
+      orbit.current.rotation.z = Math.sin(t * 0.11) * 0.06;
+    }
     camera.position.z = MathUtils.damp(
       camera.position.z,
       (compact ? 11 : 10) + transition * 1.8,
@@ -74,33 +83,61 @@ function Network({
   });
   return (
     <>
-      <Float
-        speed={active ? 0.65 : 0}
-        rotationIntensity={0.08}
-        floatIntensity={0.1}
+      <group
+        ref={group}
+        rotation={[0.14, -0.7, -0.3]}
+        scale={
+          variant === "contact"
+            ? 0.85
+            : variant === "transition"
+              ? [1.4, 0.65, 1]
+              : 1
+        }
       >
-        <group
-          ref={group}
-          rotation={[0.14, -0.7, -0.3]}
-          scale={
-            variant === "contact"
-              ? 0.85
-              : variant === "transition"
-                ? [1.4, 0.65, 1]
-                : 1
-          }
-        >
+        <lineSegments>
+          <bufferGeometry>
+            <bufferAttribute
+              attach="attributes-position"
+              args={[data.connections, 3]}
+            />
+          </bufferGeometry>
+          <lineBasicMaterial
+            color="#2781ff"
+            transparent
+            opacity={0.21}
+            blending={AdditiveBlending}
+            depthWrite={false}
+          />
+        </lineSegments>
+        <points>
+          <bufferGeometry>
+            <bufferAttribute
+              attach="attributes-position"
+              args={[data.positions, 3]}
+            />
+          </bufferGeometry>
+          <shaderMaterial
+            ref={shader}
+            vertexShader={vertex}
+            fragmentShader={fragment}
+            uniforms={uniforms}
+            transparent
+            blending={AdditiveBlending}
+            depthWrite={false}
+          />
+        </points>
+        <group ref={orbit}>
           <lineSegments>
             <bufferGeometry>
               <bufferAttribute
                 attach="attributes-position"
-                args={[data.connections, 3]}
+                args={[architecture.orbits, 3]}
               />
             </bufferGeometry>
             <lineBasicMaterial
-              color="#2781ff"
+              color="#73aaff"
               transparent
-              opacity={0.27}
+              opacity={0.18}
               blending={AdditiveBlending}
               depthWrite={false}
             />
@@ -109,21 +146,34 @@ function Network({
             <bufferGeometry>
               <bufferAttribute
                 attach="attributes-position"
-                args={[data.positions, 3]}
+                args={[architecture.beacons, 3]}
               />
             </bufferGeometry>
-            <shaderMaterial
-              ref={shader}
-              vertexShader={vertex}
-              fragmentShader={fragment}
-              uniforms={uniforms}
+            <pointsMaterial
+              color="#bbebff"
+              size={compact ? 0.055 : 0.045}
               transparent
+              opacity={0.85}
               blending={AdditiveBlending}
               depthWrite={false}
             />
           </points>
         </group>
-      </Float>
+        <lineSegments>
+          <bufferGeometry>
+            <bufferAttribute
+              attach="attributes-position"
+              args={[architecture.rails, 3]}
+            />
+          </bufferGeometry>
+          <lineBasicMaterial
+            color="#b4d8ff"
+            transparent
+            opacity={0.55}
+            depthWrite={false}
+          />
+        </lineSegments>
+      </group>
       <points>
         <bufferGeometry>
           <bufferAttribute
@@ -160,10 +210,15 @@ export default function NetworkScene({
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    canvas.addEventListener("webglcontextlost", onFailure);
+    const contextLost = () => {
+      // R3F disposes the context after a canvas leaves the viewport.
+      // That detached canvas must not mark the next scene as failed.
+      if (canvas.isConnected) onFailure();
+    };
+    canvas.addEventListener("webglcontextlost", contextLost);
     canvas.setAttribute("data-scene-ready", "true");
     return () => {
-      canvas.removeEventListener("webglcontextlost", onFailure);
+      canvas.removeEventListener("webglcontextlost", contextLost);
       canvas.removeAttribute("data-scene-ready");
     };
   }, [canvasReady, onFailure]);
