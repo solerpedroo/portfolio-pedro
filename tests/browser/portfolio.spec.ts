@@ -45,7 +45,7 @@ test("desktop: content, WebGL, filters, downloads, navigation and accessibility"
   await expect(page).toHaveURL(/#projects$/);
   await page.locator(".project-archive input").fill("Chronos");
   await expect(page.locator(".archive-project")).toHaveCount(1);
-  await page.locator(".archive-project summary").click();
+  await page.locator(".archive-project .animated-details__trigger").first().click();
   await expect(page.locator(".archive-detail")).toBeVisible();
   await page.locator(".project-archive input").fill("no-project-xyz");
   await expect(page.locator(".empty-state")).toBeVisible();
@@ -54,7 +54,7 @@ test("desktop: content, WebGL, filters, downloads, navigation and accessibility"
   await expect(page.locator(".archive-project")).toHaveCount(2);
   await page.getByRole("button", { name: "Todos", exact: true }).click();
   await expect(page.locator(".archive-project")).toHaveCount(16);
-  await page.locator(".certifications-disclosure > summary").click();
+  await page.locator(".certifications-disclosure .animated-details__trigger").click();
   await expect(page.locator(".certificates-grid article")).toHaveCount(68);
   await page
     .getByRole("searchbox", { name: "Buscar certificação ou instituição" })
@@ -173,7 +173,7 @@ test("contact: validation, success and failure without sending real messages", a
   page,
 }) => {
   await page.goto("/pt");
-  await page.locator(".contact-form-disclosure > summary").click();
+  await page.locator(".contact-form-disclosure .animated-details__trigger").click();
   await page
     .getByRole("button", { name: "Enviar mensagem", exact: true })
     .click();
