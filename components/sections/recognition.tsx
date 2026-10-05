@@ -3,7 +3,6 @@ import type { UI } from "@/data/interface";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { Certifications } from "./certifications";
-import { AnimatedDetails } from "@/components/ui/animated-details";
 
 export function Recognition({ content, ui }: { content: Content; ui: UI }) {
   const awards = content.awards.slice().reverse();
@@ -25,7 +24,9 @@ export function Recognition({ content, ui }: { content: Content; ui: UI }) {
         <div className="awards-showcase">
           {awards.map((award, index) => (
             <Reveal key={`${award.year}-${award.title}-${award.event}`}>
-              <article className="award-card">
+              <article
+                className={`award-card${index === 0 ? " award-card-lead" : ""}`}
+              >
                 <div className="award-card-head">
                   <span className="award-index mono">
                     {String(index + 1).padStart(2, "0")}
@@ -50,21 +51,10 @@ export function Recognition({ content, ui }: { content: Content; ui: UI }) {
               download: ui.certificatesDownload,
               more: ui.more,
               empty: ui.empty,
+              intro: ui.certificatesIntro,
+              institutions: ui.institutions,
             }}
           />
-        </Reveal>
-        <Reveal>
-          <AnimatedDetails
-            id="activities"
-            className="activities activities-panel"
-            summary={ui.activities}
-          >
-            <ul className="activities-list">
-              {content.activities.map((activity) => (
-                <li key={activity}>{activity}</li>
-              ))}
-            </ul>
-          </AnimatedDetails>
         </Reveal>
       </div>
     </section>
