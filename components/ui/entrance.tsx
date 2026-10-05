@@ -3,23 +3,31 @@ import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { EntranceFallback } from "@/components/three/entrance-fallback";
 
-const EntranceScene = dynamic(() => import("@/components/three/entrance-scene"), {
-  ssr: false,
-});
+const EntranceScene = dynamic(
+  () => import("@/components/three/entrance-scene"),
+  {
+    ssr: false,
+    loading: () => <EntranceFallback exiting={false} />,
+  },
+);
 
 function detectWebgl() {
   const canvas = document.createElement("canvas");
   try {
-    return !!canvas.getContext("webgl2") || !!canvas.getContext("webgl");
+    const context = canvas.getContext("webgl2") ?? canvas.getContext("webgl");
+    const supported = !!context;
+    context?.getExtension("WEBGL_lose_context")?.loseContext();
+    return supported;
   } catch {
     return false;
   }
 }
 
-export function Entrance() {
+export function Entrance({ label }: { label: string }) {
   const root = useRef<HTMLDivElement>(null);
   const [exiting, setExiting] = useState(false);
   const [webgl, setWebgl] = useState(false);
+  const [finished, setFinished] = useState(false);
 
   useEffect(() => {
     const node = root.current;
@@ -36,15 +44,16 @@ export function Entrance() {
     }
 
     const mobile = matchMedia("(max-width: 767px)");
-    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } })
-      .connection?.saveData;
+    const saveData = (
+      navigator as Navigator & { connection?: { saveData?: boolean } }
+    ).connection?.saveData;
     const frame = requestAnimationFrame(() => {
       if (!mobile.matches && !saveData) setWebgl(detectWebgl());
     });
 
     const reveal = window.setTimeout(() => setExiting(true), 1150);
     const finish = window.setTimeout(() => {
-      node?.classList.add("is-done");
+      setFinished(true);
     }, 2150);
     return () => {
       cancelAnimationFrame(frame);
@@ -52,6 +61,8 @@ export function Entrance() {
       window.clearTimeout(finish);
     };
   }, []);
+
+  if (finished) return null;
 
   return (
     <div
@@ -61,9 +72,17 @@ export function Entrance() {
     >
       <div className="entrance-backdrop" />
       <div className="entrance-scene">
-        {webgl ? <EntranceScene exiting={exiting} /> : <EntranceFallback exiting={exiting} />}
+        {webgl ? (
+          <EntranceScene exiting={exiting} />
+        ) : (
+          <EntranceFallback exiting={exiting} />
+        )}
       </div>
       <div className="entrance-grid" aria-hidden="true" />
+      <div className="entrance-masthead mono">
+        <span>{label}</span>
+        <span>+ &nbsp; FIG. 01</span>
+      </div>
       <div className="entrance-copy">
         <div className="entrance-ring" aria-hidden="true" />
         <div className="entrance-monogram">
@@ -73,6 +92,11 @@ export function Entrance() {
         <span className="entrance-name mono">PEDRO SOLER</span>
         <span className="entrance-tag mono">SOFTWARE · AI · VISION</span>
         <span className="entrance-line" />
+      </div>
+      <div className="entrance-caption mono">
+        <span>SOFTWARE ENGINEERING</span>
+        <span>×</span>
+        <span>ARTIFICIAL INTELLIGENCE</span>
       </div>
     </div>
   );
