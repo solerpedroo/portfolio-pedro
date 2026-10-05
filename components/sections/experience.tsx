@@ -28,10 +28,16 @@ export function Experience({ content, ui }: { content: Content; ui: UI }) {
                 className={`experience-item ${index === 0 ? "experience-current" : ""}`}
               >
                 <div className="experience-meta">
-                  <span className="timeline-dot" />
+                  <span className="experience-index mono" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                   <p className="mono">{job.period}</p>
                   {index === 0 && (
                     <span className="current-indicator mono">
+                      <span
+                        className="experience-status-dot"
+                        aria-hidden="true"
+                      />
                       {ui.currentRole}
                     </span>
                   )}
