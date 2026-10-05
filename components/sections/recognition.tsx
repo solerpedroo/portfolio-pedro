@@ -1,9 +1,12 @@
 import type { Content } from "@/types/content";
 import type { UI } from "@/data/interface";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Reveal } from "@/components/ui/reveal";
 import { Certifications } from "./certifications";
 import { AnimatedDetails } from "@/components/ui/animated-details";
+
 export function Recognition({ content, ui }: { content: Content; ui: UI }) {
+  const awards = content.awards.slice().reverse();
   return (
     <section
       id="awards"
@@ -16,44 +19,53 @@ export function Recognition({ content, ui }: { content: Content; ui: UI }) {
             number="04"
             label={ui.recognition}
             title={ui.recognitionTitle}
+            description={ui.recognitionIntro}
           />
         </div>
-        <div className="awards-list">
-          {content.awards
-            .slice()
-            .reverse()
-            .map((award) => (
-              <article key={award.event} className="award-row">
-                <span className="mono">{award.year}</span>
+        <div className="awards-showcase">
+          {awards.map((award, index) => (
+            <Reveal key={`${award.year}-${award.title}-${award.event}`}>
+              <article className="award-card">
+                <div className="award-card-head">
+                  <span className="award-index mono">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="award-year mono">{award.year}</span>
+                  <span className="award-symbol" aria-hidden="true">
+                    ✳
+                  </span>
+                </div>
                 <h3>{award.title}</h3>
-                <p>{award.event}</p>
-                <span className="award-symbol" aria-hidden="true">
-                  ✳
-                </span>
+                <p className="award-event">{award.event}</p>
               </article>
-            ))}
+            </Reveal>
+          ))}
         </div>
-        <Certifications
-          certificates={content.certifications}
-          labels={{
-            title: ui.certifications,
-            search: ui.certificatesSearch,
-            download: ui.certificatesDownload,
-            more: ui.more,
-            empty: ui.empty,
-          }}
-        />
-        <AnimatedDetails
-          id="activities"
-          className="activities"
-          summary={ui.activities}
-        >
-          <ul>
-            {content.activities.map((a) => (
-              <li key={a}>{a}</li>
-            ))}
-          </ul>
-        </AnimatedDetails>
+        <Reveal>
+          <Certifications
+            certificates={content.certifications}
+            labels={{
+              title: ui.certifications,
+              search: ui.certificatesSearch,
+              download: ui.certificatesDownload,
+              more: ui.more,
+              empty: ui.empty,
+            }}
+          />
+        </Reveal>
+        <Reveal>
+          <AnimatedDetails
+            id="activities"
+            className="activities activities-panel"
+            summary={ui.activities}
+          >
+            <ul className="activities-list">
+              {content.activities.map((activity) => (
+                <li key={activity}>{activity}</li>
+              ))}
+            </ul>
+          </AnimatedDetails>
+        </Reveal>
       </div>
     </section>
   );
