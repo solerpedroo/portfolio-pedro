@@ -2,6 +2,16 @@
 
 Registro do que foi verificado na migração para Next.js e como repetir os checks localmente. Nenhum teste envia mensagens reais de contato.
 
+## Acabamento visual — 5 de outubro de 2026
+
+Revisão distribuída entre três subagentes: cenas Three.js, seções de apoio e revisão independente. O acabamento unifica cabeçalhos, cartões, superfícies, ações e estados de foco; adapta formação e idiomas no tablet; corrige o arquivo de projetos no mobile. As cenas incorporam arcos orbitais, pontos luminosos e calibração, com SVG equivalente e seis chamadas de desenho.
+
+Correções confirmadas: abertura desmontada ao terminar, pausa completa da cena, retorno ao WebGL após rolar no mobile e contraste do botão de currículo. O descarte de um canvas fora da tela não é tratado como falha da próxima cena.
+
+Validação final em produção local na porta 3100: build, lint, TypeScript, seis testes de conteúdo e cinco testes de navegador aprovados. Os testes de navegador incluem acessibilidade automatizada, movimento reduzido, ausência de WebGL, recuperação de contexto, filtros, downloads, idiomas, formulário interceptado e larguras de 360 a 1920 pixels.
+
+Composição inspecionada em capturas de desktop, projetos, formação, stack, contato e mobile em `artifacts/final-*.png`. Capturas são artefatos locais ignorados pelo Git.
+
 ## Comandos rápidos
 
 ```sh
