@@ -1,0 +1,278 @@
+/* Final shared visual language, layered after section-specific styles. */
+:root {
+  --panel-radius: 12px;
+  --panel-border: #253a56;
+  --panel-sheen: #8dcaff;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+.section-description,
+.hero-intro,
+.panel-intro {
+  text-wrap: pretty;
+}
+.section-heading .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.section-heading .eyebrow > span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 32px;
+  height: 28px;
+  border: 1px solid #345982;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #10284b, #071222);
+  letter-spacing: 0;
+  font-size: 10px;
+}
+.section-heading .eyebrow::after {
+  content: "";
+  width: 64px;
+  height: 1px;
+  background: linear-gradient(90deg, #365c8c, transparent);
+}
+.section-heading h2 {
+  margin-top: 22px;
+}
+.hero-eyebrow .tiny-cross {
+  color: #91cbff;
+}
+.headline-mask {
+  /* Leave room for Portuguese accents and descenders during the reveal. */
+  padding-bottom: 0.22em;
+  margin-bottom: -0.22em;
+}
+.hero-intro {
+  font-size: 15px;
+  color: #b2c0d6;
+}
+.hero-copy {
+  pointer-events: auto;
+}
+.scroll-cue {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.site-header {
+  box-shadow:
+    inset 0 1px 0 #b8dcff08,
+    0 10px 40px #0002;
+}
+.locale-switch a {
+  min-width: 32px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-links a[aria-current] {
+  color: #c0dfff;
+}
+.nav-links a:last-child[aria-current] {
+  background: #1473ff20;
+  border-color: #6099df;
+}
+.button-primary {
+  border-radius: 7px;
+}
+.cv-download-primary .cv-download-cta {
+  color: #071222;
+  background: #8fc9ff;
+}
+.cv-download-primary:hover .cv-download-cta {
+  color: #071222;
+  background: #b6ddff;
+}
+.case-header a.case-cross {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #294363;
+  border-radius: 50%;
+  color: #90bce9;
+}
+.case-header a.case-cross svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s var(--ease-out);
+}
+.case-header a.case-cross:hover {
+  background: #0f2847;
+  border-color: #659cd7;
+  color: #d3edff;
+}
+.case-header a.case-cross:hover svg {
+  transform: translate(2px, -2px);
+}
+.case-preview .project-image,
+.about-portrait-frame {
+  border-radius: var(--panel-radius);
+  box-shadow:
+    inset 0 1px 0 #c5e2ff0c,
+    0 28px 65px #0005;
+}
+.preview-chrome {
+  position: absolute;
+  top: 27px;
+  right: 76px;
+  display: flex;
+  gap: 6px;
+  z-index: 1;
+}
+.preview-chrome i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #537398;
+}
+.preview-chrome i:last-child {
+  background: #8fc9ff;
+  box-shadow: 0 0 9px #5aabff60;
+}
+.portrait-locator {
+  position: absolute;
+  bottom: 20px;
+  right: 24px;
+  font-size: 28px;
+  color: #d5eaff;
+  text-shadow: 0 1px 8px #030711;
+  z-index: 2;
+}
+.education-panel,
+.languages-panel,
+.skills-section,
+.skill-group-card,
+.award-card,
+.activities-panel,
+.cv-download,
+.language-card {
+  border-radius: var(--panel-radius);
+}
+.education-panel,
+.languages-panel,
+.skills-section {
+  position: relative;
+  border-color: var(--panel-border);
+  background:
+    radial-gradient(ellipse at 100% 0, #163e6b1a, transparent 55%),
+    linear-gradient(150deg, #0a1525, #060c18 65%);
+}
+.education-panel::before,
+.languages-panel::before,
+.skills-section::before {
+  content: "";
+  position: absolute;
+  inset: -1px 28px auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #719fce70, transparent);
+  pointer-events: none;
+}
+.education-languages {
+  align-items: stretch;
+  gap: 32px;
+}
+.education-languages > div,
+.education-panel,
+.languages-panel {
+  height: 100%;
+}
+.language-stack {
+  gap: 14px;
+}
+.education-mark {
+  font-family: var(--font-mono), monospace;
+  font-size: 20px;
+}
+.education-card:hover .education-mark {
+  transform: rotate(90deg);
+}
+.skill-group-card {
+  background: linear-gradient(140deg, #0c192b88, #060c18aa);
+}
+.site-footer {
+  border-top-color: #253a56;
+}
+
+@media (max-width: 1100px) and (min-width: 768px) {
+  .nav-links {
+    gap: 14px;
+  }
+  .nav-tools {
+    gap: 12px;
+  }
+  .wordmark-name {
+    display: none;
+  }
+  .featured-about {
+    gap: 32px;
+  }
+  .education-languages {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .hero-intro {
+    font-size: 14px;
+  }
+  .hero-discipline {
+    line-height: 1.9;
+  }
+  .section-heading h2 {
+    font-size: clamp(34px, 8vw, 48px);
+  }
+  .section-heading .eyebrow {
+    gap: 10px;
+  }
+  .section-heading .eyebrow::after {
+    width: 30px;
+  }
+  .case-header a.case-cross {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+  .case-header a.case-cross svg {
+    width: 18px;
+    height: 18px;
+  }
+  .preview-chrome {
+    top: 22px;
+    right: 66px;
+  }
+  .project-image-index {
+    max-width: calc(100% - 85px);
+    font-size: 8px;
+  }
+  .education-languages {
+    gap: 24px;
+  }
+  .education-panel,
+  .languages-panel {
+    padding: 24px 20px;
+  }
+  .skills-section {
+    padding: 24px 20px 20px;
+  }
+  .cv-download {
+    padding: 16px;
+    gap: 12px;
+  }
+  .cv-download-primary .cv-download-cta {
+    padding: 10px 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .case-header a.case-cross:hover svg,
+  .education-card:hover .education-mark {
+    transform: none;
+  }
+}
