@@ -6,6 +6,9 @@ import { siteUrl } from "@/lib/site";
 import { getUI } from "@/data/interface";
 import "@/app/globals.css";
 import "@/app/experience.css";
+import "@/app/section-polish.css";
+import "@/app/polish.css";
+import "@/app/collection.css";
 const sans = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
