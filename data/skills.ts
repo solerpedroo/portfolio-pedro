@@ -18,6 +18,7 @@ export const skillGroups = [
       "HTML",
       "CSS",
       "JavaScript",
+      "Java",
       "TypeScript",
       "Next.js",
       "Vue.js",
