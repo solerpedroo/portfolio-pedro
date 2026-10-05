@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import type { Project } from "@/types/content";
 import { Arrow } from "@/components/ui/arrow";
+import { AnimatedDetails } from "@/components/ui/animated-details";
 export function ProjectArchive({
   projects,
   labels,
@@ -90,19 +91,21 @@ export function ProjectArchive({
       </div>
       <div className="archive-list">
         {filtered.map((project, i) => (
-          <details className="archive-project" key={project.id}>
-            <summary>
-              <span className="archive-number mono">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h4>{project.name}</h4>
-              <span className="archive-tag mono">
-                {project.tags.slice(0, 2).join(" / ")}
-              </span>
-              <span className="expand-sign" aria-hidden="true">
-                +
-              </span>
-            </summary>
+          <AnimatedDetails
+            className="archive-project"
+            key={project.id}
+            summary={
+              <>
+                <span className="archive-number mono">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h4>{project.name}</h4>
+                <span className="archive-tag mono">
+                  {project.tags.slice(0, 2).join(" / ")}
+                </span>
+              </>
+            }
+          >
             <div className="archive-detail">
               <div className="archive-image">
                 <Image
@@ -137,7 +140,7 @@ export function ProjectArchive({
                 </div>
               </div>
             </div>
-          </details>
+          </AnimatedDetails>
         ))}
         {filtered.length === 0 && <p className="empty-state">{labels.empty}</p>}
       </div>
