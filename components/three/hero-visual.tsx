@@ -7,7 +7,7 @@ const NetworkScene = dynamic(() => import("./network-scene"), {
   loading: () => <SurfaceFallback />,
 });
 class SceneBoundary extends Component<
-  { children: ReactNode },
+  { children: ReactNode; variant: string },
   { failed: boolean }
 > {
   state = { failed: false };
@@ -15,7 +15,11 @@ class SceneBoundary extends Component<
     return { failed: true };
   }
   render() {
-    return this.state.failed ? <SurfaceFallback /> : this.props.children;
+    return this.state.failed ? (
+      <SurfaceFallback variant={this.props.variant} />
+    ) : (
+      this.props.children
+    );
   }
 }
 export function HeroVisual({
@@ -48,8 +52,7 @@ export function HeroVisual({
       if (!reduced.matches && !device.connection?.saveData) {
         const canvas = document.createElement("canvas");
         try {
-          const gl =
-            canvas.getContext("webgl2") ?? canvas.getContext("webgl");
+          const gl = canvas.getContext("webgl2") ?? canvas.getContext("webgl");
           supported = !!gl;
           gl?.getExtension("WEBGL_lose_context")?.loseContext();
         } catch {
@@ -86,7 +89,13 @@ export function HeroVisual({
   return (
     <div className={`hero-visual visual-${variant}`} ref={host}>
       <div className="visual-topline mono">
-        <span>{variant === "hero" ? "FIG. 01" : "FIG. 02"}</span>
+        <span>
+          {variant === "hero"
+            ? "FIG. 01"
+            : variant === "transition"
+              ? "FIG. 02"
+              : "FIG. 03"}
+        </span>
         <span>{labels.scene}</span>
         <span className="crosshair">+</span>
       </div>
@@ -94,7 +103,7 @@ export function HeroVisual({
         <div className="scene-axis axis-y" />
         <div className="scene-axis axis-x" />
         {enabled && visible && !failed ? (
-          <SceneBoundary>
+          <SceneBoundary variant={variant}>
             <NetworkScene
               active={pageVisible && !paused}
               compact={capability.compact}
@@ -103,7 +112,7 @@ export function HeroVisual({
             />
           </SceneBoundary>
         ) : (
-          <SurfaceFallback />
+          <SurfaceFallback variant={variant} />
         )}
       </div>
       <div className="visual-bottomline mono">
