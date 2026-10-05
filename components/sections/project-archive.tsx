@@ -65,11 +65,12 @@ export function ProjectArchive({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={labels.search}
+            autoComplete="off"
           />
         </label>
       </div>
       <div className="archive-controls">
-        <div className="filter-tabs" aria-label={labels.title}>
+        <div className="filter-tabs" role="group" aria-label={labels.title}>
           {[
             { id: "all", name: labels.all },
             { id: "ai", name: "AI" },
@@ -78,6 +79,7 @@ export function ProjectArchive({
           ].map((c) => (
             <button
               key={c.id}
+              type="button"
               aria-pressed={category === c.id}
               onClick={() => setCategory(c.id)}
             >
@@ -90,14 +92,25 @@ export function ProjectArchive({
         </span>
       </div>
       <div className="archive-list">
-        {filtered.map((project, i) => (
+        {filtered.map((project) => (
           <AnimatedDetails
             className="archive-project"
             key={project.id}
             summary={
               <>
+                <span className="archive-thumbnail">
+                  <Image
+                    src={project.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 767px) 90vw, 42vw"
+                  />
+                  <span className="archive-thumbnail-grid" aria-hidden="true" />
+                </span>
                 <span className="archive-number mono">
-                  {String(i + 1).padStart(2, "0")}
+                  {String(
+                    projects.findIndex((entry) => entry.id === project.id) + 1,
+                  ).padStart(2, "0")}
                 </span>
                 <h4>{project.name}</h4>
                 <span className="archive-tag mono">
@@ -107,14 +120,6 @@ export function ProjectArchive({
             }
           >
             <div className="archive-detail">
-              <div className="archive-image">
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  fill
-                  sizes="(max-width: 767px) 90vw, 350px"
-                />
-              </div>
               <div>
                 <p>{project.description}</p>
                 <ul className="project-tags">
@@ -122,7 +127,7 @@ export function ProjectArchive({
                     <li key={tag}>{tag}</li>
                   ))}
                 </ul>
-                <div className="flex flex-wrap gap-6">
+                <div className="archive-project-links">
                   {project.links.map((href) => (
                     <a
                       className="text-link"
