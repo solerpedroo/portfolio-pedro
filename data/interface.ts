@@ -36,6 +36,14 @@ const pt = {
   related: "Certificações relacionadas",
   aboutTitle: "Curiosidade como ponto de partida.",
   aboutLabel: "Por trás do código",
+  aboutIntro:
+    "Quem está por trás dos projetos, da stack e das entregas — com currículos prontos para compartilhar.",
+  profileEyebrow: "PERFIL / SOFTWARE & IA",
+  downloadLead: "Baixe o currículo na versão que fizer sentido para a vaga.",
+  cvTech: "Área de tecnologia · PDF",
+  cvEn: "Technology field · PDF",
+  cvGeneral: "Versão completa · PDF",
+  downloadCta: "Baixar",
   interests: "Interesses",
   interestText:
     "Inteligência Artificial · Visão Computacional · Arquitetura de Software · Desenvolvimento de Produtos",
@@ -109,6 +117,14 @@ const en: UI = {
   related: "Related certifications",
   aboutTitle: "It starts with curiosity.",
   aboutLabel: "Behind the code",
+  aboutIntro:
+    "The person behind the projects, stack and deliveries — with résumés ready to share.",
+  profileEyebrow: "PROFILE / SOFTWARE & AI",
+  downloadLead: "Download the résumé version that fits the role.",
+  cvTech: "Technology focus · PDF",
+  cvEn: "Technology field · PDF",
+  cvGeneral: "Full version · PDF",
+  downloadCta: "Download",
   interests: "Interests",
   interestText:
     "Artificial Intelligence · Computer Vision · Software Architecture · Product Development",
@@ -181,6 +197,14 @@ const es: UI = {
   related: "Certificaciones relacionadas",
   aboutTitle: "Todo empieza con curiosidad.",
   aboutLabel: "Detrás del código",
+  aboutIntro:
+    "Quién está detrás de los proyectos, el stack y las entregas — con currículos listos para compartir.",
+  profileEyebrow: "PERFIL / SOFTWARE E IA",
+  downloadLead: "Descarga la versión del currículo que encaje con la vacante.",
+  cvTech: "Área de tecnología · PDF",
+  cvEn: "Technology field · PDF",
+  cvGeneral: "Versión completa · PDF",
+  downloadCta: "Descargar",
   interests: "Intereses",
   interestText:
     "Inteligencia Artificial · Visión por Computadora · Arquitectura de Software · Desarrollo de Productos",
