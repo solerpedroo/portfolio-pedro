@@ -114,50 +114,82 @@ export function About({ content, ui }: { content: Content; ui: UI }) {
         </article>
       </Reveal>
       <div className="education-languages">
-        <div id="education">
-          <h3 className="minor-heading">{ui.education}</h3>
-          {content.education.map((e) => (
-            <article className="education-row" key={e.title}>
-              <span className="mono">{e.period}</span>
-              <div>
-                <h4>{e.title}</h4>
-                <p>{e.institution}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-        <div id="languages">
-          <h3 className="minor-heading">{ui.languages}</h3>
-          {content.languages.map((l) => (
-            <div className="language-row" key={l.name}>
-              <span>{l.name}</span>
-              <span className="mono">{l.level}</span>
+        <Reveal>
+          <div id="education" className="education-panel">
+            <header className="education-heading">
+              <p className="eyebrow">{ui.educationLabel}</p>
+              <h3>{ui.educationTitle}</h3>
+              <p className="panel-intro">{ui.educationIntro}</p>
+            </header>
+            <div className="education-stack">
+              {content.education.map((entry, index) => (
+                <article className="education-card" key={entry.title}>
+                  <span className="education-index mono">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div className="education-card-body">
+                    <span className="education-period mono">{entry.period}</span>
+                    <h4>{entry.title}</h4>
+                    <p>{entry.institution}</p>
+                  </div>
+                  <span className="education-mark" aria-hidden="true">
+                    ↗
+                  </span>
+                </article>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        </Reveal>
+        <Reveal>
+          <div id="languages" className="languages-panel">
+            <header className="languages-heading">
+              <p className="eyebrow">{ui.languages}</p>
+              <p className="panel-intro">{ui.languagesIntro}</p>
+            </header>
+            <ul className="language-stack">
+              {content.languages.map((language) => (
+                <li className="language-card" key={language.name}>
+                  <span className="language-name">{language.name}</span>
+                  <span className="mono language-level">{language.level}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
       </div>
-      <div id="skills" className="skills-section">
-        <div className="skills-heading">
-          <p className="eyebrow">{ui.skills}</p>
-          <h3>{ui.skillsTitle}</h3>
-        </div>
-        <div className="skill-groups">
-          {skillGroups.map((group, index) => (
-            <div className="skill-row" key={group.name}>
-              <span className="mono">0{index + 1}</span>
-              <h4>{group.name}</h4>
-              <p>{group.items.join(" · ")}</p>
-            </div>
-          ))}
-        </div>
-        <AnimatedDetails className="other-skills" summary={ui.otherSkills}>
-          <ul>
-            {content.otherSkills.map((skill) => (
-              <li key={skill}>{skill}</li>
+      <Reveal>
+        <div id="skills" className="skills-section">
+          <header className="skills-heading">
+            <p className="eyebrow">{ui.skills}</p>
+            <h3>{ui.skillsTitle}</h3>
+            <p className="panel-intro">{ui.skillsIntro}</p>
+          </header>
+          <div className="skill-groups-grid">
+            {skillGroups.map((group, index) => (
+              <article className="skill-group-card" key={group.name}>
+                <div className="skill-group-head">
+                  <span className="skill-group-index mono">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h4>{group.name}</h4>
+                </div>
+                <ul className="skill-chip-list" aria-label={group.name}>
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
             ))}
-          </ul>
-        </AnimatedDetails>
-      </div>
+          </div>
+          <AnimatedDetails className="other-skills" summary={ui.otherSkills}>
+            <ul className="other-skills-grid">
+              {content.otherSkills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          </AnimatedDetails>
+        </div>
+      </Reveal>
     </section>
   );
 }
