@@ -11,12 +11,13 @@ import { Experience } from "@/components/sections/experience";
 import { About } from "@/components/sections/about";
 import { Recognition } from "@/components/sections/recognition";
 import { Contact } from "@/components/sections/contact";
+import { Activities } from "@/components/sections/activities";
 export function Portfolio({ locale }: { locale: Locale }) {
   const content = getContent(locale);
   const ui = getUI(locale);
   return (
     <>
-      <Entrance />
+      <Entrance label={ui.eyebrow} />
       <ExperienceEffects />
       <a className="skip-link" href="#main-content">
         {ui.skip}
@@ -39,6 +40,7 @@ export function Portfolio({ locale }: { locale: Locale }) {
         <Experience content={content} ui={ui} />
         <About content={content} ui={ui} />
         <Recognition content={content} ui={ui} />
+        <Activities activities={content.activities} ui={ui} />
         <Contact ui={ui} />
       </main>
       <footer className="site-footer container">
