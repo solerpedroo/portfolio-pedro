@@ -4,8 +4,16 @@ import type { UI } from "@/data/interface";
 import { skillGroups } from "@/data/skills";
 import { downloads } from "@/data/socials";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { InteractiveFrame } from "@/components/ui/interactive-frame";
+import { Reveal } from "@/components/ui/reveal";
 import { Arrow } from "@/components/ui/arrow";
+import { portrait } from "@/lib/portrait";
+import { AnimatedDetails } from "@/components/ui/animated-details";
+
+const cvSubtitles = (ui: UI) => [ui.cvTech, ui.cvEn, ui.cvGeneral];
+
 export function About({ content, ui }: { content: Content; ui: UI }) {
+  const cvDetails = cvSubtitles(ui);
   return (
     <section
       id="about"
@@ -17,47 +25,94 @@ export function About({ content, ui }: { content: Content; ui: UI }) {
           number="03"
           label={ui.aboutLabel}
           title={ui.aboutTitle}
+          description={ui.aboutIntro}
         />
       </div>
-      <div className="about-grid">
-        <div className="portrait-wrap">
-          <Image
-            src="/img/foto_pedro.jpeg"
-            alt="Pedro Henrique Contardi Soler"
-            width={640}
-            height={760}
-            sizes="(max-width: 767px) 90vw, 360px"
-            className="portrait"
-          />
-          <div className="portrait-caption">
-            <span className="mono">PEDRO SOLER</span>
-            <span aria-hidden="true">↗</span>
+      <Reveal>
+        <article className="featured-about" aria-labelledby="about-name">
+          <div className="case-header about-profile-header">
+            <span className="case-number" aria-hidden="true">
+              03
+            </span>
+            <div>
+              <p className="eyebrow">{ui.profileEyebrow}</p>
+              <h3 id="about-name">
+                Pedro Henrique
+                <br />
+                Contardi Soler<span className="brand-dot">.</span>
+              </h3>
+            </div>
+            <span className="case-cross" aria-hidden="true">
+              ↗
+            </span>
           </div>
-        </div>
-        <div className="about-copy">
-          <h3>
-            Pedro Henrique
-            <br />
-            Contardi Soler<span className="brand-dot">.</span>
-          </h3>
-          <p className="about-role">{content.title}</p>
-          {content.about.slice(0, 2).map((p) => (
-            <p key={p}>{p}</p>
-          ))}
-          <div className="interests">
-            <span className="eyebrow">{ui.interests}</span>
-            <p>{ui.interestText}</p>
-          </div>
-          <div className="download-links" aria-label={ui.downloads}>
-            {downloads.map((d) => (
-              <a key={d.href} href={d.href} download className="text-link">
-                {d.label}
+          <InteractiveFrame className="case-preview about-portrait">
+            <div
+              className={`about-portrait-frame${portrait.width < 800 ? " about-portrait-frame--lowres" : ""}`}
+            >
+              <Image
+                src={portrait.src}
+                alt="Pedro Henrique Contardi Soler"
+                width={portrait.width}
+                height={portrait.height}
+                priority
+                quality={94}
+                unoptimized={portrait.width < 800}
+                sizes="(max-width: 767px) min(100vw, 480px), min(720px, 45vw)"
+                className="about-portrait-image"
+              />
+              <span className="project-image-index mono" aria-hidden="true">
+                PROFILE / 03
+              </span>
+              <span className="project-image-arrow">
                 <Arrow diagonal />
-              </a>
+              </span>
+            </div>
+          </InteractiveFrame>
+          <div className="project-copy about-story">
+            <span className="eyebrow">{content.title}</span>
+            {content.about.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
             ))}
+            <ul className="project-tags about-focus" aria-label={ui.interests}>
+              {ui.interestText.split(" · ").map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <div className="about-downloads" aria-labelledby="about-downloads-label">
+              <div className="about-downloads-heading">
+                <p className="eyebrow" id="about-downloads-label">
+                  {ui.downloads}
+                </p>
+                <p className="about-downloads-lead">{ui.downloadLead}</p>
+              </div>
+              <div className="cv-actions">
+                {downloads.map((file, index) => (
+                  <a
+                    key={file.href}
+                    href={file.href}
+                    download
+                    className={
+                      index === 0
+                        ? "cv-download cv-download-primary"
+                        : "cv-download cv-download-secondary"
+                    }
+                  >
+                    <span className="cv-download-copy">
+                      <strong>{file.label}</strong>
+                      <small>{cvDetails[index]}</small>
+                    </span>
+                    <span className="cv-download-cta">
+                      {ui.downloadCta}
+                      <Arrow diagonal />
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </article>
+      </Reveal>
       <div className="education-languages">
         <div id="education">
           <h3 className="minor-heading">{ui.education}</h3>
@@ -95,17 +150,13 @@ export function About({ content, ui }: { content: Content; ui: UI }) {
             </div>
           ))}
         </div>
-        <details className="other-skills">
-          <summary>
-            {ui.otherSkills}
-            <span aria-hidden="true">+</span>
-          </summary>
+        <AnimatedDetails className="other-skills" summary={ui.otherSkills}>
           <ul>
             {content.otherSkills.map((skill) => (
               <li key={skill}>{skill}</li>
             ))}
           </ul>
-        </details>
+        </AnimatedDetails>
       </div>
     </section>
   );
