@@ -7,7 +7,7 @@ import {
   type Group,
   type ShaderMaterial,
 } from "three";
-import { createSurface } from "./geometry";
+import { createOrbitalArchitecture, createSurface } from "./geometry";
 
 const vertex = `uniform float uTime; varying float vPulse;
 void main(){ vec4 mv = modelViewMatrix * vec4(position,1.0); vPulse = .5 + .5*sin(position.y*2.2-uTime*1.1); gl_PointSize = (7.0+vPulse*6.0)*(6.0/-mv.z); gl_Position = projectionMatrix*mv; }`;
@@ -18,8 +18,10 @@ function EntranceMesh({ exiting }: { exiting: boolean }) {
   const group = useRef<Group>(null);
   const shader = useRef<ShaderMaterial>(null);
   const elapsed = useRef(0);
+  const exitStarted = useRef<number | null>(null);
   const { invalidate } = useThree();
   const data = useMemo(() => createSurface(20, 26), []);
+  const architecture = useMemo(() => createOrbitalArchitecture(80), []);
   const uniforms = useMemo(() => ({ uTime: { value: 0 } }), []);
 
   useEffect(() => {
@@ -33,24 +35,58 @@ function EntranceMesh({ exiting }: { exiting: boolean }) {
     const t = elapsed.current;
     const intro = Math.min(t / 1.05, 1);
     const ease = 1 - Math.pow(1 - intro, 3);
-    const out = exiting ? Math.min((t - 0.95) / 0.55, 1) : 0;
+    if (exiting && exitStarted.current === null) exitStarted.current = t;
+    const out = exiting
+      ? Math.min((t - (exitStarted.current ?? t)) / 0.55, 1)
+      : 0;
     const outEase = out * out;
 
     if (group.current) {
-      group.current.rotation.y = MathUtils.lerp(-1.1, -0.55, ease) + t * 0.08;
-      group.current.rotation.x = MathUtils.lerp(0.35, 0.12, ease);
-      const scale = MathUtils.lerp(0.45, 1.05, ease) * (1 + outEase * 0.35);
+      group.current.rotation.y = MathUtils.lerp(-0.9, -0.7, ease) + t * 0.035;
+      group.current.rotation.x = MathUtils.lerp(0.2, 0.14, ease);
+      group.current.rotation.z = -0.3;
+      const scale = MathUtils.lerp(0.85, 1, ease) * (1 + outEase * 0.1);
       group.current.scale.setScalar(scale);
     }
-    camera.position.z = MathUtils.lerp(15, 8.5, ease) + outEase * 4;
+    camera.position.z = MathUtils.lerp(11, 10, ease) + outEase;
     if (shader.current) shader.current.uniforms.uTime.value = t * 1.35;
   });
 
   return (
     <>
-      <color attach="background" args={["#030711"]} />
       <fog attach="fog" args={["#030711", 8, 22]} />
       <group ref={group} rotation={[0.35, -1.1, 0]}>
+        <lineSegments>
+          <bufferGeometry>
+            <bufferAttribute
+              attach="attributes-position"
+              args={[architecture.orbits, 3]}
+            />
+          </bufferGeometry>
+          <lineBasicMaterial
+            color="#75abff"
+            transparent
+            opacity={0.2}
+            blending={AdditiveBlending}
+            depthWrite={false}
+          />
+        </lineSegments>
+        <points>
+          <bufferGeometry>
+            <bufferAttribute
+              attach="attributes-position"
+              args={[architecture.beacons, 3]}
+            />
+          </bufferGeometry>
+          <pointsMaterial
+            color="#bdeaff"
+            size={0.05}
+            transparent
+            opacity={0.8}
+            blending={AdditiveBlending}
+            depthWrite={false}
+          />
+        </points>
         <lineSegments>
           <bufferGeometry>
             <bufferAttribute
@@ -86,7 +122,10 @@ function EntranceMesh({ exiting }: { exiting: boolean }) {
       </group>
       <points>
         <bufferGeometry>
-          <bufferAttribute attach="attributes-position" args={[data.stars, 3]} />
+          <bufferAttribute
+            attach="attributes-position"
+            args={[data.stars, 3]}
+          />
         </bufferGeometry>
         <pointsMaterial
           color="#6eb4ff"
@@ -105,8 +144,12 @@ export default function EntranceScene({ exiting }: { exiting: boolean }) {
     <Canvas
       dpr={[1, 1.5]}
       frameloop="demand"
-      camera={{ position: [0, 0, 15], fov: 48 }}
-      gl={{ antialias: true, alpha: false, powerPreference: "high-performance" }}
+      camera={{ position: [0, 0, 11], fov: 43 }}
+      gl={{
+        antialias: true,
+        alpha: true,
+        powerPreference: "low-power",
+      }}
       aria-hidden="true"
       className="entrance-canvas"
     >
