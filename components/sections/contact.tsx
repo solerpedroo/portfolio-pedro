@@ -21,7 +21,7 @@ export function Contact({ ui }: { ui: UI }) {
         }}
       />
       <p className="eyebrow">
-        <span>05</span> {ui.contact}
+        <span>06</span> {ui.contact}
       </p>
       <div className="contact-heading">
         <h2 id="contact-heading">{ui.contactTitle}</h2>
@@ -36,7 +36,10 @@ export function Contact({ ui }: { ui: UI }) {
         <Arrow diagonal />
       </a>
       <div className="contact-bottom">
-        <p className="mono">{ui.location}</p>
+        <p className="mono contact-location">
+          <span aria-hidden="true">◎</span>
+          {ui.location}
+        </p>
         <div className="social-links">
           {socials.map((s) => (
             <a
