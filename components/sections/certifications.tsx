@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import type { Certificate } from "@/types/content";
+import { AnimatedDetails } from "@/components/ui/animated-details";
 export function Certifications({
   certificates,
   labels,
@@ -37,11 +38,10 @@ export function Certifications({
           {labels.download} <span aria-hidden="true">↓</span>
         </a>
       </div>
-      <details className="certifications-disclosure">
-        <summary>
-          {labels.more}
-          <span aria-hidden="true">+</span>
-        </summary>
+      <AnimatedDetails
+        className="certifications-disclosure"
+        summary={labels.more}
+      >
         <label className="search-field">
           <span className="sr-only">{labels.search}</span>
           <input
@@ -63,7 +63,7 @@ export function Certifications({
           ))}
         </div>
         {filtered.length === 0 && <p>{labels.empty}</p>}
-      </details>
+      </AnimatedDetails>
     </div>
   );
 }
