@@ -2,6 +2,7 @@
 import { useState, type FormEvent } from "react";
 import { email } from "@/data/socials";
 import type { UI } from "@/data/interface";
+import { AnimatedDetails } from "@/components/ui/animated-details";
 export function ContactForm({
   ui,
 }: {
@@ -65,11 +66,10 @@ export function ContactForm({
     }
   }
   return (
-    <details className="contact-form-disclosure">
-      <summary>
-        {ui.form}
-        <span aria-hidden="true">+</span>
-      </summary>
+    <AnimatedDetails
+      className="contact-form-disclosure"
+      summary={ui.form}
+    >
       <form onSubmit={submit} className="contact-form">
         <input
           name="_honey"
@@ -119,6 +119,6 @@ export function ContactForm({
               : ""}
         </p>
       </form>
-    </details>
+    </AnimatedDetails>
   );
 }
