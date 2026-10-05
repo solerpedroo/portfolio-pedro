@@ -2,6 +2,7 @@ import type { Content } from "@/types/content";
 import type { UI } from "@/data/interface";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
+import { AnimatedDetails } from "@/components/ui/animated-details";
 export function Experience({ content, ui }: { content: Content; ui: UI }) {
   return (
     <section
@@ -41,11 +42,10 @@ export function Experience({ content, ui }: { content: Content; ui: UI }) {
                   <p className="experience-description">{job.description}</p>
                 )}
                 {job.contributions.length > 0 && (
-                  <details className="experience-details">
-                    <summary>
-                      {ui.contributions}
-                      <span aria-hidden="true">+</span>
-                    </summary>
+                  <AnimatedDetails
+                    className="experience-details"
+                    summary={ui.contributions}
+                  >
                     <ul>
                       {job.contributions.map((item) => (
                         <li key={item}>{item}</li>
@@ -68,7 +68,7 @@ export function Experience({ content, ui }: { content: Content; ui: UI }) {
                         </ul>
                       </>
                     )}
-                  </details>
+                  </AnimatedDetails>
                 )}
               </article>
             </Reveal>
