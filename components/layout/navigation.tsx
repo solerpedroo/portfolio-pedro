@@ -25,17 +25,29 @@ export function Navigation({
     { id: "contact", label: ui.contact },
   ];
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries)
-          if (entry.isIntersecting) setActive(entry.target.id);
-      },
-      { rootMargin: "-15% 0px -60% 0px" },
-    );
-    document
-      .querySelectorAll("main section[id], #skills")
-      .forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    const sections = ["projects", "experience", "about", "skills", "contact"]
+      .map((id) => document.getElementById(id))
+      .filter((element): element is HTMLElement => !!element);
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      let current = "";
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= 160) current = section.id;
+      }
+      setActive(current);
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    schedule();
+    addEventListener("scroll", schedule, { passive: true });
+    addEventListener("resize", schedule);
+    return () => {
+      cancelAnimationFrame(frame);
+      removeEventListener("scroll", schedule);
+      removeEventListener("resize", schedule);
+    };
   }, [pathname]);
   useEffect(() => {
     const close = (event: KeyboardEvent) => {
@@ -66,7 +78,7 @@ export function Navigation({
               onClick={() => setOpen(false)}
             >
               {link.label}
-              <span className="nav-dot" />
+              <span className="nav-dot" aria-hidden="true" />
             </a>
           ))}
         </div>
