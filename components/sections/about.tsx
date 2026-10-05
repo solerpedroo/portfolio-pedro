@@ -64,8 +64,8 @@ export function About({ content, ui }: { content: Content; ui: UI }) {
               <span className="project-image-index mono" aria-hidden="true">
                 PROFILE / 03
               </span>
-              <span className="project-image-arrow">
-                <Arrow diagonal />
+              <span className="portrait-locator mono" aria-hidden="true">
+                +
               </span>
             </div>
           </InteractiveFrame>
@@ -79,7 +79,10 @@ export function About({ content, ui }: { content: Content; ui: UI }) {
                 <li key={item}>{item}</li>
               ))}
             </ul>
-            <div className="about-downloads" aria-labelledby="about-downloads-label">
+            <div
+              className="about-downloads"
+              aria-labelledby="about-downloads-label"
+            >
               <div className="about-downloads-heading">
                 <p className="eyebrow" id="about-downloads-label">
                   {ui.downloads}
@@ -128,12 +131,14 @@ export function About({ content, ui }: { content: Content; ui: UI }) {
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div className="education-card-body">
-                    <span className="education-period mono">{entry.period}</span>
+                    <span className="education-period mono">
+                      {entry.period}
+                    </span>
                     <h4>{entry.title}</h4>
                     <p>{entry.institution}</p>
                   </div>
                   <span className="education-mark" aria-hidden="true">
-                    ↗
+                    +
                   </span>
                 </article>
               ))}
