@@ -49,8 +49,7 @@ const pt = {
     "Inteligência Artificial · Visão Computacional · Arquitetura de Software · Desenvolvimento de Produtos",
   skills: "Repertório técnico",
   skillsTitle: "Ferramentas para construir.",
-  skillsIntro:
-    "Stack agrupada por domínio — da visão computacional ao deploy.",
+  skillsIntro: "Stack agrupada por domínio — da visão computacional ao deploy.",
   otherSkills: "Gestão, comunicação e outras habilidades",
   education: "Formação",
   educationLabel: "Formação acadêmica",
@@ -64,9 +63,15 @@ const pt = {
   recognitionIntro:
     "Feiras, mostras e competições em que projetos ganharam visibilidade e colocação.",
   certifications: "Certificações",
+  certificatesIntro:
+    "Aprendizado contínuo, da base técnica às novas possibilidades.",
+  institutions: "Todas as instituições",
   certificatesSearch: "Buscar certificação ou instituição",
   certificatesDownload: "Baixar certificados",
   activities: "Atividades extracurriculares",
+  activitiesTitle: "Aprender além da sala de aula.",
+  activitiesIntro:
+    "Feiras, encontros e iniciativas entre ciência, tecnologia e empreendedorismo.",
   contactTitle: "Vamos conversar?",
   contactIntro:
     "Projetos, tecnologia ou uma nova oportunidade. Estou aberto a aprender, colaborar e construir.",
@@ -139,8 +144,7 @@ const en: UI = {
     "Artificial Intelligence · Computer Vision · Software Architecture · Product Development",
   skills: "Technical toolkit",
   skillsTitle: "Tools to build with.",
-  skillsIntro:
-    "Stack grouped by domain — from computer vision to deployment.",
+  skillsIntro: "Stack grouped by domain — from computer vision to deployment.",
   otherSkills: "Management, communication and other skills",
   education: "Education",
   educationLabel: "Academic background",
@@ -154,9 +158,15 @@ const en: UI = {
   recognitionIntro:
     "Fairs, showcases and competitions where projects earned visibility and placement.",
   certifications: "Certifications",
+  certificatesIntro:
+    "Continuous learning, from technical foundations to new possibilities.",
+  institutions: "All institutions",
   certificatesSearch: "Search certifications or institutions",
   certificatesDownload: "Download certificates",
   activities: "Extracurricular activities",
+  activitiesTitle: "Learning beyond the classroom.",
+  activitiesIntro:
+    "Fairs, events and initiatives across science, technology and entrepreneurship.",
   contactTitle: "Let’s build something meaningful.",
   contactIntro:
     "Projects, technology or a new opportunity. I'm open to learning, collaborating and building.",
@@ -237,15 +247,22 @@ const es: UI = {
   educationIntro:
     "Grado, técnico e idiomas que complementan los proyectos y el trabajo diario.",
   languages: "Idiomas",
-  languagesIntro: "Comunicación para colaborar, presentar y seguir aprendiendo.",
+  languagesIntro:
+    "Comunicación para colaborar, presentar y seguir aprendiendo.",
   recognition: "Reconocimientos",
   recognitionTitle: "De la idea a la presentación.",
   recognitionIntro:
     "Ferias, muestras y competencias donde los proyectos ganaron visibilidad y posición.",
   certifications: "Certificaciones",
+  certificatesIntro:
+    "Aprendizaje continuo, de la base técnica a nuevas posibilidades.",
+  institutions: "Todas las instituciones",
   certificatesSearch: "Buscar certificación o institución",
   certificatesDownload: "Descargar certificados",
   activities: "Actividades extracurriculares",
+  activitiesTitle: "Aprender más allá del aula.",
+  activitiesIntro:
+    "Ferias, encuentros e iniciativas entre ciencia, tecnología y emprendimiento.",
   contactTitle: "¿Hablamos?",
   contactIntro:
     "Proyectos, tecnología o una nueva oportunidad. Estoy abierto a aprender, colaborar y construir.",
