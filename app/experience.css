@@ -613,7 +613,8 @@ main {
 .archive-heading h3 {
   font-size: 40px;
 }
-.archive-project > summary {
+.archive-project > summary,
+.archive-project .animated-details__trigger {
   min-height: 96px;
 }
 .archive-project h4 {
@@ -622,7 +623,8 @@ main {
 .archive-project:hover {
   background: linear-gradient(90deg, #0d1b3100, #0d1b31aa);
 }
-.archive-project[open] {
+.archive-project[open],
+.archive-project.is-open {
   background: #091120;
   padding-inline: 20px;
   margin-inline: -20px;
@@ -704,31 +706,157 @@ main {
 #about {
   padding-top: 130px;
 }
-.about-grid {
-  grid-template-columns: 0.85fr 1.4fr;
-  gap: 100px;
+.featured-about {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 32px 52px;
+  align-items: center;
+  padding: 0 0 72px;
+  border-bottom: 1px solid #1d304d;
 }
-.portrait-wrap {
-  max-width: 400px;
+.about-profile-header h3 {
+  font-size: clamp(38px, 4.6vw, 68px);
 }
-.portrait {
-  filter: saturate(0.4);
-  border-radius: 6px;
-  box-shadow: 20px 20px 0 #0b182c;
+.about-portrait {
+  min-width: 0;
 }
-.portrait-caption {
+.about-portrait-frame {
   position: relative;
-  padding-top: 30px;
+  display: block;
+  aspect-ratio: 1 / 1;
+  width: min(100%, 720px);
+  max-width: 720px;
+  margin-inline: auto;
+  overflow: hidden;
+  transform: perspective(1200px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s;
+  background: radial-gradient(ellipse at 50% 12%, #1a3560, #081222 68%);
+  border: 1px solid #2a4568;
+  border-radius: 8px;
+  box-shadow: 0 35px 80px #0006;
 }
-.about-copy h3 {
-  font-size: 46px;
+.about-portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    520px circle at var(--pointer-x) var(--pointer-y),
+    #4c9bff18,
+    transparent 62%
+  );
+  pointer-events: none;
+  z-index: 1;
 }
-.about-copy > p {
-  font-size: 15px;
+.about-portrait-frame:hover {
+  border-color: #4773a9;
 }
-.about-copy .about-role {
-  color: #7ab4ff;
+.about-portrait-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center 12%;
+}
+.about-portrait-frame--lowres {
+  width: min(100%, 400px);
+}
+.about-story > p + p {
+  margin-top: 14px;
+}
+.about-focus {
+  margin-top: 26px;
+}
+.about-downloads {
+  margin-top: 34px;
+  padding-top: 28px;
+  border-top: 1px solid #1d304d;
+}
+.about-downloads-heading {
+  margin-bottom: 18px;
+}
+.about-downloads-lead {
+  margin-top: 10px;
   font-size: 14px;
+  line-height: 1.75;
+  color: #a8b8d1;
+  max-width: 36em;
+}
+.cv-actions {
+  display: grid;
+  gap: 12px;
+}
+.cv-download {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 64px;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #2a4568;
+  background: linear-gradient(135deg, #0a1528, #07101f);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.cv-download:hover {
+  transform: translateY(-2px);
+  border-color: #4a7ab8;
+  box-shadow: 0 18px 40px #0005;
+}
+.cv-download-primary {
+  border-color: #3d7fd4;
+  background: linear-gradient(135deg, #0f2a52, #123364 55%, #0c1f3f);
+  box-shadow: 0 12px 36px #1473ff22;
+}
+.cv-download-primary:hover {
+  border-color: #72baff;
+  background: linear-gradient(135deg, #154278, #1a4f8f 55%, #123364);
+}
+.cv-download-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+.cv-download-copy strong {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.cv-download-copy small {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  color: #8eb5e8;
+  letter-spacing: 0.04em;
+}
+.cv-download-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b8d9ff;
+}
+.cv-download-primary .cv-download-cta {
+  color: #fff;
+  background: var(--accent);
+  padding: 12px 16px;
+  border-radius: 6px;
+}
+.cv-download-primary:hover .cv-download-cta {
+  background: #3989ff;
+}
+.cv-download-cta svg {
+  width: 14px;
 }
 .education-languages {
   margin-top: 100px;
@@ -1166,7 +1294,8 @@ main {
   .archive-project h4 {
     font-size: 16px;
   }
-  .archive-project[open] {
+  .archive-project[open],
+  .archive-project.is-open {
     padding-inline: 12px;
     margin-inline: -12px;
   }
@@ -1202,26 +1331,36 @@ main {
   #about {
     padding-top: 85px;
   }
-  .about-grid {
+  .featured-about {
     display: flex;
     flex-direction: column;
-    gap: 42px;
+    gap: 28px;
+    padding-bottom: 52px;
   }
-  .portrait-wrap {
-    width: 75%;
-    max-width: 330px;
+  .about-profile-header h3 {
+    font-size: clamp(34px, 9vw, 44px);
   }
-  .portrait {
-    box-shadow: 12px 12px 0 #0b182c;
+  .about-portrait-frame {
+    width: min(100%, 400px);
   }
-  .about-copy h3 {
-    font-size: 36px;
+  .about-portrait-frame--lowres {
+    width: min(100%, 360px);
   }
-  .about-copy > p {
-    font-size: 14px;
-  }
-  .about-copy .about-role {
+  .about-downloads-lead {
     font-size: 13px;
+  }
+  .cv-download {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 18px;
+  }
+  .cv-download-cta {
+    justify-content: center;
+    width: 100%;
+  }
+  .cv-download-primary .cv-download-cta {
+    min-height: 48px;
   }
   .education-languages {
     margin-top: 65px;
