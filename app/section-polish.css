@@ -1,0 +1,584 @@
+/* The supporting chapters share the same restrained, blue editorial rhythm. */
+.experience-section .experience-layout {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+  gap: clamp(48px, 7vw, 100px);
+}
+.experience-section .experience-list {
+  min-width: 0;
+}
+.experience-section .experience-item {
+  position: relative;
+  padding: 38px 0;
+  border-color: #223653;
+}
+.experience-section .experience-current {
+  margin: 0 0 6px;
+  padding: 32px !important;
+  border-radius: 10px;
+  background: linear-gradient(125deg, #0c2447, #091423 80%);
+  box-shadow:
+    inset 0 1px 0 #b5d9ff0a,
+    0 20px 60px #0002;
+}
+.experience-section .experience-meta {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.experience-section .experience-index {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border: 1px solid #315278;
+  border-radius: 50%;
+  color: #93c5ff;
+  font-size: 10px;
+}
+.experience-section .current-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 9px;
+  line-height: 1.4;
+  padding: 6px 9px;
+  border-color: #315b84;
+  background: #16365560;
+}
+.experience-status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #87d8c9;
+  box-shadow: 0 0 10px #87d8c950;
+  flex-shrink: 0;
+}
+.experience-section .experience-item h3 {
+  margin-top: 20px;
+  font-size: clamp(32px, 3.5vw, 48px);
+  line-height: 1.14;
+}
+.experience-section .experience-role {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+.experience-section .experience-description {
+  line-height: 1.85;
+  color: #aebed5;
+}
+.experience-section .experience-details {
+  margin-top: 24px;
+  border-top: 1px solid #294365;
+}
+.experience-section .experience-details .animated-details__trigger {
+  min-height: 58px;
+  font-size: 12px;
+  color: #c1d5f2;
+}
+.experience-section .experience-details ul {
+  margin: 0;
+  padding: 5px 0 12px 18px;
+}
+.experience-section .experience-details li {
+  padding-left: 6px;
+  padding-bottom: 12px;
+  line-height: 1.85;
+  color: #aebed5;
+}
+.experience-section .experience-details li::marker {
+  color: #6aaeff;
+}
+.experience-section .experience-details h4 {
+  margin: 10px 0 12px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.recognition-section .awards-showcase {
+  gap: 18px;
+}
+.recognition-section .award-card {
+  min-height: 220px;
+  height: 100%;
+  overflow: hidden;
+  padding: 30px;
+  border-radius: 10px;
+  background:
+    radial-gradient(ellipse at 100% 0, #18385830, transparent 65%), #08111f;
+  box-shadow: inset 0 1px 0 #b5d9ff08;
+}
+.recognition-section .award-card::after {
+  content: "";
+  position: absolute;
+  right: -32px;
+  top: -32px;
+  width: 130px;
+  height: 130px;
+  border: 1px solid #4b81b51a;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 24px #4b81b507,
+    0 0 0 48px #4b81b505;
+  pointer-events: none;
+}
+.recognition-section .award-card-lead {
+  border-color: #335e89;
+  background: linear-gradient(135deg, #102642, #081220 80%);
+}
+.recognition-section .award-card-head {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+.recognition-section .award-index {
+  font-size: 10px;
+  color: #719cca;
+}
+.recognition-section .award-year {
+  border-left: 1px solid #355172;
+  padding-left: 14px;
+}
+.recognition-section .award-card h3 {
+  font-size: clamp(19px, 1.9vw, 25px);
+  line-height: 1.35;
+  text-wrap: balance;
+}
+.recognition-section .award-event {
+  color: #aec0d8;
+}
+.recognition-section .certifications {
+  margin-top: 56px;
+  padding-top: 42px;
+}
+.recognition-section .subsection-header h3 {
+  font-size: clamp(26px, 3vw, 38px);
+}
+.recognition-section .subsection-header h3 > span {
+  display: grid;
+  place-items: center;
+  min-width: 32px;
+  height: 32px;
+  border: 1px solid #315278;
+  border-radius: 50%;
+  font-size: 10px;
+}
+.recognition-section .certifications-disclosure {
+  padding-inline: 22px;
+  border: 1px solid #263d5b;
+  border-radius: 10px;
+  background: #060d18aa;
+}
+.recognition-section .certifications-disclosure .animated-details__trigger {
+  min-height: 72px;
+  color: #c8daf2;
+}
+.recognition-section .certificates-grid {
+  gap: 12px;
+  padding-bottom: 24px;
+}
+.recognition-section .certificate-card {
+  position: relative;
+  padding: 20px 44px 20px 20px;
+  border: 1px solid #203651;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #0b192b, #08111f);
+}
+.recognition-section .certificate-card h4 {
+  line-height: 1.55;
+  font-weight: 500;
+  color: #d2e1f5;
+}
+.recognition-section .certificate-card p {
+  margin-top: 9px;
+  line-height: 1.6;
+  color: #9db3d0;
+}
+.certificate-mark {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: #517dae;
+  font-size: 18px;
+}
+.recognition-section .certificate-count {
+  font-size: 10px;
+  margin: 18px 0;
+}
+.recognition-section .activities-panel {
+  margin-top: 24px;
+  border-radius: 10px;
+  border-color: #263d5b;
+}
+.recognition-section .activities-panel .animated-details__trigger {
+  min-height: 72px;
+  color: #c8daf2;
+}
+.recognition-section .activities-list {
+  padding: 0 0 24px;
+  gap: 10px;
+}
+.recognition-section .activities-list li {
+  padding: 14px 18px;
+  border-left-width: 1px;
+}
+
+.project-archive {
+  padding-top: 32px;
+  border-top: 1px solid #243b59;
+}
+.project-archive .archive-heading h3 {
+  font-size: clamp(30px, 3.6vw, 46px);
+}
+.project-archive .archive-heading p:not(.eyebrow) {
+  max-width: 450px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.project-archive .archive-controls {
+  margin-top: 28px;
+  padding-bottom: 18px;
+  gap: 16px;
+}
+.project-archive .filter-tabs {
+  gap: 5px;
+}
+.project-archive .filter-tabs button {
+  border-radius: 5px;
+  padding-inline: 18px;
+  transition:
+    color 0.2s,
+    background 0.2s,
+    border-color 0.2s;
+}
+.project-archive .archive-project {
+  border-color: #233a57;
+  border-radius: 6px;
+}
+.project-archive .archive-project .animated-details__trigger {
+  min-height: 92px;
+  padding-inline: 10px;
+}
+.project-archive .archive-project.is-open {
+  padding-inline: 16px;
+  margin-inline: -16px;
+  background: #091525;
+}
+.project-archive .archive-number {
+  color: #7eabd9;
+}
+.project-archive .archive-tag {
+  color: #91aacb;
+}
+.project-archive .archive-project h4 {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.project-archive .archive-project .expand-sign {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #2b4564;
+  border-radius: 50%;
+  font-size: 21px;
+}
+.project-archive .archive-detail {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  gap: 30px;
+  padding: 6px 10px 30px 70px;
+}
+.project-archive .archive-image {
+  border: 1px solid #2b4564;
+  border-radius: 7px;
+  background: radial-gradient(ellipse at 50% 0, #17345b, #081322 75%);
+}
+.project-archive .archive-image img {
+  padding: 16px;
+}
+.project-archive .archive-detail p {
+  color: #b0c0d7;
+  line-height: 1.85;
+}
+.archive-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+}
+.project-archive .empty-state {
+  padding: 32px 20px;
+  margin-top: 16px;
+  border: 1px dashed #2b4564;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.project-archive .search-field,
+.recognition-section .search-field {
+  border: 1px solid #304b6e;
+  border-radius: 6px;
+  background: #0b162580;
+  padding-inline: 14px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.project-archive .search-field:focus-within,
+.recognition-section .search-field:focus-within {
+  border-color: #77b6f7;
+  box-shadow: 0 0 0 3px #3889ed16;
+}
+.project-archive .search-field svg,
+.recognition-section .search-field svg {
+  flex-shrink: 0;
+  color: #85abd6;
+}
+
+.contact-section .contact-heading h2 {
+  text-wrap: balance;
+}
+.contact-section .visual-contact {
+  z-index: 0;
+}
+.contact-section > .eyebrow {
+  position: relative;
+  z-index: 2;
+}
+.contact-section .visual-contact .visual-bottomline {
+  top: 32px;
+  bottom: auto;
+  z-index: 1;
+}
+.contact-section .contact-orbit {
+  box-shadow:
+    0 0 0 10px #337ed008,
+    0 0 0 24px #337ed004,
+    0 12px 44px #1473ff25;
+}
+.contact-section .contact-intro {
+  color: #b2c1d7;
+  line-height: 1.85;
+}
+.contact-section .email-link {
+  padding-block: 8px 14px;
+  gap: 18px;
+}
+.contact-section .contact-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.contact-section .contact-location > span {
+  font-size: 20px;
+  color: #81b6ec;
+}
+.contact-section .contact-bottom {
+  padding-top: 24px;
+  border-color: #29405f;
+}
+.contact-section .social-links {
+  gap: 12px;
+}
+.contact-section .social-links .text-link {
+  padding: 12px 16px;
+  border: 1px solid #294365;
+  border-radius: 5px;
+  background: #0a142480;
+  font-size: 11px;
+}
+.contact-section .social-links .text-link:hover {
+  border-color: #679cd5;
+  background: #102541;
+}
+.contact-section .contact-form-disclosure {
+  margin-top: 28px;
+  padding-inline: 22px;
+  border: 1px solid #29405f;
+  border-radius: 10px;
+  background: #07101dcc;
+  backdrop-filter: blur(12px);
+}
+.contact-section .contact-form-disclosure .animated-details__trigger {
+  min-height: 72px;
+  color: #c8daf2;
+}
+.contact-section .contact-form {
+  padding-top: 12px;
+  max-width: 760px;
+}
+.contact-section .contact-form input,
+.contact-section .contact-form textarea {
+  padding: 14px;
+  border-radius: 6px;
+  background: #0b1727;
+  border-color: #304b6e;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.contact-section .contact-form input:focus,
+.contact-section .contact-form textarea:focus {
+  border-color: #77b6f7;
+  box-shadow: 0 0 0 3px #3889ed16;
+}
+.contact-section .contact-form textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+.contact-section .form-privacy {
+  line-height: 1.8;
+  max-width: 600px;
+}
+.contact-section .form-status:empty {
+  margin: 0;
+}
+
+@media (max-width: 1023px) {
+  .experience-section .experience-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: 36px;
+  }
+  .experience-section .experience-current {
+    padding: 24px !important;
+  }
+  .experience-section .experience-meta {
+    align-items: center;
+  }
+  .experience-section .current-indicator {
+    margin-left: 0;
+  }
+  .project-archive .archive-detail {
+    padding-left: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .experience-section .experience-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .experience-section .experience-current {
+    padding: 22px !important;
+    margin-inline: 0;
+  }
+  .experience-section .experience-item {
+    padding-block: 30px;
+  }
+  .experience-section .experience-meta .mono {
+    font-size: 10px;
+    letter-spacing: 0.02em;
+  }
+  .recognition-section .awards-showcase {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .recognition-section .award-card {
+    padding: 24px;
+    min-height: 180px;
+  }
+  .recognition-section .award-card-head {
+    margin-bottom: 22px;
+  }
+  .recognition-section .certifications {
+    margin-top: 40px;
+    padding-top: 32px;
+  }
+  .recognition-section .certifications-disclosure,
+  .recognition-section .activities-panel {
+    padding-inline: 16px;
+  }
+  .recognition-section .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-archive {
+    margin-top: 40px;
+    padding-top: 26px;
+  }
+  .project-archive .archive-heading {
+    align-items: stretch;
+    gap: 22px;
+  }
+  .project-archive .search-field,
+  .recognition-section .search-field {
+    min-width: 0;
+    width: 100%;
+  }
+  .project-archive .filter-tabs {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .project-archive .filter-tabs button {
+    padding-inline: 12px;
+  }
+  .project-archive .archive-project .animated-details__trigger {
+    grid-template-columns: 26px minmax(0, 1fr) 28px;
+    gap: 12px;
+    min-height: 80px;
+  }
+  .project-archive .archive-project h4 {
+    font-size: 17px;
+    line-height: 1.35;
+  }
+  .project-archive .archive-tag {
+    display: none;
+  }
+  .project-archive .archive-project.is-open {
+    padding-inline: 8px;
+    margin-inline: -8px;
+  }
+  .project-archive .archive-detail {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 4px 10px 24px;
+  }
+  .contact-section .contact-heading {
+    align-items: flex-end;
+    gap: 16px;
+  }
+  .contact-section .visual-contact .visual-bottomline {
+    top: 18px;
+    right: 25%;
+  }
+  .contact-section .contact-orbit {
+    width: 58px;
+    height: 58px;
+  }
+  .contact-section .contact-orbit svg {
+    width: 28px;
+    height: 28px;
+  }
+  .contact-section .email-link {
+    font-size: clamp(16px, 4.5vw, 24px);
+    gap: 12px;
+    max-width: 100%;
+  }
+  .contact-section .email-link svg {
+    flex-shrink: 0;
+    width: 18px;
+  }
+  .contact-section .contact-bottom {
+    margin-top: 48px;
+    align-items: flex-start;
+  }
+  .contact-section .social-links {
+    gap: 8px;
+  }
+  .contact-section .social-links .text-link {
+    padding-inline: 12px;
+  }
+  .contact-section .contact-form-disclosure {
+    padding-inline: 16px;
+  }
+  .contact-section .form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .recognition-section .award-card:hover {
+    transform: none;
+  }
+  .recognition-section .award-card:hover .award-symbol {
+    transform: none;
+  }
+  .project-archive .archive-project .animated-details__trigger:hover h4 {
+    transform: none;
+  }
+}
