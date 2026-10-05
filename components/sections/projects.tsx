@@ -42,9 +42,15 @@ export function Projects({ projects, ui }: { projects: Project[]; ui: UI }) {
                       {id === "safevision" ? "Safe Vision" : project.name}
                     </h3>
                   </div>
-                  <span className="case-cross" aria-hidden="true">
-                    ↗
-                  </span>
+                  <a
+                    className="case-cross"
+                    href={project.links[0]}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${ui.visit}: ${project.name}`}
+                  >
+                    <Arrow diagonal />
+                  </a>
                 </div>
                 <InteractiveFrame className="case-preview">
                   <a
@@ -54,6 +60,11 @@ export function Projects({ projects, ui }: { projects: Project[]; ui: UI }) {
                     rel="noreferrer"
                     aria-label={`${ui.visit}: ${project.name}`}
                   >
+                    <span className="preview-chrome" aria-hidden="true">
+                      <i />
+                      <i />
+                      <i />
+                    </span>
                     <Image
                       src={project.image}
                       alt={project.name}
