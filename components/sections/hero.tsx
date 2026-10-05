@@ -61,7 +61,7 @@ export function Hero({ ui }: { ui: UI }) {
         </a>
         <p className="mono hero-location">{ui.location}</p>
         <a className="scroll-cue mono" href="#projects" aria-label={ui.explore}>
-          SCROLL TO EXPLORE <span aria-hidden="true">↓</span>
+          {ui.explore} <span aria-hidden="true">↓</span>
         </a>
       </div>
     </section>
