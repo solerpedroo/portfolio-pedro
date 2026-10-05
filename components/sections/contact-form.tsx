@@ -34,22 +34,19 @@ export function ContactForm({
       const timeout = window.setTimeout(() => controller.abort(), 15000);
       let response: Response;
       try {
-        response = await fetch(
-          `https://formsubmit.co/ajax/${email}`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-            body: JSON.stringify({
-              ...Object.fromEntries(fields),
-              _subject: "Portfolio contact — Pedro Soler",
-              _template: "table",
-            }),
-            signal: controller.signal,
+        response = await fetch(`https://formsubmit.co/ajax/${email}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
           },
-        );
+          body: JSON.stringify({
+            ...Object.fromEntries(fields),
+            _subject: "Portfolio contact — Pedro Soler",
+            _template: "table",
+          }),
+          signal: controller.signal,
+        });
       } finally {
         window.clearTimeout(timeout);
       }
@@ -66,11 +63,12 @@ export function ContactForm({
     }
   }
   return (
-    <AnimatedDetails
-      className="contact-form-disclosure"
-      summary={ui.form}
-    >
-      <form onSubmit={submit} className="contact-form">
+    <AnimatedDetails className="contact-form-disclosure" summary={ui.form}>
+      <form
+        onSubmit={submit}
+        className="contact-form"
+        aria-busy={status === "sending"}
+      >
         <input
           name="_honey"
           className="honeypot"
