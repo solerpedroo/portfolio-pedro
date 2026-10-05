@@ -2,6 +2,7 @@ import type { Content } from "@/types/content";
 import type { UI } from "@/data/interface";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Certifications } from "./certifications";
+import { AnimatedDetails } from "@/components/ui/animated-details";
 export function Recognition({ content, ui }: { content: Content; ui: UI }) {
   return (
     <section
@@ -42,17 +43,17 @@ export function Recognition({ content, ui }: { content: Content; ui: UI }) {
             empty: ui.empty,
           }}
         />
-        <details id="activities" className="activities">
-          <summary>
-            {ui.activities}
-            <span aria-hidden="true">+</span>
-          </summary>
+        <AnimatedDetails
+          id="activities"
+          className="activities"
+          summary={ui.activities}
+        >
           <ul>
             {content.activities.map((a) => (
               <li key={a}>{a}</li>
             ))}
           </ul>
-        </details>
+        </AnimatedDetails>
       </div>
     </section>
   );
