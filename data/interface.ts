@@ -49,11 +49,20 @@ const pt = {
     "Inteligência Artificial · Visão Computacional · Arquitetura de Software · Desenvolvimento de Produtos",
   skills: "Repertório técnico",
   skillsTitle: "Ferramentas para construir.",
+  skillsIntro:
+    "Stack agrupada por domínio — da visão computacional ao deploy.",
   otherSkills: "Gestão, comunicação e outras habilidades",
   education: "Formação",
+  educationLabel: "Formação acadêmica",
+  educationTitle: "Estudos que sustentam a prática.",
+  educationIntro:
+    "Graduação, técnico e idiomas que complementam os projetos e a entrega no dia a dia.",
   languages: "Idiomas",
+  languagesIntro: "Comunicação para colaborar, apresentar e aprender.",
   recognition: "Reconhecimentos",
   recognitionTitle: "Da ideia à apresentação.",
+  recognitionIntro:
+    "Feiras, mostras e competições em que projetos ganharam visibilidade e colocação.",
   certifications: "Certificações",
   certificatesSearch: "Buscar certificação ou instituição",
   certificatesDownload: "Baixar certificados",
@@ -130,11 +139,20 @@ const en: UI = {
     "Artificial Intelligence · Computer Vision · Software Architecture · Product Development",
   skills: "Technical toolkit",
   skillsTitle: "Tools to build with.",
+  skillsIntro:
+    "Stack grouped by domain — from computer vision to deployment.",
   otherSkills: "Management, communication and other skills",
   education: "Education",
+  educationLabel: "Academic background",
+  educationTitle: "Study that supports the work.",
+  educationIntro:
+    "Degree, technical training and languages that complement projects and day-to-day delivery.",
   languages: "Languages",
+  languagesIntro: "Communication to collaborate, present and keep learning.",
   recognition: "Recognition",
   recognitionTitle: "From idea to presentation.",
+  recognitionIntro:
+    "Fairs, showcases and competitions where projects earned visibility and placement.",
   certifications: "Certifications",
   certificatesSearch: "Search certifications or institutions",
   certificatesDownload: "Download certificates",
@@ -210,11 +228,20 @@ const es: UI = {
     "Inteligencia Artificial · Visión por Computadora · Arquitectura de Software · Desarrollo de Productos",
   skills: "Repertorio técnico",
   skillsTitle: "Herramientas para construir.",
+  skillsIntro:
+    "Stack agrupada por dominio — de la visión por computadora al deploy.",
   otherSkills: "Gestión, comunicación y otras habilidades",
   education: "Formación",
+  educationLabel: "Formación académica",
+  educationTitle: "Estudios que sostienen la práctica.",
+  educationIntro:
+    "Grado, técnico e idiomas que complementan los proyectos y el trabajo diario.",
   languages: "Idiomas",
+  languagesIntro: "Comunicación para colaborar, presentar y seguir aprendiendo.",
   recognition: "Reconocimientos",
   recognitionTitle: "De la idea a la presentación.",
+  recognitionIntro:
+    "Ferias, muestras y competencias donde los proyectos ganaron visibilidad y posición.",
   certifications: "Certificaciones",
   certificatesSearch: "Buscar certificación o institución",
   certificatesDownload: "Descargar certificados",
