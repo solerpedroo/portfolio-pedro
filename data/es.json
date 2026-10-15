@@ -158,6 +158,80 @@
       "tags": ["Python", "Next.js", "LLM", "GitHub"],
       "image": "/img/chronos.png",
       "links": ["https://github.com/solerpedroo/chronos"]
+    },
+    {
+      "id": "autoscale",
+      "name": "AutoScale",
+      "description": "Proyecto del hackathon Agents for Commerce (Deco): agente de diagnóstico y corrección estructural de catálogos e-commerce. Pipeline auditable (recolección → normalización → diagnóstico → priorización → generación → validación → informe) con LLM solo en la generación, severidad determinística y dashboard Next.js en modo offline o API en vivo (Vercel + Railway).",
+      "tags": ["Python", "Next.js", "LLM", "E-commerce"],
+      "image": "/img/autoscale.png",
+      "links": [
+        "https://autoscale-nu.vercel.app/",
+        "https://github.com/solerpedroo/autoscale"
+      ]
+    },
+    {
+      "id": "personal_os",
+      "name": "Personal OS",
+      "description": "Sistema personal para finanzas, patrimonio, inversiones y productividad. App Next.js con TypeScript, Tailwind v4 y Supabase: autenticación por usuario, datos aislados e integración con IA en el servidor para insights financieros.",
+      "tags": ["Next.js", "Supabase", "Finanzas", "Web"],
+      "image": "/img/assistente_financeiro.png",
+      "links": [
+        "https://personal-os.vercel.app/",
+        "https://github.com/solerpedroo/assistente-financeiro"
+      ]
+    },
+    {
+      "id": "devlingo",
+      "name": "Devlingo",
+      "description": "App mobile Flutter y backend de la plataforma Devlingo — aprendizaje gamificado para desarrolladores con práctica de código, IA pedagógica, code runner en sandbox y evolución profesional. Stack con Riverpod, GoRouter, Fastify, Firebase (Auth, Firestore, FCM) y gateway de IA.",
+      "tags": ["Flutter", "Firebase", "Node.js", "Mobile"],
+      "image": "/img/devlingo_app.png",
+      "links": ["https://github.com/solerpedroo/devlingo_app"]
+    },
+    {
+      "id": "ai_hub",
+      "name": "AI Hub Desktop",
+      "description": "Capa de control local-first entre tú y varios proveedores de IA (BYOK). Desktop Electron en Windows con proyectos, conversaciones y contexto en SQLite, claves en Credential Manager, import de historial ChatGPT/Claude/Gemini y composer unificado.",
+      "tags": ["Electron", "Desktop", "LLM", "TypeScript"],
+      "image": "/img/ai_hub.png",
+      "links": ["https://github.com/solerpedroo/ai_hub"]
+    },
+    {
+      "id": "youtube_ai_transcriber",
+      "name": "YouTube AI Transcriber",
+      "description": "Aplicación local-first para importar videos de YouTube, obtener transcripciones de calidad (subtítulos o Whisper) y estudiar el contenido con chat contextual. Proyectos y preferencias en el navegador; BYOK para speech-to-text y modelos de lenguaje.",
+      "tags": ["Next.js", "LLM", "Transcripción", "Web"],
+      "image": "/img/youtube_ai_transcriber.png",
+      "links": ["https://github.com/solerpedroo/youtube_ai_transcriber"]
+    },
+    {
+      "id": "codenotch",
+      "name": "Codenotch",
+      "description": "Fork de la app macOS Codenotch que muestra en el notch el consumo de límites de asistentes de código (Claude, Cursor, etc.). Contribuí con el port para Linux (Rust/Tauri): paquetes .deb, .rpm y AppImage, bandeja del sistema y lectura de los mismos providers en desktop.",
+      "tags": ["Rust", "Tauri", "Linux", "Desktop"],
+      "image": "/img/codenotch.png",
+      "links": ["https://github.com/solerpedroo/codenotch"]
+    },
+    {
+      "id": "cv_processing_lab",
+      "name": "Computer Vision Processing Lab",
+      "description": "Laboratorio web interactivo de procesamiento clásico de imágenes: espacios de color, filtros espaciales, bordes, morfología, FFT, comparación de algoritmos (PSNR/SSIM/MSE) y exportación de experimentos. Frontend Next.js y API FastAPI con OpenCV/NumPy.",
+      "tags": ["OpenCV", "Python", "Next.js", "Visión Computacional"],
+      "image": "/img/computer_vision_lab.png",
+      "links": [
+        "https://github.com/solerpedroo/computer-vision-processing-lab"
+      ]
+    },
+    {
+      "id": "industrial_defect_detection",
+      "name": "Industrial Defect Detection",
+      "description": "Sistema de inspección para detección visual de anomalías en imágenes industriales (MVTec AD): autoencoder convolucional y PatchCore, mapas de error, umbrales congelados y comparación reproducible entre modelos. UI Next.js con laboratorio de inferencia, experimentos e informes offline.",
+      "tags": ["PyTorch", "Visión Computacional", "FastAPI", "Next.js"],
+      "image": "/img/industrial_defect_detection.png",
+      "links": [
+        "https://github.com/solerpedroo/industrial-defect-detection"
+      ]
     }
   ],
   "experiences": [
